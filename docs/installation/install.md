@@ -110,11 +110,11 @@ composer install --no-dev --optimize-autoloader
 ```bash
 mysql -u root -p
 
-CREATE USER 'paymenter'@'127.0.0.1' IDENTIFIED BY 'yourPassword';
+create user 'paymenter'@'127.0.0.1' identified by 'yourPassword';
 
-CREATE DATABASE paymenter;
+create database paymenter;
 
-GRANT ALL PRIVILEGES ON paymenter.* TO 'paymenter'@'127.0.0.1' WITH GRANT OPTION;
+grant all privileges on paymenter.* to 'paymenter'@'127.0.0.1' with grant option;
 
 quit
 
