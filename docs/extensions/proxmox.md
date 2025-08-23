@@ -84,3 +84,8 @@ Here is a example of a email template:
 
 This is a must have for Proxmox, as the password is not shown in the panel.
 
+## Config options
+
+You can let your customers tailor their product to meet their needs by offering customizable options.  These options allow users to select specific settings for their product, making it easy to create unique products for different use cases. Below is a list of configurable options you can offer with the Proxmox extension:
+
+`location_id`, `ipv4`, `ipv6`, `pool`, `cpu`, `cores`, `sockets`, `memory`, `disk`, `backups`, `cache`, `model`, `ratelimit`.
