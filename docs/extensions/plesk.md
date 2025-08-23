@@ -4,8 +4,10 @@
 
 Create a new server in the Paymenter admin panel and select Plesk as the server type. Fill in the following fields:
 - Hostname: The hostname of your Plesk server (e.g. `plesk.example.com:8443`)
-- Username: The username of the Plesk account 
-- Password: The password of the Plesk account
+- Username: The username of the Plesk main admin account 
+- Password: The password of the Plesk main admin account
+
+Due to API limitations, the Plesk Extension can only be used with root administrator data! [Here is an official explanation from Plesk](https://support.plesk.com/hc/en-us/articles/12377012952215-Unable-to-run-API-request-under-additional-administrator-account-Can-not-find-client-by-login)
 
 ![image](/assets/images/extensions/plesk/server_settings.png)
 

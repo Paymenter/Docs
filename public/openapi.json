@@ -122,7 +122,7 @@
                     "200": {
                         "description": "Return the affiliates as a JSON response\n\n\n\nPaginated set of `AffiliateResource`",
                         "content": {
-                            "application/json": {
+                            "application/vnd.api+json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -251,7 +251,7 @@
                     "200": {
                         "description": "Return the created affiliate as a JSON response\n\n\n\n`AffiliateResource`",
                         "content": {
-                            "application/json": {
+                            "application/vnd.api+json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -305,7 +305,7 @@
                     "200": {
                         "description": "Return the affiliate as a JSON response\n\n\n\n`AffiliateResource`",
                         "content": {
-                            "application/json": {
+                            "application/vnd.api+json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -361,7 +361,7 @@
                     "200": {
                         "description": "Return the updated affiliate as a JSON response\n\n\n\n`AffiliateResource`",
                         "content": {
-                            "application/json": {
+                            "application/vnd.api+json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -489,7 +489,7 @@
                     "200": {
                         "description": "Return the users as a JSON response\n\n\n\nPaginated set of `UserResource`",
                         "content": {
-                            "application/json": {
+                            "application/vnd.api+json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -633,7 +633,7 @@
                     "200": {
                         "description": "Return the created user as a JSON response\n\n\n\n`UserResource`",
                         "content": {
-                            "application/json": {
+                            "application/vnd.api+json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -687,7 +687,7 @@
                     "200": {
                         "description": "Return the user as a JSON response\n\n\n\n`UserResource`",
                         "content": {
-                            "application/json": {
+                            "application/vnd.api+json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -731,7 +731,6 @@
                     }
                 ],
                 "requestBody": {
-                    "required": true,
                     "content": {
                         "application/json": {
                             "schema": {
@@ -744,7 +743,7 @@
                     "200": {
                         "description": "Return the updated user as a JSON response\n\n\n\n`UserResource`",
                         "content": {
-                            "application/json": {
+                            "application/vnd.api+json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -865,7 +864,7 @@
                     "200": {
                         "description": "Return the orders as a JSON response\n\n\n\nPaginated set of `OrderResource`",
                         "content": {
-                            "application/json": {
+                            "application/vnd.api+json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -987,7 +986,7 @@
                     "200": {
                         "description": "Return the created order as a JSON response\n\n\n\n`OrderResource`",
                         "content": {
-                            "application/json": {
+                            "application/vnd.api+json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -1041,7 +1040,7 @@
                     "200": {
                         "description": "Return the order as a JSON response\n\n\n\n`OrderResource`",
                         "content": {
-                            "application/json": {
+                            "application/vnd.api+json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -1085,7 +1084,6 @@
                     }
                 ],
                 "requestBody": {
-                    "required": true,
                     "content": {
                         "application/json": {
                             "schema": {
@@ -1098,7 +1096,7 @@
                     "200": {
                         "description": "Return the updated order as a JSON response\n\n\n\n`OrderResource`",
                         "content": {
-                            "application/json": {
+                            "application/vnd.api+json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -1240,7 +1238,7 @@
                     "200": {
                         "description": "Return the services as a JSON response\n\n\n\nPaginated set of `ServiceResource`",
                         "content": {
-                            "application/json": {
+                            "application/vnd.api+json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -1381,7 +1379,7 @@
                     "200": {
                         "description": "Return the created service as a JSON response\n\n\n\n`ServiceResource`",
                         "content": {
-                            "application/json": {
+                            "application/vnd.api+json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -1435,7 +1433,7 @@
                     "200": {
                         "description": "Return the service as a JSON response\n\n\n\n`ServiceResource`",
                         "content": {
-                            "application/json": {
+                            "application/vnd.api+json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -1479,7 +1477,6 @@
                     }
                 ],
                 "requestBody": {
-                    "required": true,
                     "content": {
                         "application/json": {
                             "schema": {
@@ -1492,7 +1489,7 @@
                     "200": {
                         "description": "Return the updated service as a JSON response\n\n\n\n`ServiceResource`",
                         "content": {
-                            "application/json": {
+                            "application/vnd.api+json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -1627,7 +1624,7 @@
                     "200": {
                         "description": "Return the invoices as a JSON response\n\n\n\nPaginated set of `InvoiceResource`",
                         "content": {
-                            "application/json": {
+                            "application/vnd.api+json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -1756,7 +1753,7 @@
                     "200": {
                         "description": "Return the created invoice as a JSON response\n\n\n\n`InvoiceResource`",
                         "content": {
-                            "application/json": {
+                            "application/vnd.api+json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -1810,7 +1807,7 @@
                     "200": {
                         "description": "Return the invoice as a JSON response\n\n\n\n`InvoiceResource`",
                         "content": {
-                            "application/json": {
+                            "application/vnd.api+json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -1854,7 +1851,6 @@
                     }
                 ],
                 "requestBody": {
-                    "required": true,
                     "content": {
                         "application/json": {
                             "schema": {
@@ -1867,7 +1863,7 @@
                     "200": {
                         "description": "Return the updated invoice as a JSON response\n\n\n\n`InvoiceResource`",
                         "content": {
-                            "application/json": {
+                            "application/vnd.api+json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -1988,7 +1984,7 @@
                     "200": {
                         "description": "Return the tickets as a JSON response\n\n\n\nPaginated set of `TicketResource`",
                         "content": {
-                            "application/json": {
+                            "application/vnd.api+json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -2117,7 +2113,7 @@
                     "200": {
                         "description": "Return the created ticket as a JSON response\n\n\n\n`TicketResource`",
                         "content": {
-                            "application/json": {
+                            "application/vnd.api+json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -2171,7 +2167,7 @@
                     "200": {
                         "description": "Return the ticket as a JSON response\n\n\n\n`TicketResource`",
                         "content": {
-                            "application/json": {
+                            "application/vnd.api+json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -2215,7 +2211,6 @@
                     }
                 ],
                 "requestBody": {
-                    "required": true,
                     "content": {
                         "application/json": {
                             "schema": {
@@ -2228,7 +2223,7 @@
                     "200": {
                         "description": "Return the updated ticket as a JSON response\n\n\n\n`TicketResource`",
                         "content": {
-                            "application/json": {
+                            "application/vnd.api+json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -2349,7 +2344,7 @@
                     "200": {
                         "description": "Return the ticketMessages as a JSON response\n\n\n\nPaginated set of `TicketMessageResource`",
                         "content": {
-                            "application/json": {
+                            "application/vnd.api+json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -2478,7 +2473,7 @@
                     "200": {
                         "description": "Return the created ticketMessage as a JSON response\n\n\n\n`TicketMessageResource`",
                         "content": {
-                            "application/json": {
+                            "application/vnd.api+json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -2532,7 +2527,7 @@
                     "200": {
                         "description": "Return the ticketMessage as a JSON response\n\n\n\n`TicketMessageResource`",
                         "content": {
-                            "application/json": {
+                            "application/vnd.api+json": {
                                 "schema": {
                                     "type": "object",
                                     "properties": {
@@ -4237,11 +4232,6 @@
                         "default": "pending"
                     }
                 },
-                "required": [
-                    "user_id",
-                    "currency_code",
-                    "status"
-                ],
                 "title": "UpdateInvoiceRequest"
             },
             "UpdateOrderRequest": {
@@ -4255,10 +4245,6 @@
                         "example": "USD"
                     }
                 },
-                "required": [
-                    "user_id",
-                    "currency_code"
-                ],
                 "title": "UpdateOrderRequest"
             },
             "UpdateServiceRequest": {
@@ -4323,15 +4309,6 @@
                         ]
                     }
                 },
-                "required": [
-                    "product_id",
-                    "plan_id",
-                    "user_id",
-                    "quantity",
-                    "status",
-                    "currency_code",
-                    "price"
-                ],
                 "title": "UpdateServiceRequest"
             },
             "UpdateTicketRequest": {
@@ -4371,12 +4348,6 @@
                         ]
                     }
                 },
-                "required": [
-                    "subject",
-                    "user_id",
-                    "priority",
-                    "status"
-                ],
                 "title": "UpdateTicketRequest"
             },
             "UpdateUserRequest": {
@@ -4402,10 +4373,7 @@
                         "maxLength": 255
                     },
                     "password": {
-                        "type": [
-                            "string",
-                            "null"
-                        ],
+                        "type": "string",
                         "minLength": 8
                     },
                     "email_verified_at": {
@@ -4422,9 +4390,6 @@
                         ]
                     }
                 },
-                "required": [
-                    "email"
-                ],
                 "title": "UpdateUserRequest"
             },
             "UserResource": {
