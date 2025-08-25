@@ -1,6 +1,6 @@
 <script setup>
 import SectionBlock from '@components/landing/SectionBlock.vue';
-import { ref, computed, onMounted, watch } from 'vue'
+import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
 
 const masterItems = ref([])
 const searchQuery = ref('')
@@ -43,6 +43,25 @@ const fetchAndProcessAllData = async () => {
     isLoading.value = false;
   }
 };
+
+
+const handleScroll = () => {
+  if (
+    window.innerHeight + window.scrollY >= document.body.offsetHeight - 2 &&
+    hasMore.value &&
+    !isLoading.value
+  ) {
+    loadMore();
+  }
+};
+
+onMounted(() => {
+  window.addEventListener('scroll', handleScroll);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('scroll', handleScroll);
+});
 
 onMounted(fetchAndProcessAllData);
 
