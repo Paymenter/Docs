@@ -132,6 +132,35 @@
                                                 "$ref": "#/components/schemas/AffiliateResource"
                                             }
                                         },
+                                        "links": {
+                                            "type": "object",
+                                            "properties": {
+                                                "first": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                },
+                                                "last": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                },
+                                                "prev": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                },
+                                                "next": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                }
+                                            }
+                                        },
                                         "meta": {
                                             "type": "object",
                                             "properties": {
@@ -171,35 +200,6 @@
                                                 "to"
                                             ]
                                         },
-                                        "links": {
-                                            "type": "object",
-                                            "properties": {
-                                                "first": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "last": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "prev": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "next": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                }
-                                            }
-                                        },
                                         "included": {
                                             "type": "array",
                                             "items": {
@@ -216,8 +216,8 @@
                                     },
                                     "required": [
                                         "data",
-                                        "links",
-                                        "meta"
+                                        "meta",
+                                        "links"
                                     ]
                                 }
                             }
@@ -499,6 +499,35 @@
                                                 "$ref": "#/components/schemas/UserResource"
                                             }
                                         },
+                                        "links": {
+                                            "type": "object",
+                                            "properties": {
+                                                "first": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                },
+                                                "last": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                },
+                                                "prev": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                },
+                                                "next": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                }
+                                            }
+                                        },
                                         "meta": {
                                             "type": "object",
                                             "properties": {
@@ -538,35 +567,6 @@
                                                 "to"
                                             ]
                                         },
-                                        "links": {
-                                            "type": "object",
-                                            "properties": {
-                                                "first": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "last": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "prev": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "next": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                }
-                                            }
-                                        },
                                         "included": {
                                             "type": "array",
                                             "items": {
@@ -598,8 +598,8 @@
                                     },
                                     "required": [
                                         "data",
-                                        "links",
-                                        "meta"
+                                        "meta",
+                                        "links"
                                     ]
                                 }
                             }
@@ -874,6 +874,35 @@
                                                 "$ref": "#/components/schemas/OrderResource"
                                             }
                                         },
+                                        "links": {
+                                            "type": "object",
+                                            "properties": {
+                                                "first": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                },
+                                                "last": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                },
+                                                "prev": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                },
+                                                "next": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                }
+                                            }
+                                        },
                                         "meta": {
                                             "type": "object",
                                             "properties": {
@@ -913,35 +942,6 @@
                                                 "to"
                                             ]
                                         },
-                                        "links": {
-                                            "type": "object",
-                                            "properties": {
-                                                "first": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "last": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "prev": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "next": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                }
-                                            }
-                                        },
                                         "included": {
                                             "type": "array",
                                             "items": {
@@ -951,8 +951,8 @@
                                     },
                                     "required": [
                                         "data",
-                                        "links",
-                                        "meta"
+                                        "meta",
+                                        "links"
                                     ]
                                 }
                             }
@@ -1248,6 +1248,35 @@
                                                 "$ref": "#/components/schemas/ServiceResource"
                                             }
                                         },
+                                        "links": {
+                                            "type": "object",
+                                            "properties": {
+                                                "first": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                },
+                                                "last": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                },
+                                                "prev": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                },
+                                                "next": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                }
+                                            }
+                                        },
                                         "meta": {
                                             "type": "object",
                                             "properties": {
@@ -1287,35 +1316,6 @@
                                                 "to"
                                             ]
                                         },
-                                        "links": {
-                                            "type": "object",
-                                            "properties": {
-                                                "first": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "last": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "prev": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "next": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                }
-                                            }
-                                        },
                                         "included": {
                                             "type": "array",
                                             "items": {
@@ -1344,8 +1344,8 @@
                                     },
                                     "required": [
                                         "data",
-                                        "links",
-                                        "meta"
+                                        "meta",
+                                        "links"
                                     ]
                                 }
                             }
@@ -1634,6 +1634,35 @@
                                                 "$ref": "#/components/schemas/InvoiceResource"
                                             }
                                         },
+                                        "links": {
+                                            "type": "object",
+                                            "properties": {
+                                                "first": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                },
+                                                "last": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                },
+                                                "prev": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                },
+                                                "next": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                }
+                                            }
+                                        },
                                         "meta": {
                                             "type": "object",
                                             "properties": {
@@ -1673,35 +1702,6 @@
                                                 "to"
                                             ]
                                         },
-                                        "links": {
-                                            "type": "object",
-                                            "properties": {
-                                                "first": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "last": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "prev": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "next": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                }
-                                            }
-                                        },
                                         "included": {
                                             "type": "array",
                                             "items": {
@@ -1718,8 +1718,8 @@
                                     },
                                     "required": [
                                         "data",
-                                        "links",
-                                        "meta"
+                                        "meta",
+                                        "links"
                                     ]
                                 }
                             }
@@ -1994,6 +1994,35 @@
                                                 "$ref": "#/components/schemas/TicketResource"
                                             }
                                         },
+                                        "links": {
+                                            "type": "object",
+                                            "properties": {
+                                                "first": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                },
+                                                "last": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                },
+                                                "prev": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                },
+                                                "next": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                }
+                                            }
+                                        },
                                         "meta": {
                                             "type": "object",
                                             "properties": {
@@ -2033,35 +2062,6 @@
                                                 "to"
                                             ]
                                         },
-                                        "links": {
-                                            "type": "object",
-                                            "properties": {
-                                                "first": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "last": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "prev": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "next": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                }
-                                            }
-                                        },
                                         "included": {
                                             "type": "array",
                                             "items": {
@@ -2078,8 +2078,8 @@
                                     },
                                     "required": [
                                         "data",
-                                        "links",
-                                        "meta"
+                                        "meta",
+                                        "links"
                                     ]
                                 }
                             }
@@ -2354,6 +2354,35 @@
                                                 "$ref": "#/components/schemas/TicketMessageResource"
                                             }
                                         },
+                                        "links": {
+                                            "type": "object",
+                                            "properties": {
+                                                "first": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                },
+                                                "last": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                },
+                                                "prev": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                },
+                                                "next": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                }
+                                            }
+                                        },
                                         "meta": {
                                             "type": "object",
                                             "properties": {
@@ -2393,35 +2422,6 @@
                                                 "to"
                                             ]
                                         },
-                                        "links": {
-                                            "type": "object",
-                                            "properties": {
-                                                "first": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "last": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "prev": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                },
-                                                "next": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
-                                                }
-                                            }
-                                        },
                                         "included": {
                                             "type": "array",
                                             "items": {
@@ -2438,8 +2438,8 @@
                                     },
                                     "required": [
                                         "data",
-                                        "links",
-                                        "meta"
+                                        "meta",
+                                        "links"
                                     ]
                                 }
                             }
@@ -2701,7 +2701,14 @@
                                 "type": "object",
                                 "properties": {
                                     "data": {
-                                        "$ref": "#/components/schemas/UserResourceIdentifier"
+                                        "anyOf": [
+                                            {
+                                                "$ref": "#/components/schemas/UserResourceIdentifier"
+                                            },
+                                            {
+                                                "type": "null"
+                                            }
+                                        ]
                                     }
                                 },
                                 "required": [
@@ -2712,7 +2719,14 @@
                                 "type": "object",
                                 "properties": {
                                     "data": {
-                                        "$ref": "#/components/schemas/AffiliateOrderResourceIdentifier"
+                                        "anyOf": [
+                                            {
+                                                "$ref": "#/components/schemas/AffiliateOrderResourceIdentifier"
+                                            },
+                                            {
+                                                "type": "null"
+                                            }
+                                        ]
                                     }
                                 },
                                 "required": [
@@ -3204,7 +3218,14 @@
                                 "type": "object",
                                 "properties": {
                                     "data": {
-                                        "$ref": "#/components/schemas/UserResourceIdentifier"
+                                        "anyOf": [
+                                            {
+                                                "$ref": "#/components/schemas/UserResourceIdentifier"
+                                            },
+                                            {
+                                                "type": "null"
+                                            }
+                                        ]
                                     }
                                 },
                                 "required": [
@@ -3301,7 +3322,14 @@
                                 "type": "object",
                                 "properties": {
                                     "data": {
-                                        "$ref": "#/components/schemas/ServiceResourceIdentifier"
+                                        "anyOf": [
+                                            {
+                                                "$ref": "#/components/schemas/ServiceResourceIdentifier"
+                                            },
+                                            {
+                                                "type": "null"
+                                            }
+                                        ]
                                     }
                                 },
                                 "required": [
@@ -3312,7 +3340,14 @@
                                 "type": "object",
                                 "properties": {
                                     "data": {
-                                        "$ref": "#/components/schemas/InvoiceResourceIdentifier"
+                                        "anyOf": [
+                                            {
+                                                "$ref": "#/components/schemas/InvoiceResourceIdentifier"
+                                            },
+                                            {
+                                                "type": "null"
+                                            }
+                                        ]
                                     }
                                 },
                                 "required": [
@@ -3409,7 +3444,14 @@
                                 "type": "object",
                                 "properties": {
                                     "data": {
-                                        "$ref": "#/components/schemas/UserResourceIdentifier"
+                                        "anyOf": [
+                                            {
+                                                "$ref": "#/components/schemas/UserResourceIdentifier"
+                                            },
+                                            {
+                                                "type": "null"
+                                            }
+                                        ]
                                     }
                                 },
                                 "required": [
@@ -3600,7 +3642,14 @@
                                 "type": "object",
                                 "properties": {
                                     "data": {
-                                        "$ref": "#/components/schemas/CategoryResourceIdentifier"
+                                        "anyOf": [
+                                            {
+                                                "$ref": "#/components/schemas/CategoryResourceIdentifier"
+                                            },
+                                            {
+                                                "type": "null"
+                                            }
+                                        ]
                                     }
                                 },
                                 "required": [
@@ -3858,7 +3907,14 @@
                                 "type": "object",
                                 "properties": {
                                     "data": {
-                                        "$ref": "#/components/schemas/PropertyResourceIdentifier"
+                                        "anyOf": [
+                                            {
+                                                "$ref": "#/components/schemas/PropertyResourceIdentifier"
+                                            },
+                                            {
+                                                "type": "null"
+                                            }
+                                        ]
                                     }
                                 },
                                 "required": [
@@ -3869,7 +3925,14 @@
                                 "type": "object",
                                 "properties": {
                                     "data": {
-                                        "$ref": "#/components/schemas/CouponResourceIdentifier"
+                                        "anyOf": [
+                                            {
+                                                "$ref": "#/components/schemas/CouponResourceIdentifier"
+                                            },
+                                            {
+                                                "type": "null"
+                                            }
+                                        ]
                                     }
                                 },
                                 "required": [
@@ -3880,7 +3943,14 @@
                                 "type": "object",
                                 "properties": {
                                     "data": {
-                                        "$ref": "#/components/schemas/UserResourceIdentifier"
+                                        "anyOf": [
+                                            {
+                                                "$ref": "#/components/schemas/UserResourceIdentifier"
+                                            },
+                                            {
+                                                "type": "null"
+                                            }
+                                        ]
                                     }
                                 },
                                 "required": [
@@ -3891,7 +3961,14 @@
                                 "type": "object",
                                 "properties": {
                                     "data": {
-                                        "$ref": "#/components/schemas/OrderResourceIdentifier"
+                                        "anyOf": [
+                                            {
+                                                "$ref": "#/components/schemas/OrderResourceIdentifier"
+                                            },
+                                            {
+                                                "type": "null"
+                                            }
+                                        ]
                                     }
                                 },
                                 "required": [
@@ -3902,7 +3979,14 @@
                                 "type": "object",
                                 "properties": {
                                     "data": {
-                                        "$ref": "#/components/schemas/ProductResourceIdentifier"
+                                        "anyOf": [
+                                            {
+                                                "$ref": "#/components/schemas/ProductResourceIdentifier"
+                                            },
+                                            {
+                                                "type": "null"
+                                            }
+                                        ]
                                     }
                                 },
                                 "required": [
@@ -4001,7 +4085,14 @@
                                 "type": "object",
                                 "properties": {
                                     "data": {
-                                        "$ref": "#/components/schemas/UserResourceIdentifier"
+                                        "anyOf": [
+                                            {
+                                                "$ref": "#/components/schemas/UserResourceIdentifier"
+                                            },
+                                            {
+                                                "type": "null"
+                                            }
+                                        ]
                                     }
                                 },
                                 "required": [
@@ -4012,7 +4103,14 @@
                                 "type": "object",
                                 "properties": {
                                     "data": {
-                                        "$ref": "#/components/schemas/TicketResourceIdentifier"
+                                        "anyOf": [
+                                            {
+                                                "$ref": "#/components/schemas/TicketResourceIdentifier"
+                                            },
+                                            {
+                                                "type": "null"
+                                            }
+                                        ]
                                     }
                                 },
                                 "required": [
@@ -4126,7 +4224,14 @@
                                 "type": "object",
                                 "properties": {
                                     "data": {
-                                        "$ref": "#/components/schemas/UserResourceIdentifier"
+                                        "anyOf": [
+                                            {
+                                                "$ref": "#/components/schemas/UserResourceIdentifier"
+                                            },
+                                            {
+                                                "type": "null"
+                                            }
+                                        ]
                                     }
                                 },
                                 "required": [
@@ -4137,7 +4242,14 @@
                                 "type": "object",
                                 "properties": {
                                     "data": {
-                                        "$ref": "#/components/schemas/UserResourceIdentifier"
+                                        "anyOf": [
+                                            {
+                                                "$ref": "#/components/schemas/UserResourceIdentifier"
+                                            },
+                                            {
+                                                "type": "null"
+                                            }
+                                        ]
                                     }
                                 },
                                 "required": [
@@ -4548,7 +4660,14 @@
                                 "type": "object",
                                 "properties": {
                                     "data": {
-                                        "$ref": "#/components/schemas/RoleResourceIdentifier"
+                                        "anyOf": [
+                                            {
+                                                "$ref": "#/components/schemas/RoleResourceIdentifier"
+                                            },
+                                            {
+                                                "type": "null"
+                                            }
+                                        ]
                                     }
                                 },
                                 "required": [
