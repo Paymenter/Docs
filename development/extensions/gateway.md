@@ -2,7 +2,7 @@
 
 The gateway extensions have a few hooks that you can use to process payments.
 
-You can also use [routes](index.md#routes-views-etc) and [views](index.md#routes-views-etc) in the gateway extension.
+Gateways still support everything documented in the [extensions overview](index.md).
 
 ## `canUseGateway`
 
