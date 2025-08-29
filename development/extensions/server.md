@@ -85,12 +85,17 @@ public function createServer(Service $service, $settings, $properties)
 
 This hook is used to add actions to the service show page.
 
-It supports both views and buttons.
+It supports texts, views, and buttons.
 
 ```php
-public function getActions(Service $service)
+public function getActions(Service $service, $settings, $properties)
 {
     return [
+        [
+            'text' => properties['username'],
+            'label' => 'Panel Username',
+            'type' => 'text',
+        ]
         [
             'name' => 'control_panel',
             'label' => 'Go to control panel',
