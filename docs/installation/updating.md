@@ -31,6 +31,10 @@ php artisan down
 curl -L https://github.com/paymenter/paymenter/releases/latest/download/paymenter.tar.gz | tar -xz
 ```
 
+### Update extensions
+
+Sometimes extensions also need to be updated, now is the time to check if any of your installed extensions have updates available.
+
 ### Update the dependencies
 
 ```bash
