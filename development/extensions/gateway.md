@@ -2,23 +2,29 @@
 
 The gateway extensions have a few hooks that you can use to process payments.
 
-You can also use [routes](index.md#routes-views-etc) and [views](index.md#routes-views-etc) in the gateway extension.
+Gateways still support everything documented in the [extensions overview](index.md).
 
 ## `canUseGateway`
 
 This hook is used to check if the gateway can be used. This can be used to check if the gateway is enabled, if the user has permission to use the gateway etc.
 
 ```php
-public function canUseGateway($items, $type)
-{
-    // Check if the user can use the gateway
+public function canUseGateway($total, $currency, $type, $items = []){
+    if ($currency == 'EUR') return false;
+    if ($total > 1000) return false;
+
     return true;
 }
 ```
+`$total` is the total amount that needs to be paid.
 
-`$items` is either a list of `InvoiceItem` or a array with a `Product`, `Price` and `Quantity`.
+`$currency` is the currency of the payment.
 
 `$type` is either `invoice` or `cart`.
+
+It is recommended to use above variables as below variable does not have a stable value.
+
+`$items` is either a list of `InvoiceItem` or a array with a `Product`, `Price` and `Quantity`.
 
 ## `pay`
 

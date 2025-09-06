@@ -2,7 +2,7 @@
 
 The server extensions have a few hooks that you can use to setup the server.
 
-You can also use [routes](index.md#routes-views-etc) and [views](index.md#routes-views-etc) in the server extension.
+Servers still support everything documented in the [extensions overview](index.md).
 
 ## `getProductConfig`
 

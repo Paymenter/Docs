@@ -84,9 +84,12 @@ The following values are supported
 You can use the following lifecycle hooks to run code at different stages of the extension lifecycle, all hooks have the extension instance as the first parameter.
 
 - `boot` - Runs when the extension is booted (only when the extension is enabled), e.g. registering routes
-- `enabled` - Runs when the extension is enabled, e.g. running migrations
-- `disabled` - Runs when the extension is disabled, e.g. removing migrations
-- `updated` - Runs when the extension is updated, e.g. creating remote hooks
+- `enabled` - Runs when the extension is enabled
+- `disabled` - Runs when the extension is disabled
+- `updated` - Runs when the extension config is updated
+- `installed` - Runs when the extension is installed via the admin panel
+- `uninstalled` - Runs when the extension is uninstalled
+- `upgraded` - Runs when the extension is upgraded to a newer version, passes the old version as a parameter (if available)
 
 ## Routes, Views etc
 
