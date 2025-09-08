@@ -27,15 +27,22 @@ server {
     server_name example.com;
     root /var/www/paymenter/public;
 
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-Content-Type-Options "nosniff";
+
     index index.php;
+
+    charset utf-8;
 
     location / {
         try_files $uri $uri/ /index.php?$query_string;
     }
 
-    location ~ \.php$ {
-        include snippets/fastcgi-php.conf;
+    location ~ ^/index\.php(/|$) {
         fastcgi_pass unix:/var/run/php/php8.3-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        include fastcgi_params;
+        fastcgi_hide_header X-Powered-By;
     }
 }
 ```
@@ -53,8 +60,13 @@ server {
     listen [::]:443 ssl http2;
     server_name example.com;
     root /var/www/paymenter/public;
+    
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-Content-Type-Options "nosniff";
 
     index index.php;
+
+    charset utf-8;
 
     ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;
@@ -63,9 +75,11 @@ server {
         try_files $uri $uri/ /index.php?$query_string;
     }
 
-    location ~ \.php$ {
-        include snippets/fastcgi-php.conf;
+    location ~ ^/index\.php(/|$) {
         fastcgi_pass unix:/var/run/php/php8.3-fpm.sock;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        include fastcgi_params;
+        fastcgi_hide_header X-Powered-By;
     }
 }
 ```
