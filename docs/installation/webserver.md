@@ -47,7 +47,7 @@ server {
 }
 ```
 
-```bash [Nginx with SSL]{4,11,16-17}
+```bash [Nginx with SSL]{4,11,21-22}
 server {
     listen 80;
     listen [::]:80;
