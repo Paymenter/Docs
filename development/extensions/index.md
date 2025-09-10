@@ -99,17 +99,33 @@ Here is a simple example:
 
 ```php
 use App\Helpers\ExtensionHelper;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Event;
+use Illuminate\Support\Facades\View;
 use Paymenter\Extensions\Others\Example\Middleware\ExampleMiddleware;
-    public function boot()
-    {
-        // Register routes
-        require __DIR__ . '/routes/web.php';
-        // Register views
-        View::addNamespace('extension', __DIR__ . '/resources/views');
+public function boot()
+{
+    // Register routes
+    require __DIR__ . '/routes/web.php';
+    // Register views
+    View::addNamespace('extension', __DIR__ . '/resources/views');
 
-        // Register middleware (web is used for all routes)
-        ExtensionHelper::registerMiddleware('web', ExampleMiddleware::class);
-    }
+    // Register middleware (web is used for all routes)
+    ExtensionHelper::registerMiddleware('web', ExampleMiddleware::class);
+
+    // Register policies
+    Gate::policy(Model::class, Policies\ModelPolicy::class);
+
+    // Register permissions
+    Event::listen('permissions', function () {
+        return [
+            'admin.announcements.view' => 'View Announcements',
+            'admin.announcements.create' => 'Create Announcements',
+            'admin.announcements.update' => 'Update Announcements',
+            'admin.announcements.delete' => 'Delete Announcements',
+        ];
+    });
+}
 ```
 
 ## Gateways
