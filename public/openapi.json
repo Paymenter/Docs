@@ -27,6 +27,9 @@
             "name": "Invoices"
         },
         {
+            "name": "InvoiceItems"
+        },
+        {
             "name": "Tickets"
         },
         {
@@ -1321,9 +1324,6 @@
                                             "items": {
                                                 "anyOf": [
                                                     {
-                                                        "$ref": "#/components/schemas/PropertyResource"
-                                                    },
-                                                    {
                                                         "$ref": "#/components/schemas/CouponResource"
                                                     },
                                                     {
@@ -1901,6 +1901,411 @@
                         "in": "path",
                         "required": true,
                         "description": "The invoice ID",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "No content"
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/ModelNotFoundException"
+                    },
+                    "422": {
+                        "$ref": "#/components/responses/ValidationException"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/AuthorizationException"
+                    }
+                }
+            }
+        },
+        "/v1/admin/invoice-items": {
+            "get": {
+                "operationId": "v1.admin.invoice-items.index",
+                "summary": "List invoice items",
+                "tags": [
+                    "InvoiceItems"
+                ],
+                "parameters": [
+                    {
+                        "name": "sort",
+                        "in": "query",
+                        "description": "Available sorts are `id`, `created_at`, `updated_at`, `quantity`, `price`. You can sort by multiple options by separating them with a comma. To sort in descending order, use `-` sign in front of the sort, for example: `-id`.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "include",
+                        "in": "query",
+                        "description": "Available includes are `gateway`, `gatewayCount`, `gatewayExists`, `reference`, `referenceCount`, `referenceExists`, `invoice`, `invoiceCount`, `invoiceExists`. You can include multiple options by separating them with a comma.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "per_page",
+                        "in": "query",
+                        "description": "How many items to show per page.",
+                        "schema": {
+                            "type": "integer",
+                            "default": 15
+                        },
+                        "example": 20
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Which page to show.",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "example": 2
+                    },
+                    {
+                        "name": "filter[id]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filter[quantity]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filter[price]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filter[reference_type]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filter[reference_id]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Return the invoices as a JSON response\n\n\n\nPaginated set of `InvoiceItemResource`",
+                        "content": {
+                            "application/vnd.api+json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/InvoiceItemResource"
+                                            }
+                                        },
+                                        "links": {
+                                            "type": "object",
+                                            "properties": {
+                                                "first": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                },
+                                                "last": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                },
+                                                "prev": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                },
+                                                "next": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ]
+                                                }
+                                            }
+                                        },
+                                        "meta": {
+                                            "type": "object",
+                                            "properties": {
+                                                "current_page": {
+                                                    "type": "integer"
+                                                },
+                                                "from": {
+                                                    "type": [
+                                                        "integer",
+                                                        "null"
+                                                    ]
+                                                },
+                                                "path": {
+                                                    "type": [
+                                                        "string",
+                                                        "null"
+                                                    ],
+                                                    "description": "Base path for paginator generated URLs."
+                                                },
+                                                "per_page": {
+                                                    "type": "integer",
+                                                    "description": "Number of items shown per page."
+                                                },
+                                                "to": {
+                                                    "type": [
+                                                        "integer",
+                                                        "null"
+                                                    ],
+                                                    "description": "Number of the last item in the slice."
+                                                }
+                                            },
+                                            "required": [
+                                                "current_page",
+                                                "from",
+                                                "path",
+                                                "per_page",
+                                                "to"
+                                            ]
+                                        },
+                                        "included": {
+                                            "type": "array",
+                                            "items": {
+                                                "anyOf": [
+                                                    {
+                                                        "$ref": "#/components/schemas/ServiceResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/CouponResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/UserResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/OrderResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/ProductResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/InvoiceResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/ServiceUpgradeResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/PropertyResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/CreditResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/InvoiceItemResource"
+                                                    }
+                                                ]
+                                            }
+                                        }
+                                    },
+                                    "required": [
+                                        "data",
+                                        "meta",
+                                        "links"
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "$ref": "#/components/responses/ValidationException"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/AuthorizationException"
+                    }
+                }
+            },
+            "post": {
+                "operationId": "v1.admin.invoice-items.store",
+                "summary": "Create a new invoice item",
+                "tags": [
+                    "InvoiceItems"
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/CreateInvoiceItemRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Return the created invoice as a JSON response\n\n\n\n`InvoiceItemResource`",
+                        "content": {
+                            "application/vnd.api+json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#/components/schemas/InvoiceItemResource"
+                                        }
+                                    },
+                                    "required": [
+                                        "data"
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "$ref": "#/components/responses/ValidationException"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/AuthorizationException"
+                    }
+                }
+            }
+        },
+        "/v1/admin/invoice-items/{invoiceItem}": {
+            "get": {
+                "operationId": "v1.admin.invoice-items.show",
+                "summary": "Show a specific invoice item",
+                "tags": [
+                    "InvoiceItems"
+                ],
+                "parameters": [
+                    {
+                        "name": "invoiceItem",
+                        "in": "path",
+                        "required": true,
+                        "description": "The invoice item ID",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "include",
+                        "in": "query",
+                        "description": "Available includes are `gateway`, `gatewayCount`, `gatewayExists`, `reference`, `referenceCount`, `referenceExists`, `invoice`, `invoiceCount`, `invoiceExists`. You can include multiple options by separating them with a comma.",
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Return the invoice item as a JSON response\n\n\n\n`InvoiceItemResource`",
+                        "content": {
+                            "application/vnd.api+json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#/components/schemas/InvoiceItemResource"
+                                        }
+                                    },
+                                    "required": [
+                                        "data"
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/ModelNotFoundException"
+                    },
+                    "422": {
+                        "$ref": "#/components/responses/ValidationException"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/AuthorizationException"
+                    }
+                }
+            },
+            "put": {
+                "operationId": "v1.admin.invoice-items.update",
+                "summary": "Update a specific invoice item",
+                "tags": [
+                    "InvoiceItems"
+                ],
+                "parameters": [
+                    {
+                        "name": "invoiceItem",
+                        "in": "path",
+                        "required": true,
+                        "description": "The invoice item ID",
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/UpdateInvoiceItemRequest"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Return the updated invoice item as a JSON response\n\n\n\n`InvoiceItemResource`",
+                        "content": {
+                            "application/vnd.api+json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#/components/schemas/InvoiceItemResource"
+                                        }
+                                    },
+                                    "required": [
+                                        "data"
+                                    ]
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "$ref": "#/components/responses/ModelNotFoundException"
+                    },
+                    "422": {
+                        "$ref": "#/components/responses/ValidationException"
+                    },
+                    "403": {
+                        "$ref": "#/components/responses/AuthorizationException"
+                    }
+                }
+            },
+            "delete": {
+                "operationId": "v1.admin.invoice-items.destroy",
+                "summary": "Delete a specific invoice item",
+                "tags": [
+                    "InvoiceItems"
+                ],
+                "parameters": [
+                    {
+                        "name": "invoiceItem",
+                        "in": "path",
+                        "required": true,
+                        "description": "The invoice item ID",
                         "schema": {
                             "type": "integer"
                         }
@@ -2928,6 +3333,46 @@
                 ],
                 "title": "CreateAffiliateRequest"
             },
+            "CreateInvoiceItemRequest": {
+                "type": "object",
+                "properties": {
+                    "invoice_id": {
+                        "type": "integer"
+                    },
+                    "description": {
+                        "type": "string",
+                        "maxLength": 255
+                    },
+                    "price": {
+                        "type": "number",
+                        "minimum": 0
+                    },
+                    "quantity": {
+                        "type": "integer",
+                        "minimum": 1
+                    },
+                    "reference_type": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "maxLength": 255
+                    },
+                    "reference_id": {
+                        "type": [
+                            "integer",
+                            "null"
+                        ]
+                    }
+                },
+                "required": [
+                    "invoice_id",
+                    "description",
+                    "price",
+                    "quantity"
+                ],
+                "title": "CreateInvoiceItemRequest"
+            },
             "CreateInvoiceRequest": {
                 "type": "object",
                 "properties": {
@@ -3278,17 +3723,29 @@
                             "id": {
                                 "type": "integer"
                             },
+                            "description": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
+                            },
                             "quantity": {
                                 "type": "integer"
                             },
                             "price": {
                                 "type": "string"
                             },
-                            "currency_code": {
-                                "type": "string"
+                            "reference_type": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ]
                             },
-                            "expires_at": {
-                                "type": "string"
+                            "reference_id": {
+                                "type": [
+                                    "integer",
+                                    "null"
+                                ]
                             },
                             "updated_at": {
                                 "type": [
@@ -3307,10 +3764,11 @@
                         },
                         "required": [
                             "id",
+                            "description",
                             "quantity",
                             "price",
-                            "currency_code",
-                            "expires_at",
+                            "reference_type",
+                            "reference_id",
                             "updated_at",
                             "created_at"
                         ]
@@ -3318,16 +3776,40 @@
                     "relationships": {
                         "type": "object",
                         "properties": {
-                            "services": {
+                            "reference": {
                                 "type": "object",
                                 "properties": {
                                     "data": {
                                         "anyOf": [
                                             {
-                                                "$ref": "#/components/schemas/ServiceResourceIdentifier"
+                                                "anyOf": [
+                                                    {
+                                                        "$ref": "#/components/schemas/ServiceResourceIdentifier"
+                                                    },
+                                                    {
+                                                        "type": "null"
+                                                    }
+                                                ]
                                             },
                                             {
-                                                "type": "null"
+                                                "anyOf": [
+                                                    {
+                                                        "$ref": "#/components/schemas/ServiceUpgradeResourceIdentifier"
+                                                    },
+                                                    {
+                                                        "type": "null"
+                                                    }
+                                                ]
+                                            },
+                                            {
+                                                "anyOf": [
+                                                    {
+                                                        "$ref": "#/components/schemas/CreditResourceIdentifier"
+                                                    },
+                                                    {
+                                                        "type": "null"
+                                                    }
+                                                ]
                                             }
                                         ]
                                     }
@@ -3342,10 +3824,17 @@
                                     "data": {
                                         "anyOf": [
                                             {
-                                                "$ref": "#/components/schemas/InvoiceResourceIdentifier"
+                                                "anyOf": [
+                                                    {
+                                                        "$ref": "#/components/schemas/InvoiceResourceIdentifier"
+                                                    },
+                                                    {
+                                                        "type": "null"
+                                                    }
+                                                ]
                                             },
                                             {
-                                                "type": "null"
+                                                "type": "object"
                                             }
                                         ]
                                     }
@@ -3903,24 +4392,6 @@
                     "relationships": {
                         "type": "object",
                         "properties": {
-                            "services": {
-                                "type": "object",
-                                "properties": {
-                                    "data": {
-                                        "anyOf": [
-                                            {
-                                                "$ref": "#/components/schemas/PropertyResourceIdentifier"
-                                            },
-                                            {
-                                                "type": "null"
-                                            }
-                                        ]
-                                    }
-                                },
-                                "required": [
-                                    "data"
-                                ]
-                            },
                             "coupon": {
                                 "type": "object",
                                 "properties": {
@@ -4034,6 +4505,128 @@
                     "id"
                 ],
                 "title": "ServiceResourceIdentifier"
+            },
+            "ServiceUpgradeResource": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "serviceUpgrades"
+                        ]
+                    },
+                    "attributes": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer"
+                            },
+                            "status": {
+                                "type": "string"
+                            },
+                            "service_id": {
+                                "type": "integer"
+                            },
+                            "plan_id": {
+                                "type": "integer"
+                            },
+                            "product_id": {
+                                "type": "integer"
+                            },
+                            "updated_at": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ],
+                                "format": "date-time"
+                            },
+                            "created_at": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ],
+                                "format": "date-time"
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "status",
+                            "service_id",
+                            "plan_id",
+                            "product_id",
+                            "updated_at",
+                            "created_at"
+                        ]
+                    },
+                    "relationships": {
+                        "type": "object",
+                        "properties": {
+                            "service": {
+                                "type": "object",
+                                "properties": {
+                                    "data": {
+                                        "anyOf": [
+                                            {
+                                                "$ref": "#/components/schemas/PropertyResourceIdentifier"
+                                            },
+                                            {
+                                                "type": "null"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "required": [
+                                    "data"
+                                ]
+                            },
+                            "invoice": {
+                                "type": "object",
+                                "properties": {
+                                    "data": {
+                                        "anyOf": [
+                                            {
+                                                "$ref": "#/components/schemas/InvoiceResourceIdentifier"
+                                            },
+                                            {
+                                                "type": "null"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "required": [
+                                    "data"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "required": [
+                    "id",
+                    "type"
+                ],
+                "title": "ServiceUpgradeResource"
+            },
+            "ServiceUpgradeResourceIdentifier": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string",
+                        "enum": [
+                            "serviceUpgrades"
+                        ]
+                    },
+                    "id": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "type",
+                    "id"
+                ],
+                "title": "ServiceUpgradeResourceIdentifier"
             },
             "TicketMessageResource": {
                 "type": "object",
@@ -4316,6 +4909,31 @@
                     }
                 },
                 "title": "UpdateAffiliateRequest"
+            },
+            "UpdateInvoiceItemRequest": {
+                "type": "object",
+                "properties": {
+                    "description": {
+                        "type": "string",
+                        "maxLength": 255
+                    },
+                    "quantity": {
+                        "type": "integer",
+                        "minimum": 1
+                    },
+                    "price": {
+                        "type": "number",
+                        "minimum": 0
+                    },
+                    "reference_type": {
+                        "type": "string",
+                        "maxLength": 100
+                    },
+                    "reference_id": {
+                        "type": "integer"
+                    }
+                },
+                "title": "UpdateInvoiceItemRequest"
             },
             "UpdateInvoiceRequest": {
                 "type": "object",
