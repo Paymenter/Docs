@@ -133,7 +133,7 @@ const formatDate = (dateString) => dateString ? new Date(dateString).toLocaleDat
       </div>
     </div>
 
-    <div class="flex justify-between items-center mb-6">
+    <div class="flex flex-col md:flex-row justify-between items-center mb-6">
       <div class="flex justify-center gap-3 flex-wrap">
         <button @click="activeFilter = 'all'" :class="{
           'bg-[var(--vp-c-brand-1)] border-[var(--vp-c-brand-1)]': activeFilter === 'all',
