@@ -25,8 +25,8 @@ php artisan app:extension:disable
 
 Adding a new admin page to Paymenter is easy due to the versatile Filament framework.
 
-Click [this](https://filamentphp.com/docs/3.x/panels/pages) to learn how to create a new admin page.
-You can also create resources for controlling models. Click [this](https://filamentphp.com/docs/3.x/panels/resources/getting-started) to learn how to create a new resource.
+Click [this](https://filamentphp.com/docs/4.x/navigation/custom-pages) to learn how to create a new admin page.
+You can also create resources for controlling models. Click [this](https://filamentphp.com/docs/4.x/resources/overview) to learn how to create a new resource.
 
 Make sure to select your extension path when asked.
 
