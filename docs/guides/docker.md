@@ -37,6 +37,12 @@ This will prompt you for the URL of your Paymenter installation.
 docker compose run --rm paymenter php artisan app:init
 ```
 
+Seed the database with initial properties
+
+```bash
+docker compose run --rm paymenter php artisan db:seed --class=CustomPropertySeeder
+```
+
 Now we need to create the user
 
 This will prompt you for the username, email and password of the user.

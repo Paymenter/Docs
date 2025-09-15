@@ -156,6 +156,7 @@ Simple run this command and your database is ready to be used.
 
 ```bash
 php artisan migrate --force --seed
+php artisan db:seed --class=CustomPropertySeeder
 ```
 
 Fill in the default URL and name using the following command:
