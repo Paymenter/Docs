@@ -4354,6 +4354,9 @@
                             "price": {
                                 "type": "string"
                             },
+                            "status": {
+                                "type": "string"
+                            },
                             "currency_code": {
                                 "type": "string"
                             },
@@ -4383,6 +4386,7 @@
                             "id",
                             "quantity",
                             "price",
+                            "status",
                             "currency_code",
                             "expires_at",
                             "updated_at",
