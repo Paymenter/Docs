@@ -47,9 +47,12 @@ Once you've configured your Proxmox server, you need to configure a location.
 
 The location contains the details such as the url, api token, and os templates.
 
+OS templates should be a VM template that you have created in Proxmox. Use the VM ID of the template. (name can be anything)
+
 ![image](/assets/images/extensions/proxmox/location.png)
 
 ## Configuring a node
+
 Once you've configured your Proxmox location, you need to configure a node. 
 
 Navigate to the **Nodes** tab in the admin panel and press **Add Node**.
