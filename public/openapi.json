@@ -1337,6 +1337,9 @@
                                                     },
                                                     {
                                                         "$ref": "#/components/schemas/InvoiceResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/PropertyResource"
                                                     }
                                                 ]
                                             }
@@ -2106,10 +2109,10 @@
                                                         "$ref": "#/components/schemas/InvoiceResource"
                                                     },
                                                     {
-                                                        "$ref": "#/components/schemas/ServiceUpgradeResource"
+                                                        "$ref": "#/components/schemas/PropertyResource"
                                                     },
                                                     {
-                                                        "$ref": "#/components/schemas/PropertyResource"
+                                                        "$ref": "#/components/schemas/ServiceUpgradeResource"
                                                     },
                                                     {
                                                         "$ref": "#/components/schemas/CreditResource"
@@ -4476,6 +4479,24 @@
                                         "items": {
                                             "$ref": "#/components/schemas/InvoiceResourceIdentifier"
                                         }
+                                    }
+                                },
+                                "required": [
+                                    "data"
+                                ]
+                            },
+                            "property": {
+                                "type": "object",
+                                "properties": {
+                                    "data": {
+                                        "anyOf": [
+                                            {
+                                                "$ref": "#/components/schemas/PropertyResourceIdentifier"
+                                            },
+                                            {
+                                                "type": "null"
+                                            }
+                                        ]
                                     }
                                 },
                                 "required": [
