@@ -49,6 +49,7 @@ Skip the "Setting up database" section and instead run:
 
 ```bash
 php artisan migrate:fresh --seed
+php artisan db:seed --class=CustomPropertySeeder
 php artisan app:init
 ```
 
