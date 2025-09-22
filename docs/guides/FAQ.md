@@ -34,3 +34,15 @@ cd /var/www/paymenter && php artisan app:settings:change captcha disabled
 ```
 
 :::
+
+::: details I forgot my password, how can I reset it?
+
+Normally, you can reset your password by clicking the "Forgot Password" link on the login page. However administrators can ONLY reset their password via the command line.
+
+You can reset your password by running the following command:
+
+```bash
+php artisan app:user:password-reset <email>
+```
+
+:::
