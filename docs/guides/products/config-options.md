@@ -2,11 +2,22 @@
 
 Config options are a powerful feature which allow your customer to customise their product. You can create config options for any product.
 
-## How to Create a Config Option
+For example, you can create a config option for a Minecraft server where the customer can choose between different server types such as Paper, Spigot, or Vanilla.
 
-In this guide we'll create a config option for a Pterodactyl server. The config option will allow the customer to select the type of server they want to order.
+## Types
 
-## 1: Create the Config Option
+There are several types of config options you can create:
+
+| Type        | Description                                                                                     | Supports Pricing |
+|-------------|-------------------------------------------------------------------------------------------------|------------------|
+| Select      | A dropdown menu where the customer can select one option from a list of options.               | Yes              | 
+| Radio       | A list of options where the customer can select one option.                                    | Yes              |
+| Checkbox    | A list of options where the customer can select multiple options.                              | Yes              |
+| Text        | A text input where the customer can enter a value.                                             | No               |
+| Number      | A number input where the customer can enter a number.                                          | No               |
+| Textarea    | A textarea input where the customer can enter a longer value.                                  | No               | 
+
+## Create the Config Option
 
 First, we need to create a category for the configuration and select the products we want to offer the choices upon checkout. We do this by filling in the following form:
 
@@ -14,10 +25,9 @@ First, we need to create a category for the configuration and select the product
 
 It is important to set the `Name` to what you want to be displayed to your customers. In the example, we have chosen for `Server Type`
 
-Now, we need to provide a property that we want to change. In the example, we have chosen `egg_id`
-For a full list of names, see the [Pterodactyl guide](../extensions/pterodactyl.md)
+Now, we need to provide a `Environment Variable` that we want to change. In the example, we have chosen `egg_id`
 
-## 2: Making Inputs
+## Making Inputs
 
 Now we need to create the inputs for the config option. Click on `Options`.
 In the example, we want an option for Paper. Click on `Add Option` and fill in the form.
@@ -26,7 +36,7 @@ The `Environment Variable` is used to overwrite server setting variables, in thi
 
 ![Config Options Config](/assets/images/guides/config-options/configurable-options-config.png)
 
-## 3: Updating Pricing
+## Updating Pricing
 
 In case we want to add an additional charge for the config option, you can click on `pricing` to extend the window.
 Here you can set a `Name`, which is shown to your customer. Examples of this could be: `Free`, `Monthly`, `Yearly`

@@ -2,8 +2,6 @@
 
 A simple tutorial on how to add OAuth authorization to your Paymenter installation.
 
----
-
 ## Discord
 
 ### 1. Open the [Discord Developer Portal](https://discord.com/developers/docs/intro)
@@ -35,8 +33,6 @@ Replace `<your_app_url>` with the full URL of your Paymenter installation (inclu
 ### 7. Click **Submit** to save your changes.
 
 Discord OAuth is now active and visible on your login page.
-
----
 
 ## GitHub
 
@@ -73,8 +69,6 @@ Replace `<your_app_url>` with your actual domain or server IP.
 ### 8. Click **Submit** to save changes.
 
 GitHub OAuth is now integrated and ready to use on your login page.
-
----
 
 ## Google
 

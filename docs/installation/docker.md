@@ -1,6 +1,6 @@
 # Docker
 
-Guide to use Paymenter within Docker.
+Installation guide for Paymenter using Docker.
 
 ## Installation
 
