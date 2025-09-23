@@ -84,27 +84,8 @@ export default {
           ]
         },
         {
-          text: 'Extension Guides',
-          collapsed: false,
-          items: [
-            { text: 'CPanel', link: '/docs/extensions/cpanel' },
-            { text: 'Convoy', link: '/docs/extensions/convoy' },
-            { text: 'DirectAdmin', link: '/docs/extensions/directadmin' },
-            { text: 'Enhance', link: '/docs/extensions/enhance' },
-            { text: 'Mollie', link: '/docs/extensions/mollie' },
-            { text: 'PayPal', link: '/docs/extensions/paypal' },
-            { text: 'Plesk', link: '/docs/extensions/plesk' },
-            { text: 'Proxmox', link: '/docs/extensions/proxmox' },
-            { text: 'Pterodactyl', link: '/docs/extensions/pterodactyl' },
-            { text: 'Stripe', link: '/docs/extensions/stripe' },
-            { text: 'VirtFusion', link: '/docs/extensions/virtfusion' },
-            { text: 'Virtualizor', link: '/docs/extensions/virtualizor' }
-          ]
-        },
-        {
           text: 'Guides',
           items: [
-            { text: 'Single Sign On', link: '/docs/guides/OAuth.md' },
             {
               text: 'Products',
               link: '/docs/guides/products/',
@@ -116,14 +97,37 @@ export default {
                 }
               ]
             },
+            {
+              text: 'Servers',
+              link: '/docs/guides/servers/',
+              collapsed: false,
+              items: [
+                { text: 'CPanel', link: '/docs/extensions/cpanel' },
+                { text: 'Convoy', link: '/docs/extensions/convoy' },
+                { text: 'DirectAdmin', link: '/docs/extensions/directadmin' },
+                { text: 'Enhance', link: '/docs/extensions/enhance' },
+                { text: 'Plesk', link: '/docs/extensions/plesk' },
+                { text: 'Proxmox', link: '/docs/extensions/proxmox' },
+                { text: 'Pterodactyl', link: '/docs/extensions/pterodactyl' },
+                { text: 'VirtFusion', link: '/docs/extensions/virtfusion' },
+                { text: 'Virtualizor', link: '/docs/extensions/virtualizor' }
+              ]
+            },
+            {
+              text: 'Gateways',
+              link: '/docs/guides/gateways/',
+              collapsed: false,
+              items: [
+                { text: 'Mollie', link: '/docs/extensions/mollie' },
+                { text: 'PayPal', link: '/docs/extensions/paypal' },
+                { text: 'Stripe', link: '/docs/extensions/stripe' }
+              ]
+            },
+            { text: 'Single Sign On', link: '/docs/guides/OAuth.md' },
             { text: 'Creating SSL Certificates', link: '/docs/guides/SSL.md' },
             {
               text: 'Migration from version 0.x to 1.0',
               link: '/docs/guides/v0-migration.md'
-            },
-            {
-              text: 'Deploy with Coolify',
-              link: '/docs/guides/deploy-with-coolify.md'
             },
             { text: 'FAQ', link: '/docs/guides/FAQ.md' }
           ]

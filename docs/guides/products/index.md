@@ -48,5 +48,3 @@ The Upgrades tab allows you to set up available upgrades or downgrades for your 
 ### Server
 
 Server tab shows all available server extensions. You can select the server you want to use for this product. Once you select a server, additional fields will appear that are specific to the selected server.
-
-
