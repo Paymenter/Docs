@@ -5,6 +5,14 @@
 If your current version is below 1.0.0, please follow the [migration guide](/docs/guides/v0-migration.md) first.
 :::
 
+::: details For docker users
+If you are using the docker version of Paymenter, use the following commands to update:
+
+```bash
+docker compose pull
+docker compose up -d
+```
+:::
 
 ## Automatic update
 
