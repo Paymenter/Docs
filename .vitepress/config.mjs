@@ -79,7 +79,17 @@ export default {
                 { text: 'Using Docker', link: '/docs/installation/docker' }
               ]
             },
-            { text: 'Webserver Setup', link: '/docs/installation/webserver' },
+            {
+              text: 'Webserver Setup',
+              link: '/docs/installation/webserver',
+              collapsed: true,
+              items: [
+                {
+                  text: 'Creating SSL Certificates',
+                  link: '/docs/installation/ssl'
+                }
+              ]
+            },
             { text: 'Updating', link: '/docs/installation/updating' }
           ]
         },
@@ -124,12 +134,9 @@ export default {
               ]
             },
             { text: 'Single Sign On', link: '/docs/guides/OAuth.md' },
-            { text: 'Creating SSL Certificates', link: '/docs/guides/SSL.md' },
-            {
-              text: 'Migration from version 0.x to 1.0',
-              link: '/docs/guides/v0-migration.md'
-            },
-            { text: 'FAQ', link: '/docs/guides/FAQ.md' }
+
+            { text: 'CLI', link: '/docs/guides/cli' },
+            { text: 'FAQ', link: '/docs/guides/FAQ.md' },
           ]
         },
         {

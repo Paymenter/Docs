@@ -15,5 +15,8 @@ Once you have selected an extension, additional fields may appear that are speci
 
 ## Available Gateways
 
-Paymenter includes several built-in gateway extensions, and you can also install additional extensions from the [Paymenter Marketplace](https://paymenter.org/marketplace).
+Paymenter includes several built-in gateway extensions, and you can also install additional extensions from the [Paymenter Marketplace](/marketplace).
 
+- [Mollie](../../extensions/mollie)
+- [PayPal](../../extensions/paypal)
+- [Stripe](../../extensions/stripe)

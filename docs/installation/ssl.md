@@ -76,7 +76,6 @@ Paste the following line at the bottom of the file. This example will run the re
 0 23 * * * certbot renew --quiet --deploy-hook 'systemctl restart nginx'
 ```
 
-> \[!IMPORTANT]
+> [!IMPORTANT]
 > Make sure to replace `"nginx"` with the name of your webserver (e.g., `apache2` or another if you're using something else).
 
-You can customize how often this job runs using [this website](https://crontab.guru/).
