@@ -1,18 +1,16 @@
-import fs from 'fs'
+import fs, { link } from 'fs'
 import path from 'path'
 import tailwindcss from '@tailwindcss/vite'
 
 export default {
   ignoreDeadLinks: true,
   vite: {
-    plugins: [
-      tailwindcss()
-    ],
+    plugins: [tailwindcss()],
     resolve: {
       alias: {
-        '@components': path.resolve(__dirname, './theme/components'),
+        '@components': path.resolve(__dirname, './theme/components')
       }
-    },
+    }
     /* Use only in development
     server: {
       proxy: {
@@ -67,55 +65,91 @@ export default {
         {
           text: 'Getting Started',
           items: [
-            { text: 'Introduction', link: '/docs/getting-started/introduction' },
+            { text: 'Introduction', link: '/docs/getting-started/introduction' }
           ]
         },
         {
           text: 'Setting Up',
           items: [
-            { text: 'Installation', link: '/docs/installation/install' },
-            { text: 'Webserver Setup', link: '/docs/installation/webserver' },
+            {
+              text: 'Installation',
+              link: '/docs/installation/install',
+              collapsed: true,
+              items: [
+                { text: 'Using Docker', link: '/docs/installation/docker' }
+              ]
+            },
+            {
+              text: 'Webserver Setup',
+              link: '/docs/installation/webserver',
+              collapsed: true,
+              items: [
+                {
+                  text: 'Creating SSL Certificates',
+                  link: '/docs/installation/ssl'
+                }
+              ]
+            },
             { text: 'Updating', link: '/docs/installation/updating' }
-          ]
-        },
-        {
-          text: 'Extension Guides',
-          collapsed: false,
-          items: [
-            { text: 'CPanel', link: '/docs/extensions/cpanel' },
-            { text: 'Convoy', link: '/docs/extensions/convoy' },
-            { text: 'DirectAdmin', link: '/docs/extensions/directadmin' },
-            { text: 'Enhance', link: '/docs/extensions/enhance' },
-            { text: 'Mollie', link: '/docs/extensions/mollie' },
-            { text: 'PayPal', link: '/docs/extensions/paypal' },
-            { text: 'Plesk', link: '/docs/extensions/plesk' },
-            { text: 'Proxmox', link: '/docs/extensions/proxmox' },
-            { text: 'Pterodactyl', link: '/docs/extensions/pterodactyl' },
-            { text: 'Stripe', link: '/docs/extensions/stripe' },
-            { text: 'VirtFusion', link: '/docs/extensions/virtfusion' },
-            { text: 'Virtualizor', link: '/docs/extensions/virtualizor' }
           ]
         },
         {
           text: 'Guides',
           items: [
-            { text: 'Docker', link: '/docs/guides/docker.md' },
-            { text: 'Single Sign On', link: '/docs/guides/OAuth.md' },
             {
-              text: 'Configurable Options',
-              link: '/docs/guides/config-options.md'
+              text: 'Products',
+              link: '/docs/guides/products/',
+              collapsed: true,
+              items: [
+                {
+                  text: 'Config Options',
+                  link: '/docs/guides/products/config-options'
+                }
+              ]
             },
-            { text: 'Creating SSL Certificates', link: '/docs/guides/SSL.md' },
-            { text: 'Migration from version 0.x to 1.0', link: '/docs/guides/v0-migration.md' },
-            { text: 'Deploy with Coolify', link: '/docs/guides/deploy-with-coolify.md' },
-            { text: 'FAQ', link: '/docs/guides/FAQ.md' }
+            {
+              text: 'Servers',
+              link: '/docs/guides/servers/',
+              collapsed: false,
+              items: [
+                { text: 'CPanel', link: '/docs/extensions/cpanel' },
+                { text: 'Convoy', link: '/docs/extensions/convoy' },
+                { text: 'DirectAdmin', link: '/docs/extensions/directadmin' },
+                { text: 'Enhance', link: '/docs/extensions/enhance' },
+                { text: 'Plesk', link: '/docs/extensions/plesk' },
+                { text: 'Proxmox', link: '/docs/extensions/proxmox' },
+                { text: 'Pterodactyl', link: '/docs/extensions/pterodactyl' },
+                { text: 'VirtFusion', link: '/docs/extensions/virtfusion' },
+                { text: 'Virtualizor', link: '/docs/extensions/virtualizor' }
+              ]
+            },
+            {
+              text: 'Gateways',
+              link: '/docs/guides/gateways/',
+              collapsed: false,
+              items: [
+                { text: 'Mollie', link: '/docs/extensions/mollie' },
+                { text: 'PayPal', link: '/docs/extensions/paypal' },
+                { text: 'Stripe', link: '/docs/extensions/stripe' }
+              ]
+            },
+            { text: 'Single Sign On', link: '/docs/guides/OAuth.md' },
+
+            { text: 'CLI', link: '/docs/guides/cli' },
+            { text: 'FAQ', link: '/docs/guides/FAQ.md' },
           ]
         },
         {
           text: 'Contribute',
           items: [
-            { text: 'Help Build Paymenter', link: '/docs/contribute/how-to-help' },
-            { text: 'Docs and Translation', link: '/docs/contribute/docs-translations' }
+            {
+              text: 'Help Build Paymenter',
+              link: '/docs/contribute/how-to-help'
+            },
+            {
+              text: 'Docs and Translation',
+              link: '/docs/contribute/docs-translations'
+            }
           ]
         }
       ],
@@ -126,7 +160,7 @@ export default {
             { text: 'V1.3 Release', link: '/blog/v1.3-release' },
             { text: 'V1.2 Release', link: '/blog/v1.2-release' },
             { text: 'V1.1 Release', link: '/blog/v1.1-release' },
-            { text: 'V1 Release', link: '/blog/v1-release' },
+            { text: 'V1 Release', link: '/blog/v1-release' }
           ]
         }
       ],
@@ -155,7 +189,7 @@ export default {
           text: 'Themes',
           items: [
             { text: 'Create a Theme', link: '/development/theme/index.md' },
-            { text: 'Building assets', link: '/development/theme/assets.md' },
+            { text: 'Building assets', link: '/development/theme/assets.md' }
           ]
         },
         {
@@ -176,14 +210,18 @@ export default {
     },
 
     footer: {
-      message: 'Released under the <a href="https://github.com/Paymenter/Paymenter/blob/master/LICENSE">MIT License</a>.',
+      message:
+        'Released under the <a href="https://github.com/Paymenter/Paymenter/blob/master/LICENSE">MIT License</a>.',
       copyright: 'Copyright © 2025 Paymenter. All Rights Reserved.'
     },
 
     socialLinks: [
-      { icon: 'discord', link: 'https://discord.gg/paymenter-882318291014651924' },
+      {
+        icon: 'discord',
+        link: 'https://discord.gg/paymenter-882318291014651924'
+      },
       { icon: 'github', link: 'https://github.com/Paymenter' }
-    ],
+    ]
   },
   head: [
     [
@@ -202,10 +240,10 @@ export default {
       }
     ],
     [
-      'link', 
-      { 
-        rel: 'icon', 
-        href: '/favicon.ico' 
+      'link',
+      {
+        rel: 'icon',
+        href: '/favicon.ico'
       }
     ],
     [

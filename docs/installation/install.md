@@ -1,3 +1,8 @@
+---
+next: 
+    text: Webserver Setup
+    link: /docs/installation/webserver
+---
 # Installation
 
 ## Supported operating systems
