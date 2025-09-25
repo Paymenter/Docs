@@ -24,6 +24,12 @@ public function getProductConfig($values = [])
 }
 ```
 
+| Parameter | Description                         |
+|-----------|-------------------------------------|
+| `$values` | The values that are provided on the product from `getProductConfig`. |
+
+`$values` can come in handy if you want to show/hide certain fields based on other fields.
+
 ## `getCheckoutConfig`
 
 Shown to the user when they are checking out.
@@ -31,13 +37,6 @@ Shown to the user when they are checking out.
 ```php
 use App\Models\Product;
 
-/**
- * Get the checkout configuration for the product.
- * 
- * @param Product $product The product that is being checked out.
- * @param array $values The values that are provided by the user.
- * @param array $settings The settings that are provided on the product from `getProductConfig`.
- */
 public function getCheckoutConfig(Product $product, $values = [], $settings = [])
 {
     return [
@@ -55,15 +54,23 @@ public function getCheckoutConfig(Product $product, $values = [], $settings = []
 }
 ```
 
+| Parameter | Description                         |
+|-----------|-------------------------------------|
+| `Product $product` | The product that is being purchased. |
+| `$values` | The values that are provided on the product from `getCheckoutConfig`. |
+| `$settings` | The settings that are provided on the product from `getProductConfig`. |
+
+`$values` can come in handy if you want to show/hide certain fields based on other fields.
+
 ## `createServer`, `suspendServer`, `unsuspendServer`, `terminateServer`, `upgradeServer`
 
 These hooks are used to create, suspend, unsuspend, terminate and upgrade the server.
 
-Have 3 parameters:
-
-- `Service $service` - The service that is being created, suspended, unsuspended or terminated.
-- `$settings` - The settings that are provided on the product from `getProductConfig`.
-- `$properties` - Custom properties created by the admin and values coming from `getCheckoutConfig`.
+| Parameter | Description                         |
+|---------------|-------------------------------------|
+| `Service $service` | The service that is being created, suspended, unsuspended or terminated. |
+| `$settings` | The settings that are provided on the product from `getProductConfig`. |
+| `$properties` | Custom properties created by the admin and values coming from `getCheckoutConfig`. <br>Its recommended to `array_merge($settings, $properties)` before using them. <br> This makes sure that any variable that the admin wants to override is properly set. |
 
 ```php
 use App\Models\Service;
@@ -114,7 +121,7 @@ public function getActions(Service $service, $settings, $properties)
 Having a time sensistive url? Then you can use the function argument to generate the url.
 
 ```php
-public function getActions(Service $service)
+public function getActions(Service $service, $settings, $properties)
 {
     return [
         [
