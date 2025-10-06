@@ -289,7 +289,7 @@ onMounted(() => {
             <FeatureItem icon="git-repository-commits-fill" title="+2,500" description="Repository Commits" />
             <FeatureItem icon="p2p-fill" title="35" description="Contributing Users" />
             <FeatureItem icon="customer-service-fill" title="+3,000" description="Closed Support Threads" />
-            <FeatureItem icon="line-chart-fill" title="+$10,000" description="Marketplace Revenue (last 6 months)" />
+            <FeatureItem icon="line-chart-fill" title="+$10,000" description="Marketplace Revenue (last 4 months)" />
           </div>
 
         </div>
@@ -699,7 +699,7 @@ onMounted(() => {
               </div>
               <div class="text-lg font-semibold text-right">
                 <span class="line-through text-gray-400 text-base mr-1">{{ formatPrice(item.price) }}</span>
-                <span class="text-[var(--vp-c-brand-1)]">{{ formatPrice(item._discounted_price_) }}</span>
+                <span class="text-[var(--vp-c-brand-1)]">{{ formatPrice(item.discounted_price) }}</span>
               </div>
             </div>
           </div>
