@@ -5,6 +5,23 @@ import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
 const masterItems = ref([])
 const searchQuery = ref('')
 const activeFilter = ref('all')
+
+const updateFilterFromUrl = () => {
+  const path = window.location.pathname
+  if (path === '/marketplace/extensions') activeFilter.value = 'extension'
+  else if (path === '/marketplace/themes') activeFilter.value = 'theme'
+  else activeFilter.value = 'all'
+}
+
+const setFilter = (filter) => {
+  let newPath = '/marketplace'
+  if (filter === 'extension') newPath = '/marketplace/extensions'
+  if (filter === 'theme') newPath = '/marketplace/themes'
+  
+  window.history.replaceState({}, '', newPath)
+  activeFilter.value = filter // Update the reactive value directly
+}
+
 const isLoading = ref(true)
 const error = ref(null)
 
@@ -56,6 +73,7 @@ const handleScroll = () => {
 };
 
 onMounted(() => {
+  updateFilterFromUrl(); // Set initial filter based on URL
   window.addEventListener('scroll', handleScroll);
 });
 
@@ -135,19 +153,19 @@ const formatDate = (dateString) => dateString ? new Date(dateString).toLocaleDat
 
     <div class="flex flex-col md:flex-row justify-between items-center mb-6">
       <div class="flex justify-center gap-3 flex-wrap">
-        <button @click="activeFilter = 'all'" :class="{
+        <button @click="setFilter('all')" :class="{
           'bg-[var(--vp-c-brand-1)] border-[var(--vp-c-brand-1)]': activeFilter === 'all',
           'bg-[var(--vp-c-bg)] text-[var(--vp-c-text-2)] border-[var(--vp-c-border)] hover:border-[var(--vp-c-brand-1)] hover:text-[var(--vp-c-text-1)]': activeFilter !== 'all'
         }" class="filter-button px-6 py-3 border-2 rounded-lg font-medium transition-all duration-200">
           All ({{ grandTotalItemCount }})
         </button>
-        <button @click="activeFilter = 'extension'" :class="{
+        <button @click="setFilter('extension')" :class="{
           'bg-[var(--vp-c-brand-1)] border-[var(--vp-c-brand-1)]': activeFilter === 'extension',
           'bg-[var(--vp-c-bg)] text-[var(--vp-c-text-2)] border-[var(--vp-c-border)] hover:border-[var(--vp-c-brand-1)] hover:text-[var(--vp-c-text-1)]': activeFilter !== 'extension'
         }" class="filter-button px-6 py-3 border-2 rounded-lg font-medium transition-all duration-200">
           Extensions ({{ grandTotalExtensionCount }})
         </button>
-        <button @click="activeFilter = 'theme'" :class="{
+        <button @click="setFilter('theme')" :class="{
           'bg-[var(--vp-c-brand-1)] border-[var(--vp-c-brand-1)]': activeFilter === 'theme',
           'bg-[var(--vp-c-bg)] text-[var(--vp-c-text-2)] border-[var(--vp-c-border)] hover:border-[var(--vp-c-brand-1)] hover:text-[var(--vp-c-text-1)]': activeFilter !== 'theme'
         }" class="filter-button px-6 py-3 border-2 rounded-lg font-medium transition-all duration-200">

@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Marketplace
-description: Discover extensions and themes for your Paymenter installation
+title: Marketplace - Extensions
+description: Discover extensions for your Paymenter installation
 ---
 
 <script setup>
