@@ -411,9 +411,9 @@ const { frontmatter } = useData();
                 <SectionBlock icon="team-fill" tagline="Community" title="Connect With Our Community"
                     description="Connect with thousands of hosting providers and developers. Share insights, get support, and contribute to making Paymenter even better. Join our Discord server and GitHub to be part of the journey.">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
-                        <FeatureItem icon="download-fill" title="+24,000" description="Total Software Downloads" />
-                        <FeatureItem icon="github-fill" title="+920" description="GitHub Stars and Growing" />
-                        <FeatureItem icon="user-community-fill" title="+2,450" description="Active Community Members" />
+                        <FeatureItem icon="download-fill" title="+27,000" description="Total Software Downloads" />
+                        <FeatureItem icon="github-fill" title="+1,000" description="GitHub Stars and Growing" />
+                        <FeatureItem icon="user-community-fill" title="+2,570" description="Active Community Members" />
                     </div>
                 </SectionBlock>
 
