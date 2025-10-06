@@ -39,7 +39,7 @@
     </div>
     <div class="relative z-10 flex flex-col items-center justify-center text-center min-h-[50vh] py-24 px-4">
         <div class="flex justify-center">
-            <a href="/blog/v1.3-release" class="mb-8">
+            <a href="/anniversary" class="mb-8">
                 <div
                     class="flex items-center gap-2 rounded-full py-2 px-4 text-[var(--vp-c-text-1)] bg-[var(--vp-c-bg-alt)]/50 border border-[var(--vp-c-border)] text-sm transition duration-200 will-change-transform hover:scale-105">
                     <sparkling-fill class="size-5" />
