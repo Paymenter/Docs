@@ -267,7 +267,7 @@ onMounted(() => {
 
       <div class=" p-6 lg:gap-12 gap-4 items-end grid grid-cols-1 md:grid-cols-2">
         <div class=" flex font-semibold relative lg:mb-10">
-          <SectionBlock icon="emotion-happy-fill" tagline="3th anniversary"
+          <SectionBlock icon="emotion-happy-fill" tagline="3rd anniversary"
             title="Three Years. And We're Just Getting Started."
             description="Today marks the third anniversary of Paymenter, a significant milestone that reflects our commitment to providing powerful, open-source billing solution.">
 
