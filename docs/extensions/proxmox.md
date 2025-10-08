@@ -22,7 +22,7 @@ Customers can also manage their virtual machines directly from the Paymenter pan
 
 Purchase and download the extension from [BuiltByBit](https://builtbybit.com/resources/paymenter-proxmox.66657).
 
-Unarchive and upload the extension to your `/var/www/paymenter/extensions/Servers/` directory.
+Go to Admin -> Extensions -> Install Extension and upload the zip file.
 
 ## Creating a Proxmox API key
 
