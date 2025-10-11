@@ -1,29 +1,102 @@
-# Theme
+# Creating a Theme
 
-Creating a theme is really easy. We will show you how to create a theme in this guide.
+Learn how to create custom themes for Paymenter to match your brand and design preferences.
 
-## Prerequisites
+## Quick Start
 
-- A working Paymenter installation
-- Knowledge of HTML, CSS
-- Node.js and NPM installed on your system
+### 1a. Create a New Theme (Recommended)
 
-
-
-## Create a theme
-
-You can either copy the default folder or create one from scratch (if you want to use something else then tailwindcss).
-
-There is also a command available which sets the correct folder structure for you (copies the default theme and updates namespaces).
+The easiest way to start is by using the built-in command:
 
 ```bash
 php artisan app:theme:create
 ```
 
-## Folder structure
+This command will:
 
-You can find all the files you can edit in the `themes` folder. Checkout [this](https://github.com/Paymenter/Paymenter/tree/master/themes/default) folder for an example.
+- Copy the default theme as a starting point
+- Set up the correct folder structure
+- Update the `vite.config.js` file
+- Update the `theme.php` configuration file with your theme name and author
 
-You can also customize extensions views you can make a folder in your views folder with the name `vendor`.
+### 1b. Alternative: Manual Setup
 
-Normally extensions would use the format `<extension-type>.<extension-name>.<view-name>`. For example, the Stripe pay modal is `gateways.stripe::pay`. You can edit this view by creating a file in your views folder with the name `vendor/gateways/stripe/pay.blade.php`.
+You can also create a theme manually by copying the `themes/default` folder and renaming it to your theme name.
+
+You will need to update the build directory in `vite.config.js`.
+
+### 3. Build Assets
+
+You'll need to build your theme assets using Vite.
+
+[Building Assets](assets.md)
+
+## File Structure
+
+All theme files are located in the `themes/` directory:
+
+```bash
+themes/
+├── your-theme/
+│   ├── views/           # Blade templates
+│   ├── resources/       # CSS, JS, and assets
+│   ├── vite.config.js   # Vite configuration
+│   └── theme.php        # Theme configuration
+```
+
+For a complete example, see the [default theme structure](https://github.com/Paymenter/Paymenter/tree/master/themes/default).
+
+## Customizing Extension Views
+
+You can override extension views by creating a `vendor/` folder in your theme's views directory:
+
+**Format:** `vendor/<extension-type>/<extension-name>/<view-name>.blade.php`
+
+**Example:** To customize the Stripe payment modal (`gateways.stripe::pay`):
+
+```bash
+themes/your-theme/views/vendor/gateways/stripe/pay.blade.php
+```
+
+## Adding admin configuration
+
+You can add a configuration page for your theme in the admin panel by editing the `theme.php` file in your theme folder.
+
+Example:
+
+```php
+return [
+    'name' => 'Your Theme Name',
+    'author' => 'Your Name',
+    'url' => 'https://yourwebsite.com',
+
+    'config' => [
+        [
+            'name' => 'primary_color',
+            'label' => 'Primary Color',
+            'type' => 'color',
+            'default' => '#3490dc',
+            'description' => 'The primary color used throughout the theme.',
+            'required' => true,
+        ],
+        [
+            'name' => 'custom_css',
+            'label' => 'Custom CSS',
+            'type' => 'textarea',
+            'default' => '',
+            'description' => 'Add custom CSS to override default styles.',
+            'required' => false,
+        ],
+    ],
+];
+```
+
+You can then access the configuration in your theme using:
+
+```php
+$primaryColor = theme('primary_color', '#3490dc');
+```
+
+This will return the value set in the admin panel or the default value if none is set.
+
+Read [this](../extensions/configuration.md) to learn more about the available input fields and options.

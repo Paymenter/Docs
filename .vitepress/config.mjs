@@ -136,7 +136,7 @@ export default {
             { text: 'Single Sign On', link: '/docs/guides/OAuth.md' },
 
             { text: 'CLI', link: '/docs/guides/cli' },
-            { text: 'FAQ', link: '/docs/guides/FAQ.md' },
+            { text: 'FAQ', link: '/docs/guides/FAQ.md' }
           ]
         },
         {
@@ -176,11 +176,21 @@ export default {
           items: [
             { text: 'Extensions', link: '/development/extensions/index.md' },
             {
-              text: 'Create a Server Extension',
+              text: 'Configuration',
+              link: '/development/extensions/configuration.md'
+            },
+            { text: 'Event list', link: '/development/event-list.md' }
+          ]
+        },
+        {
+          text: 'Types of Extensions',
+          items: [
+            {
+              text: 'Server Extension',
               link: '/development/extensions/server.md'
             },
             {
-              text: 'Create a Gateway Extension',
+              text: 'Gateway Extension',
               link: '/development/extensions/gateway.md'
             }
           ]
@@ -191,10 +201,6 @@ export default {
             { text: 'Create a Theme', link: '/development/theme/index.md' },
             { text: 'Building assets', link: '/development/theme/assets.md' }
           ]
-        },
-        {
-          text: 'Events',
-          items: [{ text: 'Event list', link: '/development/event-list.md' }]
         },
         {
           text: 'OAuth',

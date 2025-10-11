@@ -30,6 +30,8 @@ public function getProductConfig($values = [])
 
 `$values` can come in handy if you want to show/hide certain fields based on other fields.
 
+Read [this](configuration.md) to learn more about the available input fields and options.
+
 ## `getCheckoutConfig`
 
 Shown to the user when they are checking out.
@@ -61,6 +63,8 @@ public function getCheckoutConfig(Product $product, $values = [], $settings = []
 | `$settings` | The settings that are provided on the product from `getProductConfig`. |
 
 `$values` can come in handy if you want to show/hide certain fields based on other fields.
+
+Read [this](configuration.md) to learn more about the available input fields and options.
 
 ## `createServer`, `suspendServer`, `unsuspendServer`, `terminateServer`, `upgradeServer`
 

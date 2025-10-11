@@ -4,9 +4,10 @@
 
 Extensions are a powerfull way to extend the functionality of the system. You can create extensions to add new features to the system. You can create extensions for the following:
 
-- [Gateways](#gateways)
-- [Servers](#servers)
-- [Other](#other) (anything that does not fit into the above categories)
+- [Gateways](gateway.md) (payment gateways)
+- [Servers](server.md) (game servers, web hosting, etc)
+- Others (miscellaneous extensions that don't fit in the other categories, these can be used to add new admin pages, hook into lifecycle events, etc)
+
 
 You can run the following command to create a new extension:
 
@@ -19,7 +20,6 @@ If you ever need to disable an extension and that is not possible from the admin
 ```bash
 php artisan app:extension:disable
 ```
-
 
 ## Admin Pages
 
@@ -65,19 +65,7 @@ public function getConfig($values = [])
 }
 ```
 
-The following values are supported
-
-| Name | Description | Type | Required |
-| --- | --- | --- | --- |
-| name | The name of the field. This will be used to get the value of the field. | string | true |
-| label | The label of the field. This will be used to display the name of the field. | string | true |
-| type | The type of the field. This can be `select`, `tags`, `text`, `textarea`, `markdown`, `password`, `email`, `number`, `color`, `file`, `checkbox` and `placeholder`. (getCheckoutConfig only supports `select`, `radio`, `text`, `password`, `number` and `checkbox`) | string | true |
-| default | The default value of the field. | string | false |
-| description | The description of the field. This will be used to display the description of the field. | string | false |
-| required | Whether the field is required or not. | boolean | false |
-| validation | Laravel validation rules. | string | false |
-| options | The options of the field. This is only required when the type is `select`. This should be an array with the options. The key of the option should be the value of the option and the value of the option should be the name of the option. e.g. `['option1' => 'Option 1', 'option2' => 'Option 2']` | array | false |
-| disabled | Whether the field is disabled or not. | boolean | false |
+Read [this](configuration.md) to learn more about the available input fields and options.
 
 ## Lifecycle Hooks
 
@@ -91,57 +79,117 @@ You can use the following lifecycle hooks to run code at different stages of the
 - `uninstalled` - Runs when the extension is uninstalled
 - `upgraded` - Runs when the extension is upgraded to a newer version, passes the old version as a parameter (if available)
 
-## Routes, Views etc
+Examples:
 
-You can register routes and views in the `boot` function of the extension.
+:::code-group
 
-Here is a simple example:
+```php [Boot Function]
+<?php
 
-```php
+namespace Paymenter\Extensions\Others\Example;
+
+use App\Classes\Extension\Extension;
 use App\Helpers\ExtensionHelper;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\View;
 use Paymenter\Extensions\Others\Example\Middleware\ExampleMiddleware;
-public function boot()
+
+class Example extends Extension
 {
-    // Register routes
-    require __DIR__ . '/routes/web.php';
-    // Register views
-    View::addNamespace('extension', __DIR__ . '/resources/views');
+    public function boot()// [!code focus:33]
+    {
+        // Register routes
+        require __DIR__ . '/routes/web.php';
+        // Register views
+        View::addNamespace('example', __DIR__ . '/resources/views');
 
-    // Register middleware (web is used for all routes)
-    ExtensionHelper::registerMiddleware('web', ExampleMiddleware::class);
+        // Register middleware (web is used for all routes)
+        ExtensionHelper::registerMiddleware('web', ExampleMiddleware::class);
 
-    // Register policies
-    Gate::policy(Model::class, Policies\ModelPolicy::class);
+        // Register policies
+        Gate::policy(Model::class, Policies\ModelPolicy::class);
 
-    // Register permissions
-    Event::listen('permissions', function () {
-        return [
-            'admin.announcements.view' => 'View Announcements',
-            'admin.announcements.create' => 'Create Announcements',
-            'admin.announcements.update' => 'Update Announcements',
-            'admin.announcements.delete' => 'Delete Announcements',
-        ];
-    });
+        // Register permissions
+        Event::listen('permissions', function () {
+            return [
+                'admin.announcements.view' => 'View Announcements',
+                'admin.announcements.create' => 'Create Announcements',
+                'admin.announcements.update' => 'Update Announcements',
+                'admin.announcements.delete' => 'Delete Announcements',
+            ];
+        });
+
+        // Registering navigation listeners
+        Event::listen('navigation', function () {
+            return [
+                'name' => 'Example',
+                'route' => 'example.index',
+                'icon' => 'ri-example-line',
+                'priority' => 10,
+            ];
+        });
+    }
 }
 ```
 
-## Gateways
+```php [Enabled/Disabled Function]
 
-Gateways are used to process payments. You can create a gateway to add a new payment method to the system.
+<?php
 
-Read [this](gateway.md) to learn how to create a gateway.
+namespace Paymenter\Extensions\Others\Example;
 
-## Servers
+use App\Classes\Extension\Extension;
+use App\Helpers\ExtensionHelper;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Event;
+use Illuminate\Support\Facades\View;
+use Paymenter\Extensions\Others\Example\Middleware\ExampleMiddleware;
 
-Servers are used to create servers in a panel such as pterodactyl. You can create a server to add a new server type to the system.
+class Example extends Extension
+{
+    public function enabled()// [!code focus:4]
+    {
+        // Code to run when the extension is enabled, for example seed data
+    }
 
-Read [this](server.md) to learn how to create a server.
+    public function disabled()// [!code focus:4]
+    {
+        // Code to run when the extension is disabled
+    }
+}
 
-## Other
+```
 
-Any extension that does not fit into the above categories can be created as an "Other" extension.
-For example, you can create an extension to add announcements to the system.
+```php [Installed/Uninstalled/Upgraded Function]
+
+<?php
+
+namespace Paymenter\Extensions\Others\Example;
+
+use App\Classes\Extension\Extension;
+use App\Helpers\ExtensionHelper;
+
+class Example extends Extension
+{
+    public function installed()// [!code focus:5]
+    {
+        // Code to run when the extension is installed, for example run migrations:
+        ExtensionHelper::runMigrations(__DIR__ . '/database/migrations');
+    }
+
+    public function uninstalled()// [!code focus:5]
+    {
+        // Code to run when the extension is uninstalled, for example rollback migrations:
+        ExtensionHelper::rollbackMigrations(__DIR__ . '/database/migrations');
+    }
+
+    public function upgraded()// [!code focus:5]
+    {
+        // Code to run when the extension is upgraded, for example run migrations:
+        ExtensionHelper::runMigrations(__DIR__ . '/database/migrations');
+    }
+}
+
+```
 
