@@ -30,6 +30,8 @@ You can also create resources for controlling models. Click [this](https://filam
 
 Make sure to select your extension path when asked.
 
+Paymenter will automatically register the page or resource for you. (only when the extension is enabled)
+
 ## Configs
 
 Every extension can have its own configuration. You can add a configuration via the `getConfig` function.
