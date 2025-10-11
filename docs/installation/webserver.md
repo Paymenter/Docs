@@ -4,9 +4,6 @@
 
 ### Step 1: Create .conf file
 
-> [!CAUTION]
-> If you are using another webclient like [Apache](#apache) please do not follow this guide
-
 First we are going to create the ```paymenter.conf``` file in ```/etc/nginx/sites-available/```
 
 &NewLine;
@@ -94,6 +91,12 @@ First we need to create a symbolic link for the file that we just created to ena
 sudo ln -s /etc/nginx/sites-available/paymenter.conf /etc/nginx/sites-enabled/
 ```
 
+If you did not remove the default nginx configuration yet, you can do so with this command
+
+```bash
+sudo rm /etc/nginx/sites-enabled/default
+```
+
 Then we need to restart the service
 
 ```bash
@@ -111,9 +114,6 @@ And that is it. Paymenter should now be fully installed. Should you run into any
 ## Apache
 
 ### Stap 1: Create a .conf file
-
->[!CAUTION] 
->If you’re using another web server like Nginx, please do not follow this guide.
 
 First, create a paymenter.conf file in /etc/apache2/sites-available/.
 
