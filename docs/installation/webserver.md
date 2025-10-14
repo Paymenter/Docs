@@ -13,7 +13,7 @@ Place the following inside:
 > [!IMPORTANT]
 >
 > 1. Make sure to replace example.com with the domain name you want to use
-> 2. If you want to use your webserver with SSL then make sure to follow the [SSL Guide](/docs/guides/SSL.md)
+> 2. If you want to use your webserver with SSL then make sure to follow the [SSL Guide](/docs/installation/ssl.md)
 
 ::: code-group
 
