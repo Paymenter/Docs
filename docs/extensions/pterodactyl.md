@@ -35,7 +35,7 @@ You can let your customers tailor their product to meet their needs by offering 
 
 All environments from eggs are also supported. Example: `MC_VERSION`, `SERVER_JAR`, `FIVEM_LICENSE`, etc...
 
-For more information on how to utilize configurable options click [here](/docs/guides/config-options.md)
+For more information on how to utilize configurable options click [here](/docs/guides/products/config-options.md)
 
 ## Port Array
 
