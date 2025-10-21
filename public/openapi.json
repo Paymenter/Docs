@@ -139,28 +139,16 @@
                                             "type": "object",
                                             "properties": {
                                                 "first": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
+                                                    "type": "string"
                                                 },
                                                 "last": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
+                                                    "type": "string"
                                                 },
                                                 "prev": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
+                                                    "type": "string"
                                                 },
                                                 "next": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
+                                                    "type": "string"
                                                 }
                                             }
                                         },
@@ -219,8 +207,8 @@
                                     },
                                     "required": [
                                         "data",
-                                        "meta",
-                                        "links"
+                                        "links",
+                                        "meta"
                                     ]
                                 }
                             }
@@ -506,28 +494,16 @@
                                             "type": "object",
                                             "properties": {
                                                 "first": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
+                                                    "type": "string"
                                                 },
                                                 "last": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
+                                                    "type": "string"
                                                 },
                                                 "prev": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
+                                                    "type": "string"
                                                 },
                                                 "next": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
+                                                    "type": "string"
                                                 }
                                             }
                                         },
@@ -601,8 +577,8 @@
                                     },
                                     "required": [
                                         "data",
-                                        "meta",
-                                        "links"
+                                        "links",
+                                        "meta"
                                     ]
                                 }
                             }
@@ -881,28 +857,16 @@
                                             "type": "object",
                                             "properties": {
                                                 "first": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
+                                                    "type": "string"
                                                 },
                                                 "last": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
+                                                    "type": "string"
                                                 },
                                                 "prev": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
+                                                    "type": "string"
                                                 },
                                                 "next": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
+                                                    "type": "string"
                                                 }
                                             }
                                         },
@@ -954,8 +918,8 @@
                                     },
                                     "required": [
                                         "data",
-                                        "meta",
-                                        "links"
+                                        "links",
+                                        "meta"
                                     ]
                                 }
                             }
@@ -1255,28 +1219,16 @@
                                             "type": "object",
                                             "properties": {
                                                 "first": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
+                                                    "type": "string"
                                                 },
                                                 "last": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
+                                                    "type": "string"
                                                 },
                                                 "prev": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
+                                                    "type": "string"
                                                 },
                                                 "next": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
+                                                    "type": "string"
                                                 }
                                             }
                                         },
@@ -1347,8 +1299,8 @@
                                     },
                                     "required": [
                                         "data",
-                                        "meta",
-                                        "links"
+                                        "links",
+                                        "meta"
                                     ]
                                 }
                             }
@@ -1641,28 +1593,16 @@
                                             "type": "object",
                                             "properties": {
                                                 "first": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
+                                                    "type": "string"
                                                 },
                                                 "last": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
+                                                    "type": "string"
                                                 },
                                                 "prev": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
+                                                    "type": "string"
                                                 },
                                                 "next": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
+                                                    "type": "string"
                                                 }
                                             }
                                         },
@@ -1721,8 +1661,8 @@
                                     },
                                     "required": [
                                         "data",
-                                        "meta",
-                                        "links"
+                                        "links",
+                                        "meta"
                                     ]
                                 }
                             }
@@ -2022,28 +1962,16 @@
                                             "type": "object",
                                             "properties": {
                                                 "first": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
+                                                    "type": "string"
                                                 },
                                                 "last": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
+                                                    "type": "string"
                                                 },
                                                 "prev": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
+                                                    "type": "string"
                                                 },
                                                 "next": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
+                                                    "type": "string"
                                                 }
                                             }
                                         },
@@ -2126,8 +2054,8 @@
                                     },
                                     "required": [
                                         "data",
-                                        "meta",
-                                        "links"
+                                        "links",
+                                        "meta"
                                     ]
                                 }
                             }
@@ -2406,28 +2334,16 @@
                                             "type": "object",
                                             "properties": {
                                                 "first": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
+                                                    "type": "string"
                                                 },
                                                 "last": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
+                                                    "type": "string"
                                                 },
                                                 "prev": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
+                                                    "type": "string"
                                                 },
                                                 "next": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
+                                                    "type": "string"
                                                 }
                                             }
                                         },
@@ -2486,8 +2402,8 @@
                                     },
                                     "required": [
                                         "data",
-                                        "meta",
-                                        "links"
+                                        "links",
+                                        "meta"
                                     ]
                                 }
                             }
@@ -2766,28 +2682,16 @@
                                             "type": "object",
                                             "properties": {
                                                 "first": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
+                                                    "type": "string"
                                                 },
                                                 "last": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
+                                                    "type": "string"
                                                 },
                                                 "prev": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
+                                                    "type": "string"
                                                 },
                                                 "next": {
-                                                    "type": [
-                                                        "string",
-                                                        "null"
-                                                    ]
+                                                    "type": "string"
                                                 }
                                             }
                                         },
@@ -2846,8 +2750,8 @@
                                     },
                                     "required": [
                                         "data",
-                                        "meta",
-                                        "links"
+                                        "links",
+                                        "meta"
                                     ]
                                 }
                             }
@@ -3201,7 +3105,7 @@
                             },
                             "value": {
                                 "type": [
-                                    "string",
+                                    "number",
                                     "null"
                                 ]
                             },
@@ -3708,67 +3612,6 @@
                 ],
                 "title": "CreditResourceIdentifier"
             },
-            "InvoiceItem": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "integer"
-                    },
-                    "invoice_id": {
-                        "type": "integer"
-                    },
-                    "price": {
-                        "type": "string"
-                    },
-                    "quantity": {
-                        "type": "integer"
-                    },
-                    "description": {
-                        "type": [
-                            "string",
-                            "null"
-                        ]
-                    },
-                    "reference_type": {
-                        "type": [
-                            "string",
-                            "null"
-                        ]
-                    },
-                    "reference_id": {
-                        "type": [
-                            "integer",
-                            "null"
-                        ]
-                    },
-                    "created_at": {
-                        "type": [
-                            "string",
-                            "null"
-                        ],
-                        "format": "date-time"
-                    },
-                    "updated_at": {
-                        "type": [
-                            "string",
-                            "null"
-                        ],
-                        "format": "date-time"
-                    }
-                },
-                "required": [
-                    "id",
-                    "invoice_id",
-                    "price",
-                    "quantity",
-                    "description",
-                    "reference_type",
-                    "reference_id",
-                    "created_at",
-                    "updated_at"
-                ],
-                "title": "InvoiceItem"
-            },
             "InvoiceItemResource": {
                 "type": "object",
                 "properties": {
@@ -4052,81 +3895,6 @@
                     "id"
                 ],
                 "title": "InvoiceResourceIdentifier"
-            },
-            "InvoiceSnapshot": {
-                "type": "object",
-                "properties": {
-                    "id": {
-                        "type": "integer"
-                    },
-                    "name": {
-                        "type": [
-                            "string",
-                            "null"
-                        ]
-                    },
-                    "properties": {
-                        "type": [
-                            "array",
-                            "null"
-                        ],
-                        "items": {}
-                    },
-                    "tax_name": {
-                        "type": [
-                            "string",
-                            "null"
-                        ]
-                    },
-                    "tax_rate": {
-                        "type": [
-                            "string",
-                            "null"
-                        ]
-                    },
-                    "tax_country": {
-                        "type": [
-                            "string",
-                            "null"
-                        ]
-                    },
-                    "bill_to": {
-                        "type": [
-                            "string",
-                            "null"
-                        ]
-                    },
-                    "invoice_id": {
-                        "type": "integer"
-                    },
-                    "created_at": {
-                        "type": [
-                            "string",
-                            "null"
-                        ],
-                        "format": "date-time"
-                    },
-                    "updated_at": {
-                        "type": [
-                            "string",
-                            "null"
-                        ],
-                        "format": "date-time"
-                    }
-                },
-                "required": [
-                    "id",
-                    "name",
-                    "properties",
-                    "tax_name",
-                    "tax_rate",
-                    "tax_country",
-                    "bill_to",
-                    "invoice_id",
-                    "created_at",
-                    "updated_at"
-                ],
-                "title": "InvoiceSnapshot"
             },
             "OrderResource": {
                 "type": "object",
