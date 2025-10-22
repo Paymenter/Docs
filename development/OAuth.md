@@ -36,7 +36,7 @@ You can exchange this code for an access token by making a POST request to the f
 Then to get the user's information, you can make a GET request to the following URL:
 
 ```
-<your_paymenter_url>/api/oauth/me
+<your_paymenter_url>/api/me
 ```
 
 You need to pass the access token in the Authorization header.
