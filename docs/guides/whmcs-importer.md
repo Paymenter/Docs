@@ -16,6 +16,10 @@ This will import the following data from your WHMCS installation:
 - Invoices
 - Payments
 
+::: warning
+This will remove all existing data in your Paymenter installation! Make sure to back up your data before proceeding.
+:::
+
 ## 1. Backup Your Data
 
 Start by backing up your WHMCS database:
