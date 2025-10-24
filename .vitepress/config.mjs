@@ -47,7 +47,6 @@ export default {
       { text: 'Home', link: '/' },
       { text: 'Docs', link: '/docs/installation/install' },
       { text: 'Blog', link: '/blog/v1.3-release' },
-      { text: 'API', link: '/api/' },
       { text: 'Development', link: '/development/extensions/index.md' },
       { text: 'Marketplace', link: '/marketplace' }
     ],
@@ -205,6 +204,10 @@ export default {
         {
           text: 'OAuth',
           items: [{ text: 'OAuth', link: '/development/OAuth.md' }]
+        },
+        {
+          text: 'API Reference',
+          link: '/api/',
         }
       ]
     },
