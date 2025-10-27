@@ -160,20 +160,16 @@ class Example extends Extension
 namespace Paymenter\Extensions\Others\Example;
 
 use App\Classes\Extension\Extension;
-use App\Helpers\ExtensionHelper;
-use Illuminate\Support\Facades\Gate;
-use Illuminate\Support\Facades\Event;
-use Illuminate\Support\Facades\View;
-use Paymenter\Extensions\Others\Example\Middleware\ExampleMiddleware;
+use App\Models\Extension as ExtensionModel;
 
 class Example extends Extension
 {
-    public function enabled()// [!code focus:4]
+    public function enabled(ExtensionModel $extension)// [!code focus:4]
     {
         // Code to run when the extension is enabled, for example seed data
     }
 
-    public function disabled()// [!code focus:4]
+    public function disabled(ExtensionModel $extension)// [!code focus:4]
     {
         // Code to run when the extension is disabled
     }
