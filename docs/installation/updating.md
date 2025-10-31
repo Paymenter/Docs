@@ -43,12 +43,6 @@ curl -L https://github.com/paymenter/paymenter/releases/latest/download/paymente
 
 Sometimes extensions also need to be updated, now is the time to check if any of your installed extensions have updates available.
 
-### Update the dependencies
-
-```bash
-composer install --no-dev --optimize-autoloader
-```
-
 ### Set the correct permissions
 
 ```bash

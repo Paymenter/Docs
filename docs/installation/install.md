@@ -65,12 +65,6 @@ apt install -y php8.3 php8.3-{common,cli,gd,mysql,mbstring,bcmath,xml,fpm,curl,z
 
 :::
 
-#### Composer
-
-```bash
-curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
-```
-
 ## Installing
 
 Creating the directory
@@ -96,14 +90,6 @@ Granting the right permissions to the folder:
 
 ```bash
 chmod -R 755 storage/* bootstrap/cache/
-```
-
-## Downloading packages
-
-Run this command to install the composer packages
-
-```bash
-composer install --no-dev --optimize-autoloader
 ```
 
 ## Creating database
