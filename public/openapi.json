@@ -803,7 +803,7 @@
                     {
                         "name": "include",
                         "in": "query",
-                        "description": "Available includes are `services`, `servicesCount`, `servicesExists`. You can include multiple options by separating them with a comma.",
+                        "description": "Available includes are `services`, `servicesCount`, `servicesExists`, `user`, `userCount`, `userExists`. You can include multiple options by separating them with a comma.",
                         "schema": {
                             "type": "string"
                         }
@@ -915,7 +915,14 @@
                                         "included": {
                                             "type": "array",
                                             "items": {
-                                                "$ref": "#/components/schemas/ServiceResource"
+                                                "anyOf": [
+                                                    {
+                                                        "$ref": "#/components/schemas/ServiceResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/UserResource"
+                                                    }
+                                                ]
                                             }
                                         }
                                     },
@@ -1000,7 +1007,7 @@
                     {
                         "name": "include",
                         "in": "query",
-                        "description": "Available includes are `services`, `servicesCount`, `servicesExists`. You can include multiple options by separating them with a comma.",
+                        "description": "Available includes are `services`, `servicesCount`, `servicesExists`, `user`, `userCount`, `userExists`. You can include multiple options by separating them with a comma.",
                         "schema": {
                             "type": "string"
                         }
@@ -2620,7 +2627,7 @@
                     {
                         "name": "sort",
                         "in": "query",
-                        "description": "Available sorts are `id`, `created_at`, `updated_at`, `currency_code`. You can sort by multiple options by separating them with a comma. To sort in descending order, use `-` sign in front of the sort, for example: `-id`.",
+                        "description": "Available sorts are `id`, `created_at`, `updated_at`, `currency_code`, `status`, `priority`, `department`. You can sort by multiple options by separating them with a comma. To sort in descending order, use `-` sign in front of the sort, for example: `-id`.",
                         "schema": {
                             "type": "string"
                         }
@@ -2628,7 +2635,7 @@
                     {
                         "name": "include",
                         "in": "query",
-                        "description": "Available includes are `messages`, `messagesCount`, `messagesExists`. You can include multiple options by separating them with a comma.",
+                        "description": "Available includes are `messages`, `messagesCount`, `messagesExists`, `user`, `userCount`, `userExists`, `assigned_to`, `assigned_toCount`, `assigned_toExists`. You can include multiple options by separating them with a comma.",
                         "schema": {
                             "type": "string"
                         }
@@ -2661,6 +2668,34 @@
                     },
                     {
                         "name": "filter[currency_code]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filter[user_id]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filter[status]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filter[priority]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filter[department]",
                         "in": "query",
                         "schema": {
                             "type": "string"
@@ -2832,7 +2867,7 @@
                     {
                         "name": "include",
                         "in": "query",
-                        "description": "Available includes are `messages`, `messagesCount`, `messagesExists`. You can include multiple options by separating them with a comma.",
+                        "description": "Available includes are `messages`, `messagesCount`, `messagesExists`, `user`, `userCount`, `userExists`, `assigned_to`, `assigned_toCount`, `assigned_toExists`. You can include multiple options by separating them with a comma.",
                         "schema": {
                             "type": "string"
                         }
@@ -2976,7 +3011,7 @@
                     {
                         "name": "include",
                         "in": "query",
-                        "description": "Available includes are `user`, `userCount`, `userExists`, `ticket`, `ticketCount`, `ticketExists`. You can include multiple options by separating them with a comma.",
+                        "description": "Available includes are `user`, `userCount`, `userExists`, `ticket`, `ticketCount`, `ticketExists`, `attachments`, `attachmentsCount`, `attachmentsExists`. You can include multiple options by separating them with a comma.",
                         "schema": {
                             "type": "string"
                         }
@@ -3094,6 +3129,9 @@
                                                     },
                                                     {
                                                         "$ref": "#/components/schemas/TicketResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/TicketAttachmentResource"
                                                     }
                                                 ]
                                             }
@@ -3180,7 +3218,7 @@
                     {
                         "name": "include",
                         "in": "query",
-                        "description": "Available includes are `user`, `userCount`, `userExists`, `ticket`, `ticketCount`, `ticketExists`. You can include multiple options by separating them with a comma.",
+                        "description": "Available includes are `user`, `userCount`, `userExists`, `ticket`, `ticketCount`, `ticketExists`, `attachments`, `attachmentsCount`, `attachmentsExists`. You can include multiple options by separating them with a comma.",
                         "schema": {
                             "type": "string"
                         }
@@ -4290,6 +4328,9 @@
                             "currency_code": {
                                 "type": "string"
                             },
+                            "user_id": {
+                                "type": "integer"
+                            },
                             "updated_at": {
                                 "type": [
                                     "string",
@@ -4308,6 +4349,7 @@
                         "required": [
                             "id",
                             "currency_code",
+                            "user_id",
                             "updated_at",
                             "created_at"
                         ]
@@ -4323,6 +4365,24 @@
                                         "items": {
                                             "$ref": "#/components/schemas/ServiceResourceIdentifier"
                                         }
+                                    }
+                                },
+                                "required": [
+                                    "data"
+                                ]
+                            },
+                            "user": {
+                                "type": "object",
+                                "properties": {
+                                    "data": {
+                                        "anyOf": [
+                                            {
+                                                "$ref": "#/components/schemas/UserResourceIdentifier"
+                                            },
+                                            {
+                                                "type": "null"
+                                            }
+                                        ]
                                     }
                                 },
                                 "required": [
@@ -4930,6 +4990,100 @@
                 ],
                 "title": "ServiceUpgradeResourceIdentifier"
             },
+            "TicketAttachmentResource": {
+                "type": "object",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    },
+                    "attributes": {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "string"
+                            },
+                            "uuid": {
+                                "type": "string"
+                            },
+                            "filename": {
+                                "type": "string"
+                            },
+                            "path": {
+                                "type": "string"
+                            },
+                            "filesize": {
+                                "type": "string"
+                            },
+                            "mime_type": {
+                                "type": "string"
+                            },
+                            "created_at": {
+                                "type": "string"
+                            },
+                            "updated_at": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "id",
+                            "uuid",
+                            "filename",
+                            "path",
+                            "filesize",
+                            "mime_type",
+                            "created_at",
+                            "updated_at"
+                        ]
+                    },
+                    "relationships": {
+                        "type": "object",
+                        "properties": {
+                            "message": {
+                                "type": "object",
+                                "properties": {
+                                    "data": {
+                                        "anyOf": [
+                                            {
+                                                "$ref": "#/components/schemas/TicketMessageResourceIdentifier"
+                                            },
+                                            {
+                                                "type": "null"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "required": [
+                                    "data"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "required": [
+                    "id",
+                    "type"
+                ],
+                "title": "TicketAttachmentResource"
+            },
+            "TicketAttachmentResourceIdentifier": {
+                "type": "object",
+                "properties": {
+                    "type": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "type",
+                    "id"
+                ],
+                "title": "TicketAttachmentResourceIdentifier"
+            },
             "TicketMessageResource": {
                 "type": "object",
                 "properties": {
@@ -5011,6 +5165,20 @@
                                 "required": [
                                     "data"
                                 ]
+                            },
+                            "attachments": {
+                                "type": "object",
+                                "properties": {
+                                    "data": {
+                                        "type": "array",
+                                        "items": {
+                                            "$ref": "#/components/schemas/TicketAttachmentResourceIdentifier"
+                                        }
+                                    }
+                                },
+                                "required": [
+                                    "data"
+                                ]
                             }
                         }
                     }
@@ -5067,6 +5235,15 @@
                             "priority": {
                                 "type": "string"
                             },
+                            "assigned_to": {
+                                "type": [
+                                    "integer",
+                                    "null"
+                                ]
+                            },
+                            "user_id": {
+                                "type": "integer"
+                            },
                             "department": {
                                 "type": [
                                     "string",
@@ -5093,6 +5270,8 @@
                             "subject",
                             "status",
                             "priority",
+                            "assigned_to",
+                            "user_id",
                             "department",
                             "updated_at",
                             "created_at"
