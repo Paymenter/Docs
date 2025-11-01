@@ -1,5 +1,6 @@
-
 # How to update
+
+Before you start the upgrade process make sure that your extensions and themes are compatible with the new version. Check the extension/theme documentation or the marketplace for compatibility information.
 
 ::: warning
 If your current version is below 1.0.0, please follow the [migration guide](/docs/guides/v0-migration.md) first.
@@ -12,6 +13,7 @@ If you are using the docker version of Paymenter, use the following commands to 
 docker compose pull
 docker compose up -d
 ```
+
 :::
 
 ## Automatic update
@@ -58,8 +60,7 @@ php artisan migrate --force --seed
 ### Clear config and view
 
 ```bash
-php artisan config:clear
-php artisan view:clear
+php artisan optimize:clear
 ```
 
 ### Set webserver permissions
