@@ -46,8 +46,7 @@ export default {
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Docs', link: '/docs/installation/install' },
-      { text: 'Blog', link: '/blog/v1.3-release' },
-      { text: 'API', link: '/api/' },
+      { text: 'Blog', link: '/blog/v1.4-release' },
       { text: 'Development', link: '/development/extensions/index.md' },
       { text: 'Marketplace', link: '/marketplace' }
     ],
@@ -134,7 +133,7 @@ export default {
               ]
             },
             { text: 'Single Sign On', link: '/docs/guides/OAuth.md' },
-
+            { text: 'WHMCS Importer', link: '/docs/guides/whmcs-importer' },
             { text: 'CLI', link: '/docs/guides/cli' },
             { text: 'FAQ', link: '/docs/guides/FAQ.md' }
           ]
@@ -157,6 +156,7 @@ export default {
         {
           text: 'Index',
           items: [
+            { text: 'V1.4 Release', link: '/blog/v1.4-release' },
             { text: 'V1.3 Release', link: '/blog/v1.3-release' },
             { text: 'V1.2 Release', link: '/blog/v1.2-release' },
             { text: 'V1.1 Release', link: '/blog/v1.1-release' },
@@ -205,6 +205,10 @@ export default {
         {
           text: 'OAuth',
           items: [{ text: 'OAuth', link: '/development/OAuth.md' }]
+        },
+        {
+          text: 'API Reference',
+          link: '/api/',
         }
       ]
     },

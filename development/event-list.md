@@ -21,6 +21,8 @@ public function boot()
 
 For the following models, you can listen to the `Created`, `Updated`, and `Deleted` events.
 
+- `Cart`
+- `CartItem`
 - `Invoice`
 - `InvoiceItem`
 - `Order`
@@ -56,7 +58,7 @@ Both hooks accept a array of navigation items like this:
 ```php
 return [
     'name' => 'Announcements',
-    'route' => 'announcements.index',
+    'url' => route('announcements.index'), // or a external url
     'priority' => 10,
 ];
 ```
@@ -67,8 +69,22 @@ return [
 
 Hooks to include content on the home page.
 
+```php
+    Event::listen('pages.home', function () {
+        return [
+            'view' => view('example::home'),
+        ];
+    });
+```
+
 ## `head`, `body` and `footer`
 
 Those hooks are added right before the closing `</head>`, `<body>` and `</body>` tags respectively.
 
-
+```php
+    Event::listen('head', function () {
+        return [
+            'view' => view('example::head'),
+        ];
+    });
+```

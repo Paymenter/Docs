@@ -90,6 +90,7 @@ Examples:
 
 namespace Paymenter\Extensions\Others\Example;
 
+use App\Attributes\ExtensionMeta;
 use App\Classes\Extension\Extension;
 use App\Helpers\ExtensionHelper;
 use Illuminate\Support\Facades\Gate;
@@ -97,6 +98,15 @@ use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\View;
 use Paymenter\Extensions\Others\Example\Middleware\ExampleMiddleware;
 
+#[ExtensionMeta(
+    name: 'Example',
+    description: 'An example extension',
+    version: '1.0.0',
+    author: 'Your Name',
+    url: 'https://yourwebsite.com',
+    // Icon can be a URL, relative path or base64 encoded string
+    icon: 'https://paymenter.org/logo-dark.svg'
+)]
 class Example extends Extension
 {
     public function boot()// [!code focus:33]
@@ -125,10 +135,18 @@ class Example extends Extension
         // Registering navigation listeners
         Event::listen('navigation', function () {
             return [
-                'name' => 'Example',
-                'route' => 'example.index',
-                'icon' => 'ri-example-line',
-                'priority' => 10,
+                [
+                    'name' => 'Example',
+                    'url' => route('example.index'),
+                    'icon' => 'ri-example-line',
+                    'priority' => 10,
+                ],
+                [
+                    'name' => 'Sub Example',
+                    'url' => 'https://example.com',
+                    'icon' => 'ri-example-line',
+                    'priority' => 20,
+                ]
             ];
         });
     }
@@ -142,20 +160,16 @@ class Example extends Extension
 namespace Paymenter\Extensions\Others\Example;
 
 use App\Classes\Extension\Extension;
-use App\Helpers\ExtensionHelper;
-use Illuminate\Support\Facades\Gate;
-use Illuminate\Support\Facades\Event;
-use Illuminate\Support\Facades\View;
-use Paymenter\Extensions\Others\Example\Middleware\ExampleMiddleware;
+use App\Models\Extension as ExtensionModel;
 
 class Example extends Extension
 {
-    public function enabled()// [!code focus:4]
+    public function enabled(ExtensionModel $extension)// [!code focus:4]
     {
         // Code to run when the extension is enabled, for example seed data
     }
 
-    public function disabled()// [!code focus:4]
+    public function disabled(ExtensionModel $extension)// [!code focus:4]
     {
         // Code to run when the extension is disabled
     }
@@ -177,19 +191,19 @@ class Example extends Extension
     public function installed()// [!code focus:5]
     {
         // Code to run when the extension is installed, for example run migrations:
-        ExtensionHelper::runMigrations(__DIR__ . '/database/migrations');
+        ExtensionHelper::runMigrations('extension/Others/Example/database/migrations');
     }
 
     public function uninstalled()// [!code focus:5]
     {
         // Code to run when the extension is uninstalled, for example rollback migrations:
-        ExtensionHelper::rollbackMigrations(__DIR__ . '/database/migrations');
+        ExtensionHelper::rollbackMigrations('extension/Others/Example/database/migrations');
     }
 
     public function upgraded()// [!code focus:5]
     {
         // Code to run when the extension is upgraded, for example run migrations:
-        ExtensionHelper::runMigrations(__DIR__ . '/database/migrations');
+        ExtensionHelper::runMigrations('extension/Others/Example/database/migrations');
     }
 }
 
