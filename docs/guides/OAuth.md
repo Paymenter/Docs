@@ -1,3 +1,7 @@
+---
+title: OAuth
+description: Set up OAuth login using Discord, GitHub, and Google.
+---
 # OAuth
 
 A simple tutorial on how to add OAuth authorization to your Paymenter installation.

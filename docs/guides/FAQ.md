@@ -1,3 +1,7 @@
+---
+title: FAQ
+description: "Frequently Asked Questions about Paymenter"
+---
 # FAQ
 
 ::: details CSS assets are not loading

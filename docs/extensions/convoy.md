@@ -1,3 +1,7 @@
+---
+title: Convoy Server
+description: Guide to configure Convoy as Server extension
+---
 # Convoy
 
 ## Overview

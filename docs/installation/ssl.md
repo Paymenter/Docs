@@ -1,3 +1,8 @@
+---
+title: "Creating SSL Certificates"
+description: Create SSL certificates for your Paymenter installation
+---
+
 # Creating SSL Certificates
 
 Paymenter's official guide to generating SSL certificates. An SSL certificate secures your site, displaying the padlock icon and "Secure" label in browsers.

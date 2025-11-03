@@ -1,3 +1,7 @@
+---
+title: Enhance
+description: Guide to configure Enhance as Server extension
+---
 # Enhance
 
 ## Overview

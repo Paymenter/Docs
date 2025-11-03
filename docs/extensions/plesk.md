@@ -1,3 +1,7 @@
+---
+title: Plesk
+description: Guide to configure Plesk as Server extension
+---
 # Plesk
 
 ## Configure Paymenter

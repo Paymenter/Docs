@@ -1,3 +1,7 @@
+---
+title: cPanel
+description: Guide to configure cPanel as Server extension
+---
 # cPanel 
 
 ## Create an API key in cPanel

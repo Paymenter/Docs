@@ -1,3 +1,7 @@
+---
+title: How to Help
+description: Contribute to the development of Paymenter
+---
 # Help Building Paymenter
 
 Paymenter is a open-source project and is worked on by multiple contributors. If you want to help us, please follow the steps below.

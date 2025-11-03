@@ -1,3 +1,7 @@
+---
+title: Mollie
+description: Guide to configure Mollie as Payment Gateway extension
+---
 # Mollie
 
 ## Finding the API key

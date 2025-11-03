@@ -1,3 +1,7 @@
+---
+title: Config Options
+description: Create and manage configurable product options in Paymenter
+---
 # Config Options
 
 Config options are a powerful feature which allow your customer to customise their product. You can create config options for any product.

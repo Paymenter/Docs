@@ -1,8 +1,11 @@
+--- 
+title: Proxmox
+description: Guide to configure Proxmox as Server extension
+---
 # Proxmox
 
 
 :::warning
-This extension is in beta and may not work as expected. Please report any issues you encounter.
 This extension only supports QEMU/KVM virtualization at the moment.
 This extension requires Proxmox 8.4 or higher.
 :::

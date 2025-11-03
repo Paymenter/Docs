@@ -1,3 +1,7 @@
+---
+title: CLI
+description: Command Line Interface commands for Paymenter
+---
 # CLI
 
 All commands should be ran from the root of your Paymenter installation. (normally `/var/www/paymenter`)

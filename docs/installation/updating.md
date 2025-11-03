@@ -1,3 +1,7 @@
+---
+title: "Updating Paymenter"
+description: "Update your Paymenter installation to the latest version"
+---
 # How to update
 
 Before you start the upgrade process make sure that your extensions and themes are compatible with the new version. Check the extension/theme documentation or the marketplace for compatibility information.

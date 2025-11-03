@@ -1,3 +1,8 @@
+---
+title: Servers
+description: Manage and configure servers in Paymenter
+---
+
 # Servers
 
 Servers in Paymenter are used to provision and manage services for your customers. They can be game servers, web hosting servers, or any other type of server that you want to integrate with Paymenter.

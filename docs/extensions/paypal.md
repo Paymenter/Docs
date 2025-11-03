@@ -1,3 +1,7 @@
+---
+title: PayPal
+description: Guide to configure PayPal as Payment Gateway extension
+---
 # PayPal
 
 _You don't have a PayPal business account OR want a easier install? Use PayPal IPN, you'll only need your email_

@@ -34,6 +34,25 @@ export default {
     latestVersion: '1.0.0'
   },
 
+  transformHead: ({ pageData }) => {
+    const head = []
+
+    head.push(['meta', { property: 'og:title', content: pageData.frontmatter.title ? pageData.frontmatter.title + " | Paymenter" : 'Paymenter' }])
+    head.push(['meta', { property: 'og:description', content: pageData.frontmatter.description ? pageData.frontmatter.description : 'Paymenter is an open source payment gateway for your hosting.' }])
+
+    head.push(['meta', { property: 'image:title', content: pageData.frontmatter.title ? pageData.frontmatter.title : 'Paymenter' }])
+    head.push(['meta', { property: 'image:description', content: pageData.frontmatter.description ? pageData.frontmatter.description : 'Paymenter is an open source payment gateway for your hosting.' }])
+    
+    // If path is /docs/* set og:image to path/social-image.png
+    if (pageData.relativePath && pageData.relativePath.startsWith('docs/')) {
+      head.push(['meta', { property: 'og:image', content: `/docs/${pageData.relativePath.replace('docs/', '').replace('.md', '')}/social-image.png` }])
+    } else {
+      head.push(['meta', { property: 'og:image', content: '/textlogo.png' }])
+    }
+
+    return head
+  },
+
   themeConfig: {
     search: {
       provider: 'local'
@@ -234,13 +253,6 @@ export default {
     ]
   },
   head: [
-    [
-      'meta',
-      {
-        property: 'og:image',
-        content: '/textlogo.png'
-      }
-    ],
     [
       'link',
       {

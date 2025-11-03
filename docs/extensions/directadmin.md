@@ -1,3 +1,7 @@
+---
+title: DirectAdmin
+description: Guide to configure DirectAdmin as Server extension
+---
 # DirectAdmin
 
 ## Configure Paymenter

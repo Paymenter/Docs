@@ -1,4 +1,6 @@
 ---
+title: Installation
+description: Step-by-step guide to install Paymenter on your server
 next: 
     text: Webserver Setup
     link: /docs/installation/webserver
