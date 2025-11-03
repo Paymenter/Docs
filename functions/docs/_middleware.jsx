@@ -12,7 +12,8 @@ export const onRequest = vercelOGPagesPlugin({
           flexDirection: 'column',
           height: '630px',
           width: '1200px',
-          backgroundImage: 'linear-gradient(135deg, #111827 0%, #4213CE 100%)',
+          // backgroundImage: 'linear-gradient(135deg, #111827 0%, #4213CE 100%)',
+          backgroundImage: 'url(https://paymenter.org/seo-image-base.png)',
           backgroundSize: '100% 100%',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center'
@@ -50,7 +51,7 @@ export const onRequest = vercelOGPagesPlugin({
               paddingTop: '5px',
               margin: '0',
               fontFamily: 'inter',
-              color: '#a7a3ff'
+              color: '#cfd0d2'
             }}
           >
             {ogDescription}
