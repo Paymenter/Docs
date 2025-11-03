@@ -1,3 +1,7 @@
+---
+title: Virtfusion
+description: Guide to configure Virtfusion as Server extension
+---
 # Virtfusion
 
 ## Overview

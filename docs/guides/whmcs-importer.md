@@ -1,3 +1,7 @@
+---
+title: WHMCS Importer
+description: Migrate from WHMCS to Paymenter
+---
 # WHMCS Importer
 
 This guide will help you migrate from WHMCS to Paymenter.

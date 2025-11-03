@@ -1,6 +1,6 @@
 ---
 title: "Docker Installation"
-description: "Guide to install Paymenter using Docker"
+description: Installation guide to install Paymenter using Docker
 ---
 # Docker
 

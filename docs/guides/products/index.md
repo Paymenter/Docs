@@ -1,3 +1,7 @@
+---
+title: Products
+description: Manage and configure products in Paymenter
+---
 # Products
 
 Products are the core of Paymenter. They represent the services you offer to your customers. This can be anything from web hosting, game servers, or even digital products like software licenses.

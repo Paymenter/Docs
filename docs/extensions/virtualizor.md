@@ -1,3 +1,7 @@
+---
+title: Virtualizor
+description: Guide to configure Virtualizor as Server extension
+---
 # Virtualizor
 
 ## Overview

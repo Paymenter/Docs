@@ -1,3 +1,7 @@
+---
+title: Stripe
+description: Guide to configure Stripe as Payment Gateway extension
+---
 # Stripe
 
 ## Overview

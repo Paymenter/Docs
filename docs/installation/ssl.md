@@ -1,6 +1,6 @@
 ---
 title: "Creating SSL Certificates"
-description: "Guide to create SSL certificates for Paymenter"
+description: Create SSL certificates for your Paymenter installation
 ---
 
 # Creating SSL Certificates

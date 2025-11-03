@@ -1,3 +1,7 @@
+---
+title: Gateways
+description: Manage and configure payment gateways in Paymenter
+---
 # Gateways
 
 Gateways in Paymenter are used to process payments and subscriptions using various payment providers. They handle the communication between your Paymenter instance and the payment provider, allowing you to accept payments from your customers.

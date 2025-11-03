@@ -1,6 +1,6 @@
 ---
 title: "Webserver Setup"
-description: "Guide to set up your webserver for Paymenter"
+description: "Configure your webserver for Paymenter"
 ---
 # Webserver Setup
 

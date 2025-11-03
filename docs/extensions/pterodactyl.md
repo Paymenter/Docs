@@ -1,3 +1,7 @@
+---
+title: Pterodactyl
+description: Guide to configure Pterodactyl as Server extension
+---
 # Pterodactyl
 
 ## Overview

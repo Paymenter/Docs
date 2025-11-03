@@ -1,3 +1,7 @@
+---
+title: Docs Translations
+description: Help translate Paymenter documentation into different languages
+---
 # Help Translating Paymenter
 
 Paymenter is a multilingual project and we need your help to translate it into different languages. If you want to help us, please follow the steps below.

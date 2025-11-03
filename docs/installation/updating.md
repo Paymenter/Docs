@@ -1,6 +1,6 @@
 ---
 title: "Updating Paymenter"
-description: "Guide to update your Paymenter installation to the latest version"
+description: "Update your Paymenter installation to the latest version"
 ---
 # How to update
 
