@@ -34,6 +34,15 @@ export default {
     latestVersion: '1.0.0'
   },
 
+  transformHead: ({ pageData }) => {
+    const head = []
+
+    head.push(['meta', { property: 'og:title', content: pageData.frontmatter.title ? pageData.frontmatter.title : 'Paymenter Documentation' }])
+    head.push(['meta', { property: 'og:description', content: pageData.frontmatter.description ? pageData.frontmatter.description : 'Paymenter is an open source payment gateway for your hosting.' }])
+
+    return head
+  },
+
   themeConfig: {
     search: {
       provider: 'local'
