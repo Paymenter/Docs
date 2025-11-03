@@ -33,7 +33,7 @@ export const onRequest = vercelOGPagesPlugin({
             display: 'flex',
             flexDirection: 'column',
             width: '100vw',
-            paddingTop: '130px',
+            paddingTop: '120px',
             paddingLeft: '60px',
             color: 'white'
           }}
