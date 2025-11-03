@@ -50,7 +50,7 @@ export const onRequest = vercelOGPagesPlugin({
               paddingTop: '5px',
               margin: '0',
               fontFamily: 'inter',
-              color: '#babec4'
+              color: '#a7a3ff'
             }}
           >
             {ogDescription}
