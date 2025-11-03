@@ -1,3 +1,7 @@
+---
+title: Extensions
+description: Guide to creating and managing extensions for Paymenter
+---
 # Extensions
 
 ## Introduction

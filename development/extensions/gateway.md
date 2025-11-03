@@ -1,3 +1,7 @@
+---
+title: "Gateway Extensions"
+description: "Creating gateway extensions for Paymenter"
+---
 # Gateway extensions
 
 The gateway extensions have a few hooks that you can use to process payments.

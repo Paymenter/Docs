@@ -1,3 +1,7 @@
+---
+title: "Event List"
+description: "All available event hooks in Paymenter"
+---
 # Event hooks
 
 Example of how to use event hooks in your application.

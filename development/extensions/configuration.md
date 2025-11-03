@@ -1,3 +1,7 @@
+---
+title: "Configuration Options"
+description: "`getConfig` and their available fields for extensions"
+---
 # Configuration
 
 Paymenter allows you to define configuration options for your extensions and themes using a simple array structure.

@@ -1,3 +1,7 @@
+---
+title: "Building Theme Assets"
+description: "How to build theme assets for Paymenter"
+---
 # Building assets
 
 Paymenter is build using Tailwind CSS. If you add any new classes to the theme, you need to build the assets again. 

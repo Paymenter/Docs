@@ -1,3 +1,7 @@
+---
+title: "Creating a Theme"
+description: Create custom themes for Paymenter
+---
 # Creating a Theme
 
 Learn how to create custom themes for Paymenter to match your brand and design preferences.

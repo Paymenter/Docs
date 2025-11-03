@@ -1,3 +1,7 @@
+---
+title: "Server Extensions"
+description: "Creating server extensions for Paymenter"
+---
 # Server extensions
 
 The server extensions have a few hooks that you can use to setup the server.
