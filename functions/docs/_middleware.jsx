@@ -73,7 +73,4 @@ export const onRequest = vercelOGPagesPlugin({
       })
     }
   },
-  autoInject: {
-    openGraph: true
-  }
 })
