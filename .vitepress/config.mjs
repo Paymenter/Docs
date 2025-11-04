@@ -67,7 +67,7 @@ export default {
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Docs', link: '/docs/installation/install' },
-      { text: 'Blog', link: '/blog/v1.4-release' },
+      { text: 'Releases', link: '/release/v1.4-release' },
       { text: 'Development', link: '/development/extensions/index.md' },
       { text: 'Marketplace', link: '/marketplace' }
     ],
@@ -173,15 +173,15 @@ export default {
           ]
         }
       ],
-      '/blog/': [
+      '/release/': [
         {
           text: 'Index',
           items: [
-            { text: 'V1.4 Release', link: '/blog/v1.4-release' },
-            { text: 'V1.3 Release', link: '/blog/v1.3-release' },
-            { text: 'V1.2 Release', link: '/blog/v1.2-release' },
-            { text: 'V1.1 Release', link: '/blog/v1.1-release' },
-            { text: 'V1 Release', link: '/blog/v1-release' }
+            { text: 'V1.4 Release', link: '/release/v1.4-release' },
+            { text: 'V1.3 Release', link: '/release/v1.3-release' },
+            { text: 'V1.2 Release', link: '/release/v1.2-release' },
+            { text: 'V1.1 Release', link: '/release/v1.1-release' },
+            { text: 'V1 Release', link: '/release/v1-release' }
           ]
         }
       ],
