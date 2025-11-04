@@ -3,7 +3,7 @@ import React from 'react'
 import vercelOGPagesPlugin from '@cloudflare/pages-plugin-vercel-og'
 
 export const onRequest = vercelOGPagesPlugin({
-  imagePathSuffix: '/social-image.png',
+  imagePathSuffix: '/og-image.png',
   component: ({ ogTitle, ogDescription, pathname }) => {
     return (
       <div

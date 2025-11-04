@@ -40,14 +40,16 @@ export default {
     head.push(['meta', { property: 'og:title', content: pageData.frontmatter.title && pageData.frontmatter.title !== 'Paymenter' ? pageData.frontmatter.title + " | Paymenter" : 'Paymenter' }])
     head.push(['meta', { property: 'og:description', content: pageData.frontmatter.description ? pageData.frontmatter.description : 'Paymenter is an open source payment gateway for your hosting.' }])
 
-    // If path is /docs/* set og:image to path/social-image.png
-    if (pageData.relativePath && (pageData.relativePath.startsWith('docs/') || pageData.relativePath.startsWith('development/'))) {
+    // If path is / use textlogo, else use generated image
+    if (pageData.relativePath && pageData.relativePath !== 'index.md') {
       head.push(['meta', { property: 'image:title', content: pageData.frontmatter.title ? pageData.frontmatter.title : 'Paymenter' }])
       head.push(['meta', { property: 'image:description', content: pageData.frontmatter.description ? pageData.frontmatter.description : 'Paymenter is an open source payment gateway for your hosting.' }])
-      
-      head.push(['meta', { property: 'og:image', content: `/${pageData.relativePath.replace('.md', '')}/social-image.png` }])
+
+      head.push(['meta', { property: 'og:image', content: `/${pageData.relativePath.replace('.md', '')}/og-image.png` }])
+      head.push(['meta', { property: 'twitter:image', content: `/${pageData.relativePath.replace('.md', '')}/og-image.png` }])
     } else {
       head.push(['meta', { property: 'og:image', content: '/textlogo.png' }])
+      head.push(['meta', { property: 'twitter:image', content: '/textlogo.png' }])
     }
 
     return head
@@ -277,9 +279,10 @@ export default {
     ],
     [
       'meta',
+      // theme color
       {
-        property: 'twitter:image',
-        content: '/textlogo.png'
+        name: 'theme-color',
+        content: '#4060ff'
       }
     ]
   ]

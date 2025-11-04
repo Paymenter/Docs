@@ -35,3 +35,10 @@ Take note of the _Webhook ID_ we'll need it in the next step
 Fill in the details given in the previous steps
 
 ![Paymenter](/assets/images/extensions/paypal/paymenter.png)
+
+
+## Billing Agreements (Payment Methods)
+
+Paymenter supports Billing Agreements (Vaulting) with PayPal. This allows your customers to save their PayPal account as a payment method for future purchases.
+
+To enable Billing Agreements, make sure to enable the "Vaulting" option when creating your PayPal application. Also ensure that your PayPal account has access to "Reference Transactions" as this is required for Billing Agreements to work.
