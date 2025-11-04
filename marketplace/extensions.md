@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Paymenter Marketplace - Extensions
+title: Marketplace - Extensions
 description: Discover extensions for your Paymenter installation
 ---
 

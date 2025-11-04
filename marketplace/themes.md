@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Paymenter Marketplace - Themes
+title: Marketplace - Themes
 description: Discover themes for your Paymenter installation
 ---
 
