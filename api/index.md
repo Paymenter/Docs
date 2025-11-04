@@ -1,6 +1,6 @@
 ---
-title: Paymenter
-titleTemplate: Open-Source Billing, Built for Hosting
+title: API
+description: Paymenter API Documentation
 
 layout: home
 aside: false
