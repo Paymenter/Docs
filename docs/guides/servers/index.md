@@ -22,6 +22,7 @@ Once you have selected an extension, additional fields may appear that are speci
 
 Paymenter includes several built-in server extensions, and you can also install additional extensions from the [Paymenter Marketplace](https://paymenter.org/marketplace).
 
+- [Cpanel](../../extensions/cpanel)
 - [Convoy](../../extensions/convoy)
 - [DirectAdmin](../../extensions/directadmin)
 - [Enhance](../../extensions/enhance)
