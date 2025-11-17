@@ -24,7 +24,6 @@ Paymenter includes several built-in server extensions, and you can also install 
 
 - [Cpanel](../../extensions/cpanel)
 - [Convoy](../../extensions/convoy)
-- [Convoy](../../extensions/convoy)
 - [DirectAdmin](../../extensions/directadmin)
 - [Enhance](../../extensions/enhance)
 - [Plesk](../../extensions/plesk)
