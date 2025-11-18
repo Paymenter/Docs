@@ -61,6 +61,20 @@
 
 }
 
+/* Sponsors button animation, greyscale on default, color on hover */
+.sponsor-logo {
+  filter: grayscale(100%);
+  transition: filter 0.3s;
+}
+.sponsor-logo:hover {
+  filter: grayscale(0%);
+}
+
+/* Group hover version for sponsor logos */
+.group:hover .sponsor-logo {
+  filter: grayscale(0%);
+}
+
 /* /////////////////// */
 /* VitePress Overrides */
 /* /////////////////// */

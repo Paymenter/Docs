@@ -385,6 +385,32 @@ const { frontmatter } = useData();
                         WitherHosting
                     </div>
                 </a>
+
+                <a class="group relative h-28 md:w-72 w-full flex justify-center items-center hover:pb-8 border border-[var(--vp-c-divider)] rounded-lg transition-colors hover:border-gray-400 dark:hover:border-gray-500"
+                    href="https://etheron.nl/?rel=paymenter" target="_blank" aria-label="WitherHosting">
+                    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="240" height="50" id="Laag_1" viewBox="0 0 545.6 81.7" 
+                        class="transition-colors duration-300 sponsor-logo">
+                        <defs>
+                            <linearGradient id="Naamloos_verloop" x1="5.94" y1="74.14" x2="66.84" y2="152.34" gradientTransform="translate(0 -78)" gradientUnits="userSpaceOnUse">
+                                <stop offset="0" stop-color="#99cfd8"/>
+                                <stop offset="1" stop-color="#0c94ab"/>
+                            </linearGradient>
+                        </defs>
+                        <g id="Laag_1-2">
+                            <rect x="15.1" y="17.9" width="57" height="50" fill="#fff"/>
+                            <path fill="url(#Naamloos_verloop)" d="M67.2,0H14.5C6.5,0,0,6.5,0,14.5v52.7c0,8,6.5,14.5,14.5,14.5h67.1V14.6C81.6,6.6,75.1.1,67.1.1h0l.1-.1ZM59,60.1h-10.3v-10.3h10.3v10.3ZM59,31.8h-26v3.8h26v10.3h-26v3.8h12.4v10.3h-18.3c-2.4,0-4.4-2-4.4-4.3v-29.8c0-2.4,1.9-4.4,4.4-4.4h27.6c2.4,0,4.4,2,4.4,4.4v5.9h-.1Z"/>
+                            <path fill="white" d="M106.1,22.7h24.2v9.6h-13.3v6.6h12.9v9.6h-12.9v7.3h13.3v9.6h-24.2V22.6h0v.1Z"/>
+                            <path fill="white" d="M138.2,40.7h-4.8v-7.3h4.8v-10.7h9.6v10.7h4.6v7.3h-4.6v24.8h-9.6v-24.8h0Z"/>
+                            <path fill="white" d="M156.6,22.7h9.6v13.7c1.7-2.9,5-4,8.4-4,4.9,0,7.8,1.7,9.5,4.6,1.7,2.8,2.2,6.6,2.2,10.7v17.9h-9.6v-17.5c0-1.8-.2-3.5-1-4.7s-2.1-2-4.2-2-4,1.2-4.7,2.6-.7,3-.7,3.8v17.8h-9.6V22.8h0l.1-.1Z"/><path fill="white" d="M201,52.8c.4,3.4,3.6,5.7,7.4,5.7s4.7-1.3,5.8-3h9.8c-1.6,3.6-3.8,6.4-6.5,8.2-2.7,1.9-5.8,2.9-9.1,2.9-9.2,0-17-7.5-17-17s7.1-17.2,16.8-17.2,9.1,1.9,12.1,5.1c4,4.3,5.3,9.5,4.5,15.4h-23.9l.1-.1ZM215.5,45.5c-.2-1.5-2.2-5.1-7.2-5.1s-6.9,3.6-7.2,5.1h14.4Z"/><path fill="white" d="M230.5,33.4h9v3.6c.9-1.7,2.6-4.7,8.2-4.7v9.7h-.4c-4.9,0-7.2,1.8-7.2,6.3v17.2h-9.6v-32.1h0Z"/><path fill="white" d="M249.2,49.3c0-7.8,5.6-17,17.3-17s17.3,9.2,17.3,17.1-5.6,17.1-17.3,17.1-17.3-9.2-17.3-17.1h0v-.1ZM258.8,49.4c0,4.6,3.5,8,7.7,8s7.7-3.4,7.7-8.1-3.5-8.1-7.7-8.1-7.7,3.4-7.7,8.1h0v.1Z"/><path fill="white" d="M289.2,33.4h9v3.4c1.1-1.6,3.1-4.5,8.8-4.5,10.8,0,11.9,8.8,11.9,13.1v20.1h-9.6v-17.5c0-3.5-.8-6.6-5-6.6s-5.5,3.4-5.5,6.7v17.5h-9.6v-32.1h0v-.1Z"/><path fill="#0c94ab" d="M344.5,65.5V22.7h4.7v19h20.7v-19h4.8v42.8h-4.8v-19.6h-20.7v19.6h-4.7Z"/><path fill="#0c94ab" d="M381.2,49.8c0-8.7,6.5-16.4,16.5-16.4s16.5,7.7,16.5,16.4-6.5,16.4-16.5,16.4-16.5-7.6-16.5-16.4h0ZM385.5,50c0,7.1,5.4,12.4,12.3,12.4s12.3-5.3,12.3-12.4-5.3-12.4-12.3-12.4-12.3,5.3-12.3,12.4h0Z"/><path fill="#0c94ab" d="M434.7,42.2c0-3.3-2.2-5.1-5.3-5.1s-5.5,2.3-5.4,5c.1,3,2.4,4.2,6.1,5.3,4.5,1.2,9.4,2.5,9.7,9.1.2,5.7-4.4,9.9-10.3,9.9s-10.6-3.2-10.7-9.7h4.2c.2,4.3,3.4,6.2,6.5,6.2s6.1-2.7,6-5.8c-.1-3.5-2.4-5-7.8-6.5-4.5-1.3-7.9-3.1-8-8,0-5.6,4.5-8.9,9.7-8.9s9.2,2.4,9.5,8.7h-4.2v-.2Z"/><path fill="#0c94ab" d="M449.2,37.8h-6.1v-3.4h6.1v-11.7h4.2v11.7h6.8v3.4h-6.8v27.7h-4.2v-27.7Z"/><path fill="#0c94ab" d="M464.9,22.7h4.3v6h-4.3v-6ZM464.9,34.3h4.3v31.1h-4.3v-31.1h0Z"/><path fill="#0c94ab" d="M477.5,34.3h4v5.5c1.8-4,6-6.5,11.6-6.4,9.7.1,13.1,6.7,13.1,14.3v17.7h-4.2v-16.8c0-6.7-3-11.3-10-11.2-6.4,0-10.1,3.9-10.1,10.4v17.6h-4.3v-31.1h-.1Z"/>
+                            <path fill="#0c94ab" d="M545.6,61.9c0,5.9-1.9,9.7-4.6,12.3-3.1,3-7.6,4.8-11.8,4.8-7.8,0-13.4-4.5-15.4-10.1h4.9c.8,1.3,1.8,2.8,3.7,4.1,2.3,1.6,4.9,2.3,6.9,2.3,6,0,12-4.6,12-12.4v-4c-2.2,4.4-6.5,7.5-12.6,7.5-9.7,0-16.3-7.4-16.3-16.4s6.8-16.5,16.3-16.5,10.9,3.5,12.6,7.3v-6.4h4.2v27.5h.1ZM516.8,49.9c0,6.3,4.5,12.4,12.5,12.4s6.5-1.3,8.7-3.6c2.1-2.3,3.4-5.4,3.5-8.8,0-2.6-.9-5.7-2.8-8.2-1.9-2.5-5-4.3-9.5-4.3-6.8,0-12.4,5.1-12.4,12.4h0v.1Z" />
+                        </g>
+                    </svg>
+                    <div
+                        class="absolute bottom-3 left-1/2 -translate-x-1/2 px-2 py-0.5 rounded-md text-xs font-semibold bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 opacity-0 translate-y-2 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300">
+                        Etheron
+                    </div>
+                </a>
+
                 <a class="h-28 md:w-72 w-full flex flex-col justify-center items-center gap-1 border border-[var(--vp-c-divider)] rounded-lg opacity-75 grayscale hover:grayscale-0 hover:opacity-100  transition-all hover:border-gray-400 dark:hover:border-gray-500"
                     href="https://github.com/sponsors/Paymenter" target="_blank" aria-label="Become a Sponsor">
                     <div class="flex gap-1.5 items-center">
