@@ -1,9 +1,35 @@
 <script setup>
 import { useData } from 'vitepress';
+import { ref, onMounted } from 'vue';
 import SectionBlock from '@components/landing/SectionBlock.vue';
 import FeatureItem from '@components/landing/FeatureItem.vue';
 
 const { frontmatter } = useData();
+
+// Reactive discord member count
+const discordMembers = ref('2,570+');
+const githubStars = ref('1,000+');
+const githubDownloads = ref('27,000+');
+
+// Fetch live discord member count
+onMounted(async () => {
+  try {
+    const response = await fetch('https://api.paymenter.org/website-statistics');
+    const data = await response.json();
+    if (data.discord_members) {
+      discordMembers.value = `+${data.discord_members.toLocaleString()}`;
+    }
+    if (data.github_stars) {
+      githubStars.value = `+${data.github_stars.toLocaleString()}`;
+    }
+    if (data.github_downloads) {
+      githubDownloads.value = `+${data.github_downloads.toLocaleString()}`;
+    }
+  } catch (error) {
+    console.log('Failed to fetch Discord members:', error);
+    // Keep default value on error
+  }
+});
 </script>
 
 
@@ -492,9 +518,9 @@ const { frontmatter } = useData();
                 <SectionBlock icon="team-fill" tagline="Community" title="Connect With Our Community"
                     description="Connect with thousands of hosting providers and developers. Share insights, get support, and contribute to making Paymenter even better. Join our Discord server and GitHub to be part of the journey.">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-6">
-                        <FeatureItem icon="download-fill" title="+27,000" description="Total Software Downloads" />
-                        <FeatureItem icon="github-fill" title="+1,000" description="GitHub Stars and Growing" />
-                        <FeatureItem icon="user-community-fill" title="+2,570" description="Active Community Members" />
+                        <FeatureItem icon="download-fill" :title="githubDownloads" description="Total Software Downloads" />
+                        <FeatureItem icon="github-fill" :title="githubStars" description="GitHub Stars and Growing" />
+                        <FeatureItem icon="user-community-fill" :title="discordMembers" description="Active Community Members" />
                     </div>
                 </SectionBlock>
 
