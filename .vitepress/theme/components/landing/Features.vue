@@ -17,13 +17,13 @@ onMounted(async () => {
     const response = await fetch('https://api.paymenter.org/website-statistics');
     const data = await response.json();
     if (data.discord_members) {
-      discordMembers.value = `+${data.discord_members.toLocaleString()}`;
+      discordMembers.value = `${data.discord_members.toLocaleString()}+`;
     }
     if (data.github_stars) {
-      githubStars.value = `+${data.github_stars.toLocaleString()}`;
+      githubStars.value = `${data.github_stars.toLocaleString()}+`;
     }
     if (data.github_downloads) {
-      githubDownloads.value = `+${data.github_downloads.toLocaleString()}`;
+      githubDownloads.value = `${data.github_downloads.toLocaleString()}+`;
     }
   } catch (error) {
     console.log('Failed to fetch Discord members:', error);
