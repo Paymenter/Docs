@@ -153,6 +153,10 @@ export default {
                 { text: 'Stripe', link: '/docs/extensions/stripe' }
               ]
             },
+            {
+              text: 'Tickets',
+              link: '/docs/guides/tickets/'
+            },
             { text: 'Single Sign On', link: '/docs/guides/OAuth.md' },
             { text: 'WHMCS Importer', link: '/docs/guides/whmcs-importer' },
             { text: 'CLI', link: '/docs/guides/cli' },
