@@ -168,7 +168,16 @@ php artisan app:user:create
 
 ### Creating cronjob
 
-Now we are going to setup the cronjob to run every minute. You can do this manualy by running `crontab -e` and entering your cronjob.
+Now we are going to setup the cronjob to run every minute. You can do this by editing the crontab for the www-data user:
+
+> [!TIP]
+> On some systems the user might be different. Some systems use `apache` or `nginx` as the user.
+
+```bash
+sudo crontab -u www-data -e
+```
+
+Then add this line:
 
 ```bash
 * * * * * php /var/www/paymenter/artisan schedule:run >> /dev/null 2>&1
