@@ -47,7 +47,7 @@ You want to automatticly assign ports to egg variables? We got you!
 
 In the Paymenter extension for pterodactyl there is a field called Port Array this array supports the following value:
 
-- `{"SERVER_PORT": 7777, "NONE": [7778, 7779] "QUERY_PORT": 2701, "RCON_PORT": 27020}`
+- `{"SERVER_PORT": 7777, "NONE": [7778, 7779], "QUERY_PORT": 2701, "RCON_PORT": 27020}`
 
 This will try to assign 7777 as default port, 7778 and 7779 as additional ports, 2701 as query port and 27020 as rcon port.
 
