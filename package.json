@@ -7,12 +7,12 @@
   },
   "dependencies": {
     "@cloudflare/pages-plugin-vercel-og": "^0.1.2",
-    "@scalar/api-reference": "^1.32.1",
+    "@scalar/api-reference": "^1.40.0",
     "keen-slider": "^6.8.6",
     "react": "^18.3.1",
-    "@tailwindcss/vite": "^4.1.1",
-    "tailwindcss": "^4.1.1",
-    "vitepress": "^1.6.3"
+    "@tailwindcss/vite": "^4.1.17",
+    "tailwindcss": "^4.1.17",
+    "vitepress": "^1.6.4"
   },
   "packageManager": "pnpm@9.4.0+sha1.9217c800d4ab947a7aee520242a7b70d64fc7638"
 }
