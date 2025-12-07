@@ -1,14 +1,14 @@
 ---
 title: PayPal
-description: Guide to configure PayPal as Payment Gateway extension
+description: Guide to configure PayPal as a Payment Gateway extension
 ---
 # PayPal
 
-_You don't have a PayPal business account OR want a easier install? Use PayPal IPN, you'll only need your email_
+_You don't have a PayPal business account OR want a easier install? Use PayPal IPN. All you need is your e-mail.
 
 ## Creating a application
 
-Head over to [PayPal developers](https://developer.paypal.com/dashboard/applications) and press "Create App"
+Head over to the [PayPal developer portal](https://developer.paypal.com/dashboard/applications) and press "Create App"
 
 ![Create App](/assets/images/extensions/paypal/create-app.png)
 
@@ -18,17 +18,17 @@ Take note of the _Client ID_ and the _Secret Key_
 
 ## Creating the webhook
 
-Scroll down to Webhooks and press add Webhook
+- Scroll down to Webhooks and press add Webhook.
 
-Fill in yourDomain /extensions/paypal/webhook
+- Fill in yourDomain /extensions/paypal/webhook.
 
-Be sure to replace yourDomain with your Paymenter domain (e.g. <https://demo.paymenter.org>)
+- Replace yourDomain with your Paymenter domain (e.g. <https://demo.paymenter.org>).
 
-Tick the all events box and continue
+- Tick "all events" and continue.
 
 ![Create Webhook](/assets/images/extensions/paypal/create-webhook.png)
 
-Take note of the _Webhook ID_ we'll need it in the next step
+Take note of the _Webhook ID_. We'll need it in the next step
 
 ## Filling in the credentials on Paymenter
 
