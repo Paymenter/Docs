@@ -6,34 +6,34 @@ description: Guide to configure Pterodactyl as Server extension
 
 ## Overview
 
-Pterodactyl is a free, open source game management panel which offers you a beautiful web interface to manage your game servers from anywhere, whether that be from a mobile device or a dedicated server in your office. Pterodactyl supports games and servers such as Minecraft (including Spigot, Bungeecord, and Sponge), ARK: Evolution Evolved, CS:GO, Team Fortress 2, Insurgency, Teamspeak 3, Mumble, and many more.
+Pterodactyl is a free, popular, and open-source game management panel which offers you a beautiful web interface to manage your game servers from anywhere, whether that be from a mobile device or a dedicated server in your office. It supports games and servers such as Minecraft (including Spigot, Bungeecord, and Sponge), ARK: Evolution Evolved, CS:GO, Team Fortress 2, Insurgency, Teamspeak 3, Mumble, and many more.
 
 ## Create a API key in Pterodactyl
 
-Create a api key in the Pterodactyl panel. With the following permissions:
+Create an API key in the Pterodactyl panel with the following permissions:
 
 ![image](/assets/images/extensions/pterodactyl/pterodactyl.png)
 
 ## Configure Paymenter
 
-Insert your API key and your Pterodactyl URL in the Paymenter admin panel. Like this:
+Insert your API key and your Pterodactyl URL in the Paymenter admin panel as such:
 
 ![image](/assets/images/extensions/pterodactyl/apikey.png)
 
 
 ## Configuring the product
 
-- After you have created an Product you need to go to the settings
+After you have created a Product:
 
-- Fill in the product details and select the server you want to assign to the product
+- go to the Product settings
 
-- Below you will see a fully functional example of Product
+- Fill in the Product details and select the server you want to assign to the product. Below you will see a fully functional example of a Product with Pterodactyl assigned as the server.
 
 ![image](/assets/images/extensions/pterodactyl/pterodactylsettings.png)
 
 - ### Configurable Options
 
-You can let your customers tailor their product to meet their needs by offering customizable options.  These options allow users to select specific settings for their product, making it easy to create unique products for different use cases. Below is a list of configurable options you can offer with the Pterodactyl extension:
+You can let your customers tailor their product to meet their needs by offering customizable options. These options allow users to select specific settings for their product, making it easy to create unique products for different use cases. Below is a list of configurable options you can offer with the Pterodactyl extension:
 
 `nest_id`, `egg_id`, `location`, `node`, `additional_allocations`(ports), `databases`, `backups`, `startup`, `cpu`, `io`, `disk`, `memory`, `swap`, `servername`.
 
@@ -43,15 +43,15 @@ For more information on how to utilize configurable options click [here](/docs/g
 
 ## Port Array
 
-You want to automatticly assign ports to egg variables? We got you!
+Do you want to automatically assign ports to egg variables? Here's how!
 
-In the Paymenter extension for pterodactyl there is a field called Port Array this array supports the following value:
+In the Paymenter extension for Pterodactyl there is a field called Port Array. This array supports the following value:
 
 - `{"SERVER_PORT": 7777, "NONE": [7778, 7779], "QUERY_PORT": 2701, "RCON_PORT": 27020}`
 
-This will try to assign 7777 as default port, 7778 and 7779 as additional ports, 2701 as query port and 27020 as rcon port.
+In this example, the panel will try to assign 7777 as default port, 7778 and 7779 as additional ports, 2701 as query port and 27020 as rcon port.
 
-If it can't find the port it will try to +1 the port until it finds a free port.
+If the port is unavailable for whatever reason, it will try to increment the port by 1 until it finds a free port.
 
 Egg specific examples:
 
