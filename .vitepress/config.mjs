@@ -159,6 +159,7 @@ export default {
             },
             { text: 'Single Sign On', link: '/docs/guides/OAuth.md' },
             { text: 'WHMCS Importer', link: '/docs/guides/whmcs-importer' },
+            { text: 'Migrate Paymenter', link: '/docs/guides/migrate' },
             { text: 'CLI', link: '/docs/guides/cli' },
             { text: 'FAQ', link: '/docs/guides/FAQ.md' }
           ]
