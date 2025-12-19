@@ -78,7 +78,6 @@ supportbanner:
   import Slider from '@theme/components/landing/Slider.vue'
   import Features from '@theme/components/landing/Features.vue'
   import SupportBanner from '@theme/components/landing/SupportBanner.vue'
-  import CustomFooter from '@theme/components/CustomFooter.vue'
 </script>
 
 <div class="w-full h-full overflow-hidden lg:mask-b-from-70% mask-b-from-90%">
@@ -90,8 +89,4 @@ supportbanner:
 <div class="container mx-auto max-w-(--vp-layout-max-width)">
     <Features />
     <SupportBanner />
-</div>
-
-<div class="w-full overflow-hidden lg:mask-b-from-70% mask-b-from-90%">
-    <CustomFooter />
 </div>
