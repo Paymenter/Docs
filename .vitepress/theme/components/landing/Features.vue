@@ -538,6 +538,137 @@ onMounted(async () => {
                     class="order-1 lg:order-2 relative w-full h-[400px] flex items-center justify-center"
                 >
                     <div
+                        class="order-1 lg:order-2 w-full flex justify-center absolute opacity-20"
+                    >
+                        <div class="relative w-full max-w-lg">
+                            <div
+                                class="absolute -inset-4 bg-linear-to-r from-violet-600/30 to-blue-600/30 rounded-2xl blur-2xl opacity-50 animate-pulse"
+                            ></div>
+                            <div
+                                class="relative bg-[#e3e5f3] dark:bg-[#151517] border border-(--vp-c-divider) rounded-xl shadow-2xl overflow-hidden backdrop-blur-sm"
+                            >
+                                <div
+                                    class="flex items-center gap-2 px-4 py-3 bg-white/5 border-b border-white/5"
+                                >
+                                    <div
+                                        class="ml-4 text-xs text-gray-500 font-mono"
+                                    >
+                                        Paymenter importer — php
+                                    </div>
+                                </div>
+
+                                <!-- Body -->
+                                <div
+                                    class="p-6 font-mono text-xs md:text-sm space-y-4"
+                                >
+                                    <div class="flex gap-2">
+                                        <span class="text-green-500 font-bold"
+                                            >➜</span
+                                        >
+                                        <span class="text-blue-400">~</span>
+                                        <span class="text-gray-300"
+                                            >php artisan app:import-from-whmcs
+                                            whmcs_temp</span
+                                        >
+                                    </div>
+
+                                    <div class="space-y-1 text-gray-400">
+                                        <div class="flex gap-2">
+                                            <span class="text-blue-500">ℹ</span>
+                                            <span
+                                                >Connecting to WHMCS
+                                                Database...</span
+                                            >
+                                            <span class="text-green-500 ml-auto"
+                                                >Connected</span
+                                            >
+                                        </div>
+                                        <div
+                                            class="w-full bg-gray-800 h-1 rounded-full overflow-hidden"
+                                        >
+                                            <div
+                                                class="bg-green-500 h-full w-full"
+                                            ></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="space-y-1 text-gray-400">
+                                        <div class="flex gap-2">
+                                            <span class="text-blue-500">ℹ</span>
+                                            <span
+                                                >Importing 2,540
+                                                Clients...</span
+                                            >
+                                            <span class="text-green-500 ml-auto"
+                                                >Done</span
+                                            >
+                                        </div>
+                                        <div
+                                            class="w-full bg-gray-800 h-1 rounded-full overflow-hidden"
+                                        >
+                                            <div
+                                                class="bg-green-500 h-full w-full"
+                                            ></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="space-y-1 text-gray-400">
+                                        <div class="flex gap-2">
+                                            <span class="text-blue-500">ℹ</span>
+                                            <span
+                                                >Importing Invoices &
+                                                Transactions...</span
+                                            >
+                                            <span class="text-green-500 ml-auto"
+                                                >Done</span
+                                            >
+                                        </div>
+                                        <div
+                                            class="w-full bg-gray-800 h-1 rounded-full overflow-hidden"
+                                        >
+                                            <div
+                                                class="bg-green-500 h-full w-full"
+                                            ></div>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        class="pt-2 text-green-400 flex items-center gap-2"
+                                    >
+                                        <svg
+                                            class="size-4"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                            stroke-width="2"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                d="M5 13l4 4L19 7"
+                                            />
+                                        </svg>
+                                        <span
+                                            >Migration Completed
+                                            Successfully!</span
+                                        >
+                                    </div>
+
+                                    <div class="flex gap-2 animate-pulse">
+                                        <span class="text-green-500 font-bold"
+                                            >➜</span
+                                        >
+                                        <span class="text-blue-400">~</span>
+                                        <span
+                                            class="w-2 h-5 bg-gray-500"
+                                        ></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
                         class="relative w-full h-full transform-3d rotate-x-25 rotate-y-18 -rotate-z-8 overflow-hidden"
                     >
                         <div
