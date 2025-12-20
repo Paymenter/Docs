@@ -3,7 +3,9 @@ const year = new Date().getFullYear();
 </script>
 
 <template>
-    <footer class="relative mt-32 overflow-hidden py-24">
+    <footer
+        class="relative mt-32 overflow-hidden py-24 1px border-t border-[var(--vp-c-border)]"
+    >
         <div class="absolute inset-0 z-0 pointer-events-none">
             <div class="absolute inset-0 blur-3xl opacity-50 dark:opacity-100">
                 <div
@@ -131,6 +133,11 @@ const year = new Date().getFullYear();
                                     href="https://github.com/Paymenter/Paymenter/releases"
                                     >Releases</a
                                 >
+                            </li>
+                            <li
+                                class="transition text-(--vp-c-text-2) hover:text-(--vp-c-text-1)"
+                            >
+                                <a href="/brand">Brand</a>
                             </li>
                         </ul>
                     </div>
