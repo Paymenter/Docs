@@ -63,7 +63,7 @@ onMounted(async () => {
                 </div>
                 <div class="flex flex-col justify-end">
                     <span
-                        class="flex justify-center font-normal text-[var(--vp-c-text-2)]"
+                        class="flex justify-center font-normal text-(--vp-c-text-2)"
                     >
                         Paymenter simplifies billing, enhances transactions, and
                         supports seamless customizations to meet your unique
@@ -107,16 +107,16 @@ onMounted(async () => {
             >
                 <div class="absolute inset-0 z-0">
                     <div
-                        class="animate-pulse ![animation-duration:8s] ![animation-iteration-count:infinite] relative w-full h-[500px] bg-[var(--vp-c-brand-1)]/5 transform-3d rotate-x-25 rotate-y-18 -rotate-z-8 mask-x-from-70% mask-x-to-100% mask-y-from-70% mask-y-to-100%"
+                        class="animate-pulse [animation-duration:8s]! [animation-iteration-count:infinite]! relative w-full h-[500px] bg-(--vp-c-brand-1)/5 transform-3d rotate-x-25 rotate-y-18 -rotate-z-8 mask-x-from-70% mask-x-to-100% mask-y-from-70% mask-y-to-100%"
                     >
                         <div
-                            class="absolute inset-0 bg-[linear-gradient(90deg,color-mix(in_srgb,var(--vp-c-brand-1)_10%,transparent)_1px,transparent_1px)] bg-[size:40px_100%]"
+                            class="absolute inset-0 bg-[linear-gradient(90deg,color-mix(in_srgb,var(--vp-c-brand-1)_10%,transparent)_1px,transparent_1px)] bg-size-[40px_100%]"
                         ></div>
                         <div
-                            class="absolute inset-0 bg-[linear-gradient(0deg,color-mix(in_srgb,var(--vp-c-brand-1)_10%,transparent)_1px,transparent_1px)] bg-[size:100%_40px]"
+                            class="absolute inset-0 bg-[linear-gradient(0deg,color-mix(in_srgb,var(--vp-c-brand-1)_10%,transparent)_1px,transparent_1px)] bg-size-[100%_40px]"
                         ></div>
                         <div
-                            class="absolute inset-0 bg-[linear-gradient(90deg,color-mix(in_srgb,var(--vp-c-brand-1)_20%,transparent)_1px,transparent_1px)] bg-[size:80px_100%]"
+                            class="absolute inset-0 bg-[linear-gradient(90deg,color-mix(in_srgb,var(--vp-c-brand-1)_20%,transparent)_1px,transparent_1px)] bg-size-[80px_100%]"
                         ></div>
                     </div>
                 </div>
@@ -125,21 +125,21 @@ onMounted(async () => {
                     class="order-1 lg:order-2 -ml-4 lg:-ml-20 flex flex-col gap-14 transform-3d rotate-x-25 rotate-y-18 -rotate-z-8 mask-r-from-80%"
                 >
                     <div
-                        class="overflow-hidden group/card ![animation-duration:9s] ![animation-iteration-count:infinite] animate-rotate-border transition-all duration-500 ease-out transform-3d rounded-3xl bg-conic/[from_var(--border-angle)] from-[var(--vp-c-divider)] via-[var(--vp-c-text-3)] to-[var(--vp-c-divider)] hover:via-[var(--vp-c-brand-1)] from-80% via-90% to-100% p-px w-auto max-w-fit"
+                        class="overflow-hidden group/card [animation-duration:9s]! [animation-iteration-count:infinite]! animate-rotate-border transition-all duration-500 ease-out transform-3d rounded-3xl bg-conic/[from_var(--border-angle)] from-(--vp-c-divider) via-(--vp-c-text-3) to-(--vp-c-divider) hover:via-(--vp-c-brand-1) from-80% via-90% to-100% p-px w-auto max-w-fit"
                     >
                         <div
-                            class="bg-[var(--vp-c-bg)] p-6 rounded-3xl flex flex-col items-start gap-8 relative z-10"
+                            class="bg-(--vp-c-bg) p-6 rounded-3xl flex flex-col items-start gap-8 relative z-10"
                         >
                             <div class="flex h-full items-center gap-3">
                                 <div
-                                    class="p-2 border border-dashed border-[var(--vp-c-text-3)]/60 group-hover/card:border-[var(--vp-c-brand-1)] rounded-lg"
+                                    class="p-2 border border-dashed border-(--vp-c-text-3)/60 group-hover/card:border-(--vp-c-brand-1) rounded-lg"
                                 >
                                     <div
-                                        class="h-4 w-4 bg-[var(--vp-c-text-3)]/60 rounded-sm group-hover/card:bg-[var(--vp-c-brand-1)] animate-pulse ![animation-duration:3s] ![animation-iteration-count:infinite]"
+                                        class="h-4 w-4 bg-(--vp-c-text-3)/60 rounded-sm group-hover/card:bg-(--vp-c-brand-1) animate-pulse [animation-duration:3s]! [animation-iteration-count:infinite]!"
                                     ></div>
                                 </div>
                                 <p
-                                    class="uppercase tracking-widest font-light font-mono text-[var(--vp-c-text-3)]"
+                                    class="uppercase tracking-widest font-light font-mono text-(--vp-c-text-3)"
                                 >
                                     Servers
                                 </p>
@@ -148,12 +148,13 @@ onMounted(async () => {
                                 <a
                                     href="/docs/extensions/convoy"
                                     class="relative group/app"
+                                    aria-label="Convoy"
                                 >
                                     <convoy
                                         class="hover:scale-120 flex items-center justify-center size-18 rounded-xl p-4 bg-[#1B1B1B] ring-6 ring-white/10"
                                     />
                                     <div
-                                        class="absolute -top-4 -right-4 hidden group-hover/app:block bg-[var(--vp-c-text-3)]/60 p-0.5 rounded-sm pointer-events-none"
+                                        class="absolute -top-4 -right-4 hidden group-hover/app:block bg-(--vp-c-text-3)/60 p-0.5 rounded-sm pointer-events-none"
                                     >
                                         <arrow-right-up-box-fill
                                             class="size-6"
@@ -161,17 +162,18 @@ onMounted(async () => {
                                     </div>
                                 </a>
                                 <div
-                                    class="h-px w-4 border border-dashed border-[var(--vp-c-text-3)]/60"
+                                    class="h-px w-4 border border-dashed border-(--vp-c-text-3)/60"
                                 ></div>
                                 <a
                                     href="/docs/extensions/cpanel"
                                     class="relative group/app"
+                                    aria-label="Cpanel"
                                 >
                                     <cpanel
                                         class="hover:scale-120 flex items-center justify-center size-18 rounded-xl p-4 bg-[#FF6C2C] ring-6 ring-[#FF6C2C]/30"
                                     />
                                     <div
-                                        class="absolute -top-4 -right-4 hidden group-hover/app:block bg-[var(--vp-c-text-3)]/60 p-0.5 rounded-sm pointer-events-none"
+                                        class="absolute -top-4 -right-4 hidden group-hover/app:block bg-(--vp-c-text-3)/60 p-0.5 rounded-sm pointer-events-none"
                                     >
                                         <arrow-right-up-box-fill
                                             class="size-6"
@@ -179,17 +181,18 @@ onMounted(async () => {
                                     </div>
                                 </a>
                                 <div
-                                    class="h-px w-4 border border-dashed border-[var(--vp-c-text-3)]/60"
+                                    class="h-px w-4 border border-dashed border-(--vp-c-text-3)/60"
                                 ></div>
                                 <a
                                     href="/docs/extensions/enhance"
                                     class="relative group/app"
+                                    aria-label="Enhance"
                                 >
                                     <enhance
                                         class="hover:scale-120 flex items-center justify-center size-18 rounded-xl p-4 bg-[#211451] ring-6 ring-[#7363af]/40"
                                     />
                                     <div
-                                        class="absolute -top-4 -right-4 hidden group-hover/app:block bg-[var(--vp-c-text-3)]/60 p-0.5 rounded-sm pointer-events-none"
+                                        class="absolute -top-4 -right-4 hidden group-hover/app:block bg-(--vp-c-text-3)/60 p-0.5 rounded-sm pointer-events-none"
                                     >
                                         <arrow-right-up-box-fill
                                             class="size-6"
@@ -197,17 +200,18 @@ onMounted(async () => {
                                     </div>
                                 </a>
                                 <div
-                                    class="h-px w-4 border border-dashed border-[var(--vp-c-text-3)]/60"
+                                    class="h-px w-4 border border-dashed border-(--vp-c-text-3)/60"
                                 ></div>
                                 <a
                                     href="/docs/extensions/plesk"
                                     class="relative group/app"
+                                    aria-label="Plesk"
                                 >
                                     <plesk
                                         class="hover:scale-120 flex items-center justify-center size-18 rounded-xl p-4 bg-white ring-6 ring-white/20"
                                     />
                                     <div
-                                        class="absolute -top-4 -right-4 hidden group-hover/app:block bg-[var(--vp-c-text-3)]/60 p-0.5 rounded-sm pointer-events-none"
+                                        class="absolute -top-4 -right-4 hidden group-hover/app:block bg-(--vp-c-text-3)/60 p-0.5 rounded-sm pointer-events-none"
                                     >
                                         <arrow-right-up-box-fill
                                             class="size-6"
@@ -215,17 +219,18 @@ onMounted(async () => {
                                     </div>
                                 </a>
                                 <div
-                                    class="h-px w-4 border border-dashed border-[var(--vp-c-text-3)]/60"
+                                    class="h-px w-4 border border-dashed border-(--vp-c-text-3)/60"
                                 ></div>
                                 <a
                                     href="/docs/extensions/pterodactyl"
                                     class="relative group/app"
+                                    aria-label="Pterodactyl"
                                 >
                                     <pterodactyl
                                         class="hover:scale-120 flex items-center justify-center size-18 rounded-xl p-4 bg-[#10529F] ring-6 ring-[#10529F]/40"
                                     />
                                     <div
-                                        class="absolute -top-4 -right-4 hidden group-hover/app:block bg-[var(--vp-c-text-3)]/60 p-0.5 rounded-sm pointer-events-none"
+                                        class="absolute -top-4 -right-4 hidden group-hover/app:block bg-(--vp-c-text-3)/60 p-0.5 rounded-sm pointer-events-none"
                                     >
                                         <arrow-right-up-box-fill
                                             class="size-6"
@@ -233,17 +238,18 @@ onMounted(async () => {
                                     </div>
                                 </a>
                                 <div
-                                    class="h-px w-4 border border-dashed border-[var(--vp-c-text-3)]/60"
+                                    class="h-px w-4 border border-dashed border-(--vp-c-text-3)/60"
                                 ></div>
                                 <a
                                     href="/docs/extensions/directadmin"
                                     class="relative group/app"
+                                    aria-label="DirectAdmin"
                                 >
                                     <directadmin
                                         class="hover:scale-120 flex items-center justify-center size-18 rounded-xl p-4 bg-[#22272E] ring-6 ring-[#22272E]/40"
                                     />
                                     <div
-                                        class="absolute -top-4 -right-4 hidden group-hover/app:block bg-[var(--vp-c-text-3)]/60 p-0.5 rounded-sm pointer-events-none"
+                                        class="absolute -top-4 -right-4 hidden group-hover/app:block bg-(--vp-c-text-3)/60 p-0.5 rounded-sm pointer-events-none"
                                     >
                                         <arrow-right-up-box-fill
                                             class="size-6"
@@ -251,17 +257,18 @@ onMounted(async () => {
                                     </div>
                                 </a>
                                 <div
-                                    class="h-px w-4 border border-dashed border-[var(--vp-c-text-3)]/60"
+                                    class="h-px w-4 border border-dashed border-(--vp-c-text-3)/60"
                                 ></div>
                                 <a
                                     href="/docs/extensions/virtualizor"
                                     class="relative group/app"
+                                    aria-label="Virtualizor"
                                 >
                                     <virtualizor
                                         class="hover:scale-120 flex items-center justify-center size-18 rounded-xl p-4 bg-white ring-6 ring-white/20"
                                     />
                                     <div
-                                        class="absolute -top-4 -right-4 hidden group-hover/app:block bg-[var(--vp-c-text-3)]/60 p-0.5 rounded-sm pointer-events-none"
+                                        class="absolute -top-4 -right-4 hidden group-hover/app:block bg-(--vp-c-text-3)/60 p-0.5 rounded-sm pointer-events-none"
                                     >
                                         <arrow-right-up-box-fill
                                             class="size-6"
@@ -269,17 +276,18 @@ onMounted(async () => {
                                     </div>
                                 </a>
                                 <div
-                                    class="h-px w-4 border border-dashed border-[var(--vp-c-text-3)]/60"
+                                    class="h-px w-4 border border-dashed border-(--vp-c-text-3)/60"
                                 ></div>
                                 <a
                                     href="/docs/extensions/virtfusion"
                                     class="relative group/app"
+                                    aria-label="VirtFusion"
                                 >
                                     <virtfusion
                                         class="hover:scale-120 flex items-center justify-center size-18 rounded-xl p-4 bg-[#166BBD] ring-6 ring-[#166BBD]/40"
                                     />
                                     <div
-                                        class="absolute -top-4 -right-4 hidden group-hover/app:block bg-[var(--vp-c-text-3)]/60 p-0.5 rounded-sm pointer-events-none"
+                                        class="absolute -top-4 -right-4 hidden group-hover/app:block bg-(--vp-c-text-3)/60 p-0.5 rounded-sm pointer-events-none"
                                     >
                                         <arrow-right-up-box-fill
                                             class="size-6"
@@ -287,27 +295,27 @@ onMounted(async () => {
                                     </div>
                                 </a>
                                 <div
-                                    class="h-px w-4 border border-dashed border-[var(--vp-c-text-3)]/60"
+                                    class="h-px w-4 border border-dashed border-(--vp-c-text-3)/60"
                                 ></div>
                             </div>
                         </div>
                     </div>
                     <div
-                        class="overflow-hidden lg:ml-24 group/card ![animation-duration:9s] ![animation-iteration-count:infinite] animate-rotate-border transition-all duration-500 ease-out transform-3d rounded-3xl bg-conic/[from_var(--border-angle)] from-[var(--vp-c-divider)] via-[var(--vp-c-text-3)] to-[var(--vp-c-divider)] hover:via-[var(--vp-c-brand-1)] from-80% via-90% to-100% p-px w-auto max-w-fit"
+                        class="overflow-hidden lg:ml-24 group/card [animation-duration:9s]! [animation-iteration-count:infinite]! animate-rotate-border transition-all duration-500 ease-out transform-3d rounded-3xl bg-conic/[from_var(--border-angle)] from-(--vp-c-divider) via-(--vp-c-text-3) to-(--vp-c-divider) hover:via-(--vp-c-brand-1) from-80% via-90% to-100% p-px w-auto max-w-fit"
                     >
                         <div
-                            class="bg-[var(--vp-c-bg)] p-6 rounded-3xl flex flex-col items-start gap-8 relative z-10"
+                            class="bg-(--vp-c-bg) p-6 rounded-3xl flex flex-col items-start gap-8 relative z-10"
                         >
                             <div class="flex h-full items-center gap-3">
                                 <div
-                                    class="p-2 border border-dashed border-[var(--vp-c-text-3)]/60 group-hover/card:border-[var(--vp-c-brand-1)] rounded-lg"
+                                    class="p-2 border border-dashed border-(--vp-c-text-3)/60 group-hover/card:border-(--vp-c-brand-1) rounded-lg"
                                 >
                                     <div
-                                        class="h-4 w-4 bg-[var(--vp-c-text-3)]/60 rounded-sm group-hover/card:bg-[var(--vp-c-brand-1)] animate-pulse ![animation-duration:3s] ![animation-iteration-count:infinite]"
+                                        class="h-4 w-4 bg-(--vp-c-text-3)/60 rounded-sm group-hover/card:bg-(--vp-c-brand-1) animate-pulse [animation-duration:3s]! [animation-iteration-count:infinite]!"
                                     ></div>
                                 </div>
                                 <p
-                                    class="uppercase tracking-widest font-light font-mono text-[var(--vp-c-text-3)]"
+                                    class="uppercase tracking-widest font-light font-mono text-(--vp-c-text-3)"
                                 >
                                     Payment Gateways
                                 </p>
@@ -316,12 +324,13 @@ onMounted(async () => {
                                 <a
                                     href="/docs/extensions/mollie"
                                     class="relative group/app"
+                                    aria-label="Mollie"
                                 >
                                     <mollie
                                         class="group-hover/app:scale-120 flex items-center justify-center size-18 rounded-xl p-4 bg-black ring-6 ring-white/10"
                                     />
                                     <div
-                                        class="absolute -top-4 -right-4 hidden group-hover/app:block bg-[var(--vp-c-text-3)]/60 p-0.5 rounded-sm pointer-events-none"
+                                        class="absolute -top-4 -right-4 hidden group-hover/app:block bg-(--vp-c-text-3)/60 p-0.5 rounded-sm pointer-events-none"
                                     >
                                         <arrow-right-up-box-fill
                                             class="size-6"
@@ -329,23 +338,24 @@ onMounted(async () => {
                                     </div>
                                 </a>
                                 <div
-                                    class="h-px w-4 border border-dashed border-[var(--vp-c-text-3)]/60"
+                                    class="h-px w-4 border border-dashed border-(--vp-c-text-3)/60"
                                 ></div>
                                 <xendit
                                     class="hover:scale-120 flex items-center justify-center size-18 rounded-xl p-4 bg-[#3b68ff] ring-6 ring-[#3b68ff]/20"
                                 />
                                 <div
-                                    class="h-px w-4 border border-dashed border-[var(--vp-c-text-3)]/60"
+                                    class="h-px w-4 border border-dashed border-(--vp-c-text-3)/60"
                                 ></div>
                                 <a
                                     href="/docs/extensions/paypal"
                                     class="relative group/app"
+                                    aria-label="PayPal"
                                 >
                                     <paypal
                                         class="group-hover/app:scale-120 flex items-center justify-center size-18 rounded-xl p-4 bg-white ring-6 ring-white/20"
                                     />
                                     <div
-                                        class="absolute -top-4 -right-4 hidden group-hover/app:block bg-[var(--vp-c-text-3)]/60 p-0.5 rounded-sm pointer-events-none"
+                                        class="absolute -top-4 -right-4 hidden group-hover/app:block bg-(--vp-c-text-3)/60 p-0.5 rounded-sm pointer-events-none"
                                     >
                                         <arrow-right-up-box-fill
                                             class="size-6"
@@ -353,17 +363,18 @@ onMounted(async () => {
                                     </div>
                                 </a>
                                 <div
-                                    class="h-px w-4 border border-dashed border-[var(--vp-c-text-3)]/60"
+                                    class="h-px w-4 border border-dashed border-(--vp-c-text-3)/60"
                                 ></div>
                                 <a
                                     href="/docs/extensions/stripe"
                                     class="relative group/app"
+                                    aria-label="Stripe"
                                 >
                                     <stripe
                                         class="group-hover/app:scale-120 flex items-center justify-center size-18 rounded-xl p-4 bg-[#635BFF] ring-6 ring-[#635BFF]/40"
                                     />
                                     <div
-                                        class="absolute -top-4 -right-4 hidden group-hover/app:block bg-[var(--vp-c-text-3)]/60 p-0.5 rounded-sm pointer-events-none"
+                                        class="absolute -top-4 -right-4 hidden group-hover/app:block bg-(--vp-c-text-3)/60 p-0.5 rounded-sm pointer-events-none"
                                     >
                                         <arrow-right-up-box-fill
                                             class="size-6"
@@ -371,7 +382,7 @@ onMounted(async () => {
                                     </div>
                                 </a>
                                 <div
-                                    class="h-px w-4 border border-dashed border-[var(--vp-c-text-3)]/60"
+                                    class="h-px w-4 border border-dashed border-(--vp-c-text-3)/60"
                                 ></div>
                                 <midtrans
                                     class="hover:scale-120 flex items-center justify-center size-18 rounded-xl p-4 bg-white ring-6 ring-white/20"
@@ -423,21 +434,21 @@ onMounted(async () => {
                 class="absolute inset-0 z-0 flex items-center justify-center transform-3d rotate-x-55 rotate-y-0 -rotate-z-45"
             >
                 <div
-                    class="h-auto w-full ![animation-duration:4s] ![animation-iteration-count:infinite] animate-rotate-border transition-all duration-500 ease-out transform-3d rounded-full bg-conic/[from_var(--border-angle)] from-[var(--vp-c-border)] via-[#1fe6a3] to-[var(--vp-c-border)] from-80% via-90% to-100% p-px shadow-2xl shadow-[#1fe6a3]/10"
+                    class="h-auto w-full [animation-duration:4s]! [animation-iteration-count:infinite]! animate-rotate-border transition-all duration-500 ease-out transform-3d rounded-full bg-conic/[from_var(--border-angle)] from-(--vp-c-border) via-[#1fe6a3] to-(--vp-c-border) from-80% via-90% to-100% p-px shadow-2xl shadow-[#1fe6a3]/10"
                 >
-                    <div class="bg-[var(--vp-c-bg)] p-20 rounded-full">
+                    <div class="bg-(--vp-c-bg) p-20 rounded-full">
                         <div
-                            class="![animation-duration:3s] ![animation-iteration-count:infinite] animate-rotate-border transition-all duration-500 ease-out transform-3d rounded-full bg-conic/[from_var(--border-angle)] from-[var(--vp-c-border)] via-[#1fe6a3] to-[var(--vp-c-border)] from-80% via-90% to-100% p-px"
+                            class="[animation-duration:3s]! [animation-iteration-count:infinite]! animate-rotate-border transition-all duration-500 ease-out transform-3d rounded-full bg-conic/[from_var(--border-angle)] from-(--vp-c-border) via-[#1fe6a3] to-(--vp-c-border) from-80% via-90% to-100% p-px"
                         >
-                            <div class="bg-[var(--vp-c-bg)] p-20 rounded-full">
+                            <div class="bg-(--vp-c-bg) p-20 rounded-full">
                                 <div
-                                    class="![animation-duration:2s] ![animation-iteration-count:infinite] animate-rotate-border transition-all duration-500 ease-out transform-3d rounded-full bg-conic/[from_var(--border-angle)] from-[var(--vp-c-border)] via-[#1fe6a3] to-[var(--vp-c-border)] from-80% via-90% to-100% p-px"
+                                    class="[animation-duration:2s]! [animation-iteration-count:infinite]! animate-rotate-border transition-all duration-500 ease-out transform-3d rounded-full bg-conic/[from_var(--border-angle)] from-(--vp-c-border) via-[#1fe6a3] to-(--vp-c-border) from-80% via-90% to-100% p-px"
                                 >
                                     <div
-                                        class="bg-[var(--vp-c-bg)] p-20 rounded-full"
+                                        class="bg-(--vp-c-bg) p-20 rounded-full"
                                     >
                                         <div
-                                            class="animate-pulse ![animation-duration:3s] ![animation-iteration-count:infinite] p-10 rounded-full border border-[#1fe6a3] shadow-2xl shadow-[#4060ff]/20 text-[var(--vp-c-text-1)]/50"
+                                            class="animate-pulse [animation-duration:3s]! [animation-iteration-count:infinite]! p-10 rounded-full border border-[#1fe6a3] shadow-2xl shadow-[#4060ff]/20 text-(--vp-c-text-1)/50"
                                         ></div>
                                     </div>
                                 </div>
@@ -462,7 +473,7 @@ onMounted(async () => {
                     <div class="text-3xl font-semibold">
                         Extend and Automate with the API
                     </div>
-                    <span class="flex font-normal text-[var(--vp-c-text-2)]">
+                    <span class="flex font-normal text-(--vp-c-text-2)">
                         Our REST API gives you the power to control your entire
                         platform. Build custom solutions, automate complex
                         workflows, and integrate everything seamlessly.
@@ -530,10 +541,10 @@ onMounted(async () => {
                         class="relative w-full h-full transform-3d rotate-x-25 rotate-y-18 -rotate-z-8 overflow-hidden"
                     >
                         <div
-                            class="absolute inset-0 bg-[linear-gradient(90deg,var(--vp-c-divider)_1px,transparent_1px)] bg-[size:40px_40px] opacity-[0.2]"
+                            class="absolute inset-0 bg-[linear-gradient(90deg,var(--vp-c-divider)_1px,transparent_1px)] bg-size-[40px_40px] opacity-[0.2]"
                         ></div>
                         <div
-                            class="absolute inset-0 bg-[linear-gradient(0deg,var(--vp-c-divider)_1px,transparent_1px)] bg-[size:40px_40px] opacity-[0.2]"
+                            class="absolute inset-0 bg-[linear-gradient(0deg,var(--vp-c-divider)_1px,transparent_1px)] bg-size-[40px_40px] opacity-[0.2]"
                         ></div>
 
                         <svg
@@ -592,7 +603,7 @@ onMounted(async () => {
                                     class="flex items-center justify-center size-24 rounded-xl p-4 bg-[#003656] ring-8 ring-[#003656]/50 shadow-lg relative z-20"
                                 />
                                 <div
-                                    class="absolute -right-3 top-1/2 -translate-y-1/2 size-4 bg-[var(--vp-c-brand-1)] rounded-full border-4 border-[var(--vp-c-bg-soft)] z-30"
+                                    class="absolute -right-3 top-1/2 -translate-y-1/2 size-4 bg-(--vp-c-brand-1) rounded-full border-4 border-(--vp-c-bg-soft) z-30"
                                 ></div>
                             </div>
 
@@ -603,7 +614,7 @@ onMounted(async () => {
                                     class="flex items-center justify-center size-24 rounded-xl p-4 bg-white dark:bg-[#1e1e1e] ring-8 ring-gray-500/10 shadow-lg relative z-20"
                                 />
                                 <div
-                                    class="absolute -right-3 top-1/2 -translate-y-1/2 size-4 bg-gray-400 rounded-full border-4 border-[var(--vp-c-bg-soft)] z-30"
+                                    class="absolute -right-3 top-1/2 -translate-y-1/2 size-4 bg-gray-400 rounded-full border-4 border-(--vp-c-bg-soft) z-30"
                                 ></div>
                             </div>
 
@@ -611,7 +622,7 @@ onMounted(async () => {
                                 class="absolute left-[84.8%] top-[50%] -translate-x-1/2 -translate-y-1/2 group cursor-default"
                             >
                                 <div
-                                    class="absolute -inset-1 bg-gradient-to-br from-[var(--vp-c-brand-1)] to-[var(--vp-c-brand-2)] rounded-3xl blur opacity-30 group-hover:opacity-50 transition duration-500"
+                                    class="absolute -inset-1 bg-linear-to-br from-(--vp-c-brand-1) to-(--vp-c-brand-2) rounded-3xl blur opacity-30 group-hover:opacity-50 transition duration-500"
                                 ></div>
                                 <div class="relative z-20">
                                     <paymenter-icon
@@ -619,7 +630,7 @@ onMounted(async () => {
                                     />
                                 </div>
                                 <div
-                                    class="absolute -left-3 top-1/2 -translate-y-1/2 size-4 bg-[var(--vp-c-brand-1)] rounded-full border-4 border-[var(--vp-c-bg-soft)] z-30"
+                                    class="absolute -left-3 top-1/2 -translate-y-1/2 size-4 bg-(--vp-c-brand-1) rounded-full border-4 border-(--vp-c-bg-soft) z-30"
                                 ></div>
                             </div>
                         </div>
@@ -638,7 +649,7 @@ onMounted(async () => {
 
                 <div class="flex flex-col justify-end">
                     <span
-                        class="flex justify-center font-normal text-[var(--vp-c-text-2)]"
+                        class="flex justify-center font-normal text-(--vp-c-text-2)"
                     >
                         The continued development and maintenance of Paymenter
                         is made possible by these generous sponsors:
@@ -650,7 +661,7 @@ onMounted(async () => {
                 class="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-4 items-center text-gray-500 dark:text-gray-400"
             >
                 <a
-                    class="group relative h-28 md:w-72 w-full flex justify-center items-center hover:pb-8 border border-[var(--vp-c-divider)] rounded-lg transition-colors hover:border-gray-400 dark:hover:border-gray-500"
+                    class="group relative h-28 md:w-72 w-full flex justify-center items-center hover:pb-8 border border-(--vp-c-divider) rounded-lg transition-colors hover:border-gray-400 dark:hover:border-gray-500"
                     href="https://www.quape.com/?rel=paymenter"
                     target="_blank"
                     aria-label="QUAPE PTE LTD"
@@ -694,7 +705,7 @@ onMounted(async () => {
                 </a>
 
                 <a
-                    class="group relative h-28 md:w-72 w-full flex justify-center items-center hover:pb-8 border border-[var(--vp-c-divider)] rounded-lg transition-colors hover:border-gray-400 dark:hover:border-gray-500"
+                    class="group relative h-28 md:w-72 w-full flex justify-center items-center hover:pb-8 border border-(--vp-c-divider) rounded-lg transition-colors hover:border-gray-400 dark:hover:border-gray-500"
                     href="https://nodedog.consulting?rel=paymenter"
                     target="_blank"
                     aria-label="NodeDog Consulting"
@@ -728,7 +739,7 @@ onMounted(async () => {
                     </div>
                 </a>
                 <a
-                    class="group relative h-28 md:w-72 w-full flex justify-center items-center hover:pb-8 border border-[var(--vp-c-divider)] rounded-lg transition-colors hover:border-gray-400 dark:hover:border-gray-500"
+                    class="group relative h-28 md:w-72 w-full flex justify-center items-center hover:pb-8 border border-(--vp-c-divider) rounded-lg transition-colors hover:border-gray-400 dark:hover:border-gray-500"
                     href="https://witherhosting.com?rel=paymenter"
                     target="_blank"
                     aria-label="WitherHosting"
@@ -877,7 +888,7 @@ onMounted(async () => {
                 </a>
 
                 <a
-                    class="h-28 md:w-72 w-full flex flex-col justify-center items-center gap-1 border border-[var(--vp-c-divider)] rounded-lg opacity-75 grayscale hover:grayscale-0 hover:opacity-100 transition-all hover:border-gray-400 dark:hover:border-gray-500"
+                    class="h-28 md:w-72 w-full flex flex-col justify-center items-center gap-1 border border-(--vp-c-divider) rounded-lg opacity-75 grayscale hover:grayscale-0 hover:opacity-100 transition-all hover:border-gray-400 dark:hover:border-gray-500"
                     href="https://github.com/sponsors/Paymenter"
                     target="_blank"
                     aria-label="Become a Sponsor"
@@ -898,21 +909,21 @@ onMounted(async () => {
                 class="absolute inset-0 z-0 flex items-center justify-center transform-3d rotate-x-55 rotate-y-0 -rotate-z-45"
             >
                 <div
-                    class="![animation-duration:4s] ![animation-iteration-count:infinite] animate-rotate-border transition-all duration-500 ease-out transform-3d rounded-3xl bg-conic/[from_var(--border-angle)] from-[var(--vp-c-border)] via-[var(--vp-c-brand-1)] to-[var(--vp-c-border)] from-80% via-90% to-100% p-px shadow-2xl shadow-[#4060ff]/20"
+                    class="[animation-duration:4s]! [animation-iteration-count:infinite]! animate-rotate-border transition-all duration-500 ease-out transform-3d rounded-3xl bg-conic/[from_var(--border-angle)] from-(--vp-c-border) via-(--vp-c-brand-1) to-(--vp-c-border) from-80% via-90% to-100% p-px shadow-2xl shadow-[#4060ff]/20"
                 >
-                    <div class="bg-[var(--vp-c-bg)] p-20 rounded-3xl">
+                    <div class="bg-(--vp-c-bg) p-20 rounded-3xl">
                         <div
-                            class="![animation-duration:3s] ![animation-iteration-count:infinite] animate-rotate-border transition-all duration-500 ease-out transform-3d rounded-3xl bg-conic/[from_var(--border-angle)] from-[var(--vp-c-border)] via-[var(--vp-c-brand-1)] to-[var(--vp-c-border)] from-80% via-90% to-100% p-px"
+                            class="[animation-duration:3s]! [animation-iteration-count:infinite]! animate-rotate-border transition-all duration-500 ease-out transform-3d rounded-3xl bg-conic/[from_var(--border-angle)] from-(--vp-c-border) via-(--vp-c-brand-1) to-(--vp-c-border) from-80% via-90% to-100% p-px"
                         >
-                            <div class="bg-[var(--vp-c-bg)] p-20 rounded-3xl">
+                            <div class="bg-(--vp-c-bg) p-20 rounded-3xl">
                                 <div
-                                    class="![animation-duration:2s] ![animation-iteration-count:infinite] animate-rotate-border transition-all duration-500 ease-out transform-3d rounded-3xl bg-conic/[from_var(--border-angle)] from-[var(--vp-c-border)] via-[var(--vp-c-brand-1)] to-[var(--vp-c-border)] from-80% via-90% to-100% p-px"
+                                    class="[animation-duration:2s]! [animation-iteration-count:infinite]! animate-rotate-border transition-all duration-500 ease-out transform-3d rounded-3xl bg-conic/[from_var(--border-angle)] from-(--vp-c-border) via-(--vp-c-brand-1) to-(--vp-c-border) from-80% via-90% to-100% p-px"
                                 >
                                     <div
-                                        class="bg-[var(--vp-c-bg)] p-20 rounded-3xl"
+                                        class="bg-(--vp-c-bg) p-20 rounded-3xl"
                                     >
                                         <div
-                                            class="animate-pulse ![animation-duration:3s] ![animation-iteration-count:infinite] p-10 rounded-3xl bg-[#4060ff]/20 border border-[#4060ff] shadow-2xl shadow-[#4060ff]/20 text-[var(--vp-c-text-1)]/50"
+                                            class="animate-pulse [animation-duration:3s]! [animation-iteration-count:infinite]! p-10 rounded-3xl bg-[#4060ff]/20 border border-[#4060ff] shadow-2xl shadow-[#4060ff]/20 text-(--vp-c-text-1)/50"
                                         >
                                             <cloud-fill class="size-24" />
                                         </div>

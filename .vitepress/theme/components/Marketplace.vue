@@ -167,7 +167,7 @@ const createSlug = (id, name) => {
 
         <div class="mt-8 mb-8">
             <div
-                class="bg-[var(--vp-c-bg-alt)]/50 backdrop-blur-sm border border-[var(--vp-c-border)] rounded-2xl p-4"
+                class="bg-(--vp-c-bg-alt)/50 backdrop-blur-sm border border-(--vp-c-border) rounded-2xl p-4"
             >
                 <div class="flex items-center gap-3">
                     <search-line class="size-5" />
@@ -175,7 +175,7 @@ const createSlug = (id, name) => {
                         v-model="searchQuery"
                         type="text"
                         placeholder="Search extensions and themes..."
-                        class="w-full pl-12 pr-4 py-4 bg-[var(--vp-c-bg)] border-2 border-[var(--vp-c-border)] rounded-xl text-[var(--vp-c-text-1)] placeholder-[var(--vp-c-text-2)] focus:border-[var(--vp-c-brand-1)] focus:outline-none transition-colors"
+                        class="w-full pl-12 pr-4 py-4 bg-(--vp-c-bg) border-2 border-(--vp-c-border) rounded-xl text-(--vp-c-text-1) placeholder-(--vp-c-text-2) focus:border-(--vp-c-brand-1) focus:outline-none transition-colors"
                     />
                 </div>
             </div>
@@ -188,9 +188,9 @@ const createSlug = (id, name) => {
                 <button
                     @click="setFilter('all')"
                     :class="{
-                        'bg-[var(--vp-c-brand-1)] border-[var(--vp-c-brand-1)]':
+                        'bg-(--vp-c-brand-1) border-(--vp-c-brand-1)':
                             activeFilter === 'all',
-                        'bg-[var(--vp-c-bg)] text-[var(--vp-c-text-2)] border-[var(--vp-c-border)] hover:border-[var(--vp-c-brand-1)] hover:text-[var(--vp-c-text-1)]':
+                        'bg-(--vp-c-bg) text-(--vp-c-text-2) border-(--vp-c-border) hover:border-(--vp-c-brand-1) hover:text-(--vp-c-text-1)':
                             activeFilter !== 'all',
                     }"
                     class="filter-button px-6 py-3 border-2 rounded-lg font-medium transition-all duration-200"
@@ -200,9 +200,9 @@ const createSlug = (id, name) => {
                 <button
                     @click="setFilter('extension')"
                     :class="{
-                        'bg-[var(--vp-c-brand-1)] border-[var(--vp-c-brand-1)]':
+                        'bg-(--vp-c-brand-1) border-(--vp-c-brand-1)':
                             activeFilter === 'extension',
-                        'bg-[var(--vp-c-bg)] text-[var(--vp-c-text-2)] border-[var(--vp-c-border)] hover:border-[var(--vp-c-brand-1)] hover:text-[var(--vp-c-text-1)]':
+                        'bg-(--vp-c-bg) text-(--vp-c-text-2) border-(--vp-c-border) hover:border-(--vp-c-brand-1) hover:text-(--vp-c-text-1)':
                             activeFilter !== 'extension',
                     }"
                     class="filter-button px-6 py-3 border-2 rounded-lg font-medium transition-all duration-200"
@@ -212,9 +212,9 @@ const createSlug = (id, name) => {
                 <button
                     @click="setFilter('theme')"
                     :class="{
-                        'bg-[var(--vp-c-brand-1)] border-[var(--vp-c-brand-1)]':
+                        'bg-(--vp-c-brand-1) border-(--vp-c-brand-1)':
                             activeFilter === 'theme',
-                        'bg-[var(--vp-c-bg)] text-[var(--vp-c-text-2)] border-[var(--vp-c-border)] hover:border-[var(--vp-c-brand-1)] hover:text-[var(--vp-c-text-1)]':
+                        'bg-(--vp-c-bg) text-(--vp-c-text-2) border-(--vp-c-border) hover:border-(--vp-c-brand-1) hover:text-(--vp-c-text-1)':
                             activeFilter !== 'theme',
                     }"
                     class="filter-button px-6 py-3 border-2 rounded-lg font-medium transition-all duration-200"
@@ -222,7 +222,7 @@ const createSlug = (id, name) => {
                     Themes ({{ grandTotalThemeCount }})
                 </button>
             </div>
-            <p v-if="!isLoading" class="text-[var(--vp-c-text-2)] text-right">
+            <p v-if="!isLoading" class="text-(--vp-c-text-2) text-right">
                 Showing {{ itemsToDisplay.length }} of
                 {{ filteredAndSearchedItems.length }}
             </p>
@@ -245,10 +245,10 @@ const createSlug = (id, name) => {
                     v-for="item in itemsToDisplay"
                     :key="item.id"
                     :href="`/marketplace/${createSlug(item.id, item.name)}`"
-                    class="group block bg-[var(--vp-c-bg-alt)]/50 backdrop-blur-sm border border-[var(--vp-c-border)] rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:border-[var(--vp-c-brand-1)]/50 h-full flex flex-col"
+                    class="group bg-(--vp-c-bg-alt)/50 backdrop-blur-sm border border-(--vp-c-border) rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:border-(--vp-c-brand-1)/50 h-full flex flex-col"
                 >
                     <div
-                        class="relative h-48 bg-gradient-to-br from-[var(--vp-c-brand-1)]/10 to-[var(--vp-c-brand-1)]/5 flex items-center justify-center flex-shrink-0 overflow-hidden"
+                        class="relative h-48 bg-linear-to-br from-(--vp-c-brand-1)/10 to-(--vp-c-brand-1)/5 flex items-center justify-center shrink-0 overflow-hidden"
                     >
                         <img
                             :src="item.image"
@@ -261,14 +261,14 @@ const createSlug = (id, name) => {
                         />
                         <div class="absolute top-3 right-3 flex gap-2">
                             <span
-                                class="px-3 py-1 bg-[var(--vp-c-brand-1)] text-white text-xs font-medium rounded-full capitalize"
+                                class="px-3 py-1 bg-(--vp-c-brand-1) text-white text-xs font-medium rounded-full capitalize"
                                 >{{ item.type }}</span
                             >
                         </div>
                     </div>
-                    <div class="flex flex-col p-6 flex-grow">
+                    <div class="flex flex-col p-6 grow">
                         <h3
-                            class="text-xl font-semibold color-[var(--vp-c-text-1)] mb-2 group-hover:text-[var(--vp-c-brand-1)] transition-colors"
+                            class="text-xl font-semibold color-[var(--vp-c-text-1)] mb-2 group-hover:text-(--vp-c-brand-1) transition-colors"
                         >
                             {{ item.name }}
                         </h3>
@@ -286,7 +286,7 @@ const createSlug = (id, name) => {
                                         xmlns="http://www.w3.org/2000/svg"
                                         viewBox="0 0 20 20"
                                         fill="currentColor"
-                                        class="size-4 text-[var(--vp-c-brand-1)]"
+                                        class="size-4 text-(--vp-c-brand-1)"
                                     >
                                         <path
                                             fill-rule="evenodd"
@@ -300,13 +300,13 @@ const createSlug = (id, name) => {
                                     >
                                 </div>
                             </div>
-                            <span class="text-[var(--vp-c-text-2)]"
+                            <span class="text-(--vp-c-text-2)"
                                 >Last Updated:
                                 {{ formatDate(item.last_update) }}</span
                             >
                         </div>
-                        <div class="flex-grow min-h-[3rem] my-2">
-                            <p class="text-[var(--vp-c-text-2)] line-clamp-2">
+                        <div class="grow min-h-12 my-2">
+                            <p class="text-(--vp-c-text-2) line-clamp-2">
                                 {{ item.description }}
                             </p>
                         </div>
@@ -318,7 +318,7 @@ const createSlug = (id, name) => {
                                     title="Rating"
                                 >
                                     <star-fill class="size-4 fill-[#fed53d]" />
-                                    <span class="text-[var(--vp-c-text-2)]"
+                                    <span class="text-(--vp-c-text-2)"
                                         >{{ item.rating }} ({{
                                             item.review_count
                                         }})</span
@@ -332,7 +332,7 @@ const createSlug = (id, name) => {
                                     <shopping-bag-4-fill
                                         class="size-4 fill-[#9ca3af]"
                                     />
-                                    <span class="text-[var(--vp-c-text-2)]">{{
+                                    <span class="text-(--vp-c-text-2)">{{
                                         item.purchase_count
                                     }}</span>
                                 </div>
@@ -343,7 +343,7 @@ const createSlug = (id, name) => {
                                     <download-fill
                                         class="size-4 fill-[#9ca3af]"
                                     />
-                                    <span class="text-[var(--vp-c-text-2)]">{{
+                                    <span class="text-(--vp-c-text-2)">{{
                                         formatDownloads(item.downloads)
                                     }}</span>
                                 </div>
@@ -360,10 +360,10 @@ const createSlug = (id, name) => {
             v-if="!isLoading && itemsToDisplay.length === 0 && !error"
             class="text-center py-16"
         >
-            <h3 class="text-xl font-semibold text-[var(--vp-c-text-1)] mb-2">
+            <h3 class="text-xl font-semibold text-(--vp-c-text-1) mb-2">
                 No results found
             </h3>
-            <p class="text-[var(--vp-c-text-2)]">
+            <p class="text-(--vp-c-text-2)">
                 Try adjusting your search or filter criteria.
             </p>
         </div>
@@ -371,13 +371,13 @@ const createSlug = (id, name) => {
             <button
                 v-if="hasMore"
                 @click="loadMore"
-                class="px-8 py-4 bg-[var(--vp-c-brand-1)] text-white rounded-lg font-medium hover:bg-[var(--vp-c-brand-2)] transition-colors"
+                class="px-8 py-4 bg-(--vp-c-brand-1) text-white rounded-lg font-medium hover:bg-(--vp-c-brand-2) transition-colors"
             >
                 Load More
             </button>
             <p
                 v-if="!hasMore && !isLoading && masterItems.length > 0"
-                class="text-[var(--vp-c-text-2)]"
+                class="text-(--vp-c-text-2)"
             >
                 You've reached the end!
             </p>
@@ -386,13 +386,6 @@ const createSlug = (id, name) => {
 </template>
 
 <style scoped>
-.line-clamp-2 {
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-
 @keyframes swing-float {
     0%,
     100% {
