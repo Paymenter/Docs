@@ -65,6 +65,17 @@ featuresLanding:
     tagline: Built-in ticketing system
     desc: Create your own themes, modify and add what you need, create your custom experience for your customers.
 
+sponsors:
+  - name: NodeDog Consulting
+    url: https://nodedog.consulting/
+    component: nodedog
+  - name: WitherHosting
+    url: https://witherhosting.com/
+    component: witherhosting
+  - name: KaasHosting
+    url: https://kaashosting.nl/
+    component: kaashosting
+
 supportbanner:
   text: Support Us to Keep Going
   tagline: Your support enables us to keep developing and improving Paymenter for everyone. Each GitHub star and sponsorship helps us build the future of open-source billing.
