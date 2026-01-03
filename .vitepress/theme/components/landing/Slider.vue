@@ -120,22 +120,14 @@ export default {
                 aria-label="Previous"
                 class="absolute z-10 top-1/2 -translate-y-1/2 left-5 p-2.5 bg-(--vp-c-bg) border border-(--vp-c-divider) rounded-lg cursor-pointer hover:bg-blue-500/10"
             >
-                <svg class="size-6 fill-current" viewBox="0 0 24 24">
-                    <path
-                        d="M10.8284 12.0007L15.7782 16.9504L14.364 18.3646L8 12.0007L14.364 5.63672L15.7782 7.05093L10.8284 12.0007Z"
-                    ></path>
-                </svg>
+                <arrow-left-s-line class="size-6 fill-current" />
             </button>
             <button
                 @click="nextSlide"
                 aria-label="Next"
                 class="absolute z-10 top-1/2 -translate-y-1/2 right-5 p-2.5 bg-(--vp-c-bg) border border-(--vp-c-divider) rounded-lg cursor-pointer hover:bg-blue-500/10"
             >
-                <svg class="size-6 fill-current" viewBox="0 0 24 24">
-                    <path
-                        d="M13.1717 12.0007L8.22192 7.05093L9.63614 5.63672L16.0001 12.0007L9.63614 18.3646L8.22192 16.9504L13.1717 12.0007Z"
-                    ></path>
-                </svg>
+                <arrow-right-s-line class="size-6 fill-current" />
             </button>
         </div>
 
