@@ -23,6 +23,15 @@ export default {
     latestVersion: "1.0.0",
   },
 
+  transformPageData(pageData) {
+    if (pageData.params && pageData.params.name) {
+      pageData.title = pageData.params.name;
+      pageData.frontmatter.title = pageData.params.name;
+      pageData.description = pageData.params.description;
+      pageData.frontmatter.description = pageData.params.description;
+    }
+  },
+
   transformHead: ({ pageData }) => {
     const head = [];
 
@@ -105,9 +114,17 @@ export default {
     nav: [
       { text: "Home", link: "/" },
       { text: "Docs", link: "/docs/installation/install" },
-      { text: "Releases", link: "/release/v1.4-release" },
       { text: "Development", link: "/development/extensions/index.md" },
       { text: "Marketplace", link: "/marketplace" },
+      {
+        text: "About",
+        activeMatch: `^/about/`,
+        items: [
+          { text: "Releases", link: "/releases" },
+          { text: "Brand", link: "/brand" },
+          { text: "Team", link: "/team" },
+        ],
+      },
     ],
 
     logo: {
@@ -219,15 +236,15 @@ export default {
           ],
         },
       ],
-      "/release/": [
+      "/releases/": [
         {
           text: "Index",
           items: [
-            { text: "V1.4 Release", link: "/release/v1.4-release" },
-            { text: "V1.3 Release", link: "/release/v1.3-release" },
-            { text: "V1.2 Release", link: "/release/v1.2-release" },
-            { text: "V1.1 Release", link: "/release/v1.1-release" },
-            { text: "V1 Release", link: "/release/v1-release" },
+            { text: "V1.4 Release", link: "/releases/v1.4-release" },
+            { text: "V1.3 Release", link: "/releases/v1.3-release" },
+            { text: "V1.2 Release", link: "/releases/v1.2-release" },
+            { text: "V1.1 Release", link: "/releases/v1.1-release" },
+            { text: "V1 Release", link: "/releases/v1-release" },
           ],
         },
       ],
