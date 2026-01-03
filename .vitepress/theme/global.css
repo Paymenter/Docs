@@ -58,18 +58,12 @@
     }
 }
 
-/* Sponsors button animation, greyscale on default, color on hover */
-.sponsor-logo {
-    filter: grayscale(100%);
-    transition: filter 0.3s;
-}
-.sponsor-logo:hover {
-    filter: grayscale(0%);
+@utility card {
+    @apply bg-(--vp-c-bg-soft) backdrop-blur-sm rounded-xl overflow-hidden border border-(--vp-c-border);
 }
 
-/* Group hover version for sponsor logos */
-.group:hover .sponsor-logo {
-    filter: grayscale(0%);
+@utility card-hover {
+    @apply transition-all duration-300 hover:border-(--vp-c-brand-1)/50;
 }
 
 /* /////////////////// */
