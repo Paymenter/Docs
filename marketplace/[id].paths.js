@@ -2,7 +2,7 @@ export default {
   async paths() {
     try {
       const response = await fetch(
-        "https://api.paymenter.org/extensions?limit=999",
+        "https://api.paymenter.org/extensions?limit=999&longDescription=true",
       );
 
       if (!response.ok) {
@@ -31,6 +31,7 @@ export default {
             url: item.url,
             description: item.tag_line,
             type: item.type,
+            long_description: item.long_description,
             rating: item.review_average,
             downloads: item.download_count,
             last_update: item.last_update_date,
