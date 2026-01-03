@@ -44,6 +44,15 @@ const copyLink = async () => {
 const parseBBCode = (input) => {
     if (!input) return "";
 
+    function escape(unsafe) {
+      return unsafe
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+    }
+
     const addRef = (url) => {
         if (!url.includes("builtbybit.com") || url.includes("ref=")) return url;
         return url + (url.includes("?") ? "&" : "?") + "ref=398830";
@@ -51,47 +60,46 @@ const parseBBCode = (input) => {
 
     let html = input
         // Basic formatting
-        .replace(/\[B\](.*?)\[\/B\]/gi, "<b>$1</b>")
-        .replace(/\[I\](.*?)\[\/I\]/gi, "<i>$1</i>")
-        .replace(/\[U\](.*?)\[\/U\]/gi, "<u>$1</u>")
-        .replace(/\[S\](.*?)\[\/S\]/gi, "<s>$1</s>")
+        .replace(/\[B\](.*?)\[\/B\]/gi, (match, content) => `<b>${escape(content)}</b>`)
+        .replace(/\[I\](.*?)\[\/I\]/gi, (match, content) => `<i>${escape(content)}</i>`)
+        .replace(/\[U\](.*?)\[\/U\]/gi, (match, content) => `<u>${escape(content)}</u>`)
+        .replace(/\[S\](.*?)\[\/S\]/gi, (match, content) => `<s>${escape(content)}</s>`)
         .replace(
             /\[COLOR=(.*?)\](.*?)\[\/COLOR\]/gi,
-            '<span style="color:$1">$2</span>',
+            (match, color, content) => `<span style="color:${escape(color)}">${escape(content)}</span>`,
         )
         .replace(
             /\[SIZE=(.*?)\](.*?)\[\/SIZE\]/gi,
-            '<span style="font-size:1.1em">$2</span>',
+            (match, size, content) => `<span style="font-size:1.1em">${escape(content)}</span>`,
         )
-
         // Headings
         .replace(
             /\[HEADING=1\](.*?)\[\/HEADING\]/gi,
-            '<h1 class="text-2xl font-bold mt-4 mb-2">$1</h1>',
+            (match, content) => `<h1 class="text-2xl font-bold mt-4 mb-2">${escape(content)}</h1>`,
         )
         .replace(
             /\[HEADING=2\](.*?)\[\/HEADING\]/gi,
-            '<h2 class="text-xl font-bold mt-4 mb-2">$1</h2>',
+            (match, content) => `<h2 class="text-xl font-bold mt-4 mb-2">${escape(content)}</h2>`,
         )
         .replace(
             /\[HEADING=3\](.*?)\[\/HEADING\]/gi,
-            '<h3 class="text-lg font-bold mt-4 mb-2">$1</h3>',
+            (match, content) => `<h3 class="text-lg font-bold mt-4 mb-2">${escape(content)}</h3>`,
         )
 
         // Links and images
         .replace(
             /\[URL='?(.*?)'?\](.*?)\[\/URL\]/gi,
             (match, url, text) =>
-                `<a href="${addRef(url)}" target="_blank" class="text-[var(--vp-c-brand-1)] hover:underline">${text}</a>`,
+                `<a href="${addRef(escape(url))}" target="_blank" class="text-[var(--vp-c-brand-1)] hover:underline">${escape(text)}</a>`,
         )
         .replace(
             /\[URL\](.*?)\[\/URL\]/gi,
             (match, url) =>
-                `<a href="${addRef(url)}" target="_blank" class="text-[var(--vp-c-brand-1)] hover:underline">${url}</a>`,
+                `<a href="${addRef(escape(url))}" target="_blank" class="text-[var(--vp-c-brand-1)] hover:underline">${escape(url)}</a>`,
         )
         .replace(
             /\[IMG\](.*?)\[\/IMG\]/gi,
-            '<img src="$1" class="max-w-full rounded-lg my-2" />',
+            (match, src) => `<img src="${escape(src)}" class="max-w-full rounded-lg my-2" />`,
         )
 
         // Attachments
@@ -103,30 +111,30 @@ const parseBBCode = (input) => {
         // Lists
         .replace(
             /\[LIST\](.*?)\[\/LIST\]/gis,
-            '<ul class="list-disc pl-5 my-4 space-y-1">$1</ul>',
+            (match, content) => `<ul class="list-disc pl-5 my-4 space-y-1">${escape(content)}</ul>`,
         )
         .replace(
             /\[LIST=1\](.*?)\[\/LIST\]/gis,
-            '<ol class="list-decimal pl-5 my-4 space-y-1">$1</ol>',
+            (match, content) => `<ol class="list-decimal pl-5 my-4 space-y-1">${escape(content)}</ol>`,
         )
         .replace(/\[\*\]/gi, "<li>")
 
         // Code and quotes
         .replace(
             /\[CODE\](.*?)\[\/CODE\]/gis,
-            '<pre class="bg-gray-100 dark:bg-gray-800 p-3 rounded-md overflow-x-auto text-sm my-2"><code>$1</code></pre>',
+            (match, code) => `<pre class="bg-gray-100 dark:bg-gray-800 p-3 rounded-md overflow-x-auto text-sm my-2"><code>${escape(code)}</code></pre>`,
         )
         .replace(
             /\[ICODE\](.*?)\[\/ICODE\]/gi,
-            '<code class="bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded text-sm font-mono">$1</code>',
+            (match, code) => `<code class="bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded text-sm font-mono">${escape(code)}</code>`,
         )
         .replace(
             /\[QUOTE\](.*?)\[\/QUOTE\]/gis,
-            '<blockquote class="border-l-4 border-[var(--vp-c-brand-1)] pl-4 italic my-4 bg-[var(--vp-c-bg-soft)] p-2 rounded-r">$1</blockquote>',
+            (match, content) => `<blockquote class="border-l-4 border-[var(--vp-c-brand-1)] pl-4 italic my-4 bg-[var(--vp-c-bg-soft)] p-2 rounded-r">${escape(content)}</blockquote>`,
         )
 
         // Layout
-        .replace(/\[INDENT\](.*?)\[\/INDENT\]/gis, '<div class="pl-6">$1</div>')
+        .replace(/\[INDENT\](.*?)\[\/INDENT\]/gis, (match, content) => `<div class="pl-6">${escape(content)}</div>`)
         .replace(/\n/g, "<br>");
 
     return html;

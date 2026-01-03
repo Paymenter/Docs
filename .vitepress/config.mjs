@@ -19,6 +19,10 @@ export default {
 
   cleanUrls: true,
 
+  sitemap: {
+    hostname: "https://paymenter.org",
+  },
+
   versioning: {
     latestVersion: "1.0.0",
   },
@@ -57,7 +61,11 @@ export default {
     ]);
 
     // If path is / use textlogo, else use generated image
-    if (pageData.relativePath && pageData.relativePath !== "index.md") {
+    if (
+      pageData.relativePath &&
+      pageData.relativePath !== "index.md" &&
+      pageData.filePath !== 'marketplace/[id].md'
+    ) {
       head.push([
         "meta",
         {
@@ -91,6 +99,20 @@ export default {
           content: `/${pageData.relativePath.replace(".md", "")}/og-image.png`,
         },
       ]);
+    } else if (
+      pageData.filePath === 'marketplace/[id].md'
+    ) {
+      if (pageData.params.image) {
+        head.push([
+          "meta",
+          { property: "og:image", content: pageData.params.image },
+        ]);
+        head.push([
+          "meta",
+          { property: "twitter:image", content: pageData.params.image },
+        ]);
+      }
+      
     } else {
       head.push(["meta", { property: "og:image", content: "/textlogo.png" }]);
       head.push([
