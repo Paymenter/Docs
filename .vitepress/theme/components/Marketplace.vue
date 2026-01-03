@@ -1,4 +1,5 @@
 <script setup>
+import Breadcrumb from "./Breadcrumb.vue";
 import SectionBlock from "@components/landing/SectionBlock.vue";
 import { ref, computed, onMounted, onUnmounted, watch } from "vue";
 
@@ -156,7 +157,8 @@ const createSlug = (id, name) => {
 </script>
 
 <template>
-    <div class="container mx-auto max-w-(--vp-layout-max-width) p-6 mt-8">
+    <div class="container mx-auto max-w-(--vp-layout-max-width) p-6 lg:p-8">
+        <Breadcrumb :items="[{ text: 'Marketplace' }]" />
         <SectionBlock
             icon="shopping-bag-4-fill"
             tagline="Paymenter Marketplace"
@@ -245,10 +247,10 @@ const createSlug = (id, name) => {
                     v-for="item in itemsToDisplay"
                     :key="item.id"
                     :href="`/marketplace/${createSlug(item.id, item.name)}`"
-                    class="group bg-(--vp-c-bg-alt)/50 backdrop-blur-sm border border-(--vp-c-border) rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:border-(--vp-c-brand-1)/50 h-full flex flex-col"
+                    class="group card h-full flex flex-col"
                 >
                     <div
-                        class="relative h-48 bg-linear-to-br from-(--vp-c-brand-1)/10 to-(--vp-c-brand-1)/5 flex items-center justify-center shrink-0 overflow-hidden"
+                        class="relative h-55.5 bg-linear-to-br from-(--vp-c-brand-1)/10 to-(--vp-c-brand-1)/5 flex items-center justify-center shrink-0 overflow-hidden"
                     >
                         <img
                             :src="item.image"
@@ -264,6 +266,16 @@ const createSlug = (id, name) => {
                                 class="px-3 py-1 bg-(--vp-c-brand-1) text-white text-xs font-medium rounded-full capitalize"
                                 >{{ item.type }}</span
                             >
+
+                            <!-- <span
+                                class="flex capitalize items-center justify-center rounded-lg bg-linear-to-b from-purple-500 via-red-500 to-yellow-500 p-[1.5px] text-white"
+                            >
+                                <div
+                                    class="text-xs px-2 py-1 flex h-full w-full items-center justify-center rounded-lg bg-[var(--vp-c-bg)]"
+                                >
+                                    {{ item.type }}
+                                </div>
+                            </span> -->
                         </div>
                     </div>
                     <div class="flex flex-col p-6 grow">
