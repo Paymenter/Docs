@@ -5,7 +5,7 @@ const { frontmatter } = useData();
 </script>
 
 <template>
-    <section class="relative overflow-hidden mt-12 minh-72 rounded-3xl">
+    <section class="relative overflow-hidden mt-12 min-h-72 rounded-3xl">
         <div
             class="relative lg:p-14 p-8 bg-linear-to-br from-[#111827] to-[#4213CE]/60"
         >
@@ -81,7 +81,7 @@ const { frontmatter } = useData();
             </div>
 
             <div
-                class="w-[900px] rotate-x-50 -rotate-z-25 translate-x-[80%] -translate-y-24 skew-x-10 skew-y-[-5deg] bg-white/10 absolute inset-18 -m-3 rounded-3xl border border-white/20 p-2.5 isolate"
+                class="w-[900px] rotate-x-50 -rotate-z-25 translate-x-[80%] -translate-y-24 skew-x-10 skew-y-[-5deg] bg-white/5 absolute top-18 left-18 h-fit -m-3 rounded-3xl border border-white/30 p-2.5 isolate pointer-events-none"
             >
                 <img
                     class="rounded-2xl"
