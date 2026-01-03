@@ -65,6 +65,17 @@ featuresLanding:
     tagline: Built-in ticketing system
     desc: Create your own themes, modify and add what you need, create your custom experience for your customers.
 
+sponsors:
+  - name: NodeDog Consulting
+    url: https://nodedog.consulting/
+    component: nodedog
+  - name: WitherHosting
+    url: https://witherhosting.com/
+    component: witherhosting
+  - name: KaasHosting
+    url: https://kaashosting.nl/
+    component: kaashosting
+
 supportbanner:
   text: Support Us to Keep Going
   tagline: Your support enables us to keep developing and improving Paymenter for everyone. Each GitHub star and sponsorship helps us build the future of open-source billing.
@@ -78,7 +89,6 @@ supportbanner:
   import Slider from '@theme/components/landing/Slider.vue'
   import Features from '@theme/components/landing/Features.vue'
   import SupportBanner from '@theme/components/landing/SupportBanner.vue'
-  import CustomFooter from '@theme/components/CustomFooter.vue'
 </script>
 
 <div class="w-full h-full overflow-hidden lg:mask-b-from-70% mask-b-from-90%">
@@ -90,8 +100,4 @@ supportbanner:
 <div class="container mx-auto max-w-(--vp-layout-max-width)">
     <Features />
     <SupportBanner />
-</div>
-
-<div class="w-full overflow-hidden lg:mask-b-from-70% mask-b-from-90%">
-    <CustomFooter />
 </div>

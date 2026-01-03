@@ -7,12 +7,12 @@
   },
   "dependencies": {
     "@cloudflare/pages-plugin-vercel-og": "^0.1.2",
-    "@scalar/api-reference": "^1.40.0",
+    "@scalar/api-reference": "^1.40.9",
     "keen-slider": "^6.8.6",
-    "react": "^18.3.1",
-    "@tailwindcss/vite": "^4.1.17",
-    "tailwindcss": "^4.1.17",
+    "react": "^19.2.3",
+    "@tailwindcss/vite": "^4.1.18",
+    "tailwindcss": "^4.1.18",
     "vitepress": "^1.6.4"
   },
-  "packageManager": "pnpm@9.4.0+sha1.9217c800d4ab947a7aee520242a7b70d64fc7638"
+  "packageManager": "pnpm@10.27.0"
 }
