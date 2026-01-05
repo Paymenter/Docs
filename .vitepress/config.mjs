@@ -124,6 +124,11 @@ export default {
             image: pageData.params.image,
             name: pageData.frontmatter.title,
             description: pageData.frontmatter.description,
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: pageData.params.rating,
+              reviewCount: pageData.params.reviewCount,
+            },
           },
           reviewRating: {
             "@type": "Rating",
