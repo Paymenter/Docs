@@ -99,6 +99,34 @@ export default {
           content: `/${pageData.relativePath.replace(".md", "")}/og-image.png`,
         },
       ]);
+
+      // Add structured data for marketplace items
+      head.push([
+        "script",
+        {},
+        JSON.stringify({
+          "@context": "https://schema.org/",
+          "@type": "Review",
+          itemReviewed: {
+            "@type": "Product",
+            image: pageData.params.image,
+            name: pageData.frontmatter.title,
+            description: pageData.frontmatter.description,
+          },
+          reviewRating: {
+            "@type": "Rating",
+            ratingValue: pageData.params.rating,
+          },
+          author: {
+            "@type": "Person",
+            name: pageData.params.author,
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "Paymenter",
+          },
+        }),
+      ]);
     } else if (
       pageData.filePath === 'marketplace/[id].md'
     ) {
