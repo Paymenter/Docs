@@ -123,7 +123,7 @@ export default {
           aggregateRating: {
             "@type": "AggregateRating",
             ratingValue: pageData.params.rating,
-            reviewCount: pageData.params.reviewCount,
+            reviewCount: pageData.params.review_count,
           },
         }),
       ]);
