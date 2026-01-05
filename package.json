@@ -13,5 +13,6 @@
     "@tailwindcss/vite": "^4.1.18",
     "tailwindcss": "^4.1.18",
     "vitepress": "^1.6.4"
-  }
+  },
+  "packageManager": "pnpm@10.27.0"
 }
