@@ -64,7 +64,7 @@ export default {
     if (
       pageData.relativePath &&
       pageData.relativePath !== "index.md" &&
-      pageData.filePath !== 'marketplace/[id].md'
+      pageData.filePath !== "marketplace/[id].md"
     ) {
       head.push([
         "meta",
@@ -99,47 +99,7 @@ export default {
           content: `/${pageData.relativePath.replace(".md", "")}/og-image.png`,
         },
       ]);
-
-      // Add structured data for marketplace items
-      head.push([
-        "script",
-        {},
-        JSON.stringify({
-          "@context": "https://schema.org/",
-          "@type": "Review",
-          itemReviewed: {
-            "@type": "Product",
-            image: pageData.params.image
-              ? pageData.params.image
-              : "https://paymenter.org/textlogo.png",
-            name: pageData.frontmatter.title
-              ? pageData.frontmatter.title
-              : "Paymenter",
-            description: pageData.frontmatter.description
-              ? pageData.frontmatter.description
-              : "Paymenter is an open source payment gateway for your hosting.",
-          },
-          reviewRating: {
-            "@type": "Rating",
-            ratingValue: pageData.params.rating
-              ? pageData.params.rating
-              : 5,
-          },
-          author: {
-            "@type": "Person",
-            name: pageData.params.author
-              ? pageData.params.author
-              : "Paymenter Team",
-          },
-          publisher: {
-            "@type": "Organization",
-            name: "Paymenter",
-          },
-        }),
-      ]);
-    } else if (
-      pageData.filePath === 'marketplace/[id].md'
-    ) {
+    } else if (pageData.filePath === "marketplace/[id].md") {
       if (pageData.params.image) {
         head.push([
           "meta",
@@ -150,7 +110,34 @@ export default {
           { property: "twitter:image", content: pageData.params.image },
         ]);
       }
-      
+
+      // Add structured data for marketplace items
+      head.push([
+        "script",
+        {},
+        JSON.stringify({
+          "@context": "https://schema.org/",
+          "@type": "Review",
+          itemReviewed: {
+            "@type": "Product",
+            image: pageData.params.image,
+            name: pageData.frontmatter.title,
+            description: pageData.frontmatter.description,
+          },
+          reviewRating: {
+            "@type": "Rating",
+            ratingValue: pageData.params.rating,
+          },
+          author: {
+            "@type": "Person",
+            name: pageData.params.author,
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "Paymenter",
+          },
+        }),
+      ]);
     } else {
       head.push(["meta", { property: "og:image", content: "/textlogo.png" }]);
       head.push([
