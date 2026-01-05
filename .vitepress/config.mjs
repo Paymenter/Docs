@@ -115,7 +115,7 @@ export default {
       // Add structured data for marketplace items
       head.push([
         "script",
-        {},
+        { type: "application/ld+json" },
         JSON.stringify({
           "@context": "https://schema.org/",
           "@type": "Review",
