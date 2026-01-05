@@ -109,17 +109,27 @@ export default {
           "@type": "Review",
           itemReviewed: {
             "@type": "Product",
-            image: pageData.params.image,
-            name: pageData.frontmatter.title,
-            description: pageData.frontmatter.description,
+            image: pageData.params.image
+              ? pageData.params.image
+              : "https://paymenter.org/textlogo.png",
+            name: pageData.frontmatter.title
+              ? pageData.frontmatter.title
+              : "Paymenter",
+            description: pageData.frontmatter.description
+              ? pageData.frontmatter.description
+              : "Paymenter is an open source payment gateway for your hosting.",
           },
           reviewRating: {
             "@type": "Rating",
-            ratingValue: pageData.params.rating,
+            ratingValue: pageData.params.rating
+              ? pageData.params.rating
+              : 5,
           },
           author: {
             "@type": "Person",
-            name: pageData.params.author,
+            name: pageData.params.author
+              ? pageData.params.author
+              : "Paymenter Team",
           },
           publisher: {
             "@type": "Organization",
