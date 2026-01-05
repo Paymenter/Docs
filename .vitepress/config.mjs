@@ -112,7 +112,33 @@ export default {
           { property: "twitter:image", content: pageData.params.image },
         ]);
       }
-      
+      // Add structured data for marketplace items
+      head.push([
+        "script",
+        {},
+        JSON.stringify({
+          "@context": "https://schema.org/",
+          "@type": "Review",
+          itemReviewed: {
+            "@type": "Product",
+            image: pageData.params.image,
+            name: pageData.frontmatter.title,
+            description: pageData.frontmatter.description,
+          },
+          reviewRating: {
+            "@type": "Rating",
+            ratingValue: pageData.params.rating,
+          },
+          author: {
+            "@type": "Person",
+            name: pageData.params.author,
+          },
+          publisher: {
+            "@type": "Organization",
+            name: "Paymenter",
+          },
+        }),
+      ]);
     } else {
       head.push(["meta", { property: "og:image", content: "/textlogo.png" }]);
       head.push([
