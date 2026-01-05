@@ -64,7 +64,7 @@ export default {
     if (
       pageData.relativePath &&
       pageData.relativePath !== "index.md" &&
-      pageData.filePath !== 'marketplace/[id].md'
+      pageData.filePath !== "marketplace/[id].md"
     ) {
       head.push([
         "meta",
@@ -99,9 +99,7 @@ export default {
           content: `/${pageData.relativePath.replace(".md", "")}/og-image.png`,
         },
       ]);
-    } else if (
-      pageData.filePath === 'marketplace/[id].md'
-    ) {
+    } else if (pageData.filePath === "marketplace/[id].md") {
       if (pageData.params.image) {
         head.push([
           "meta",
@@ -118,29 +116,14 @@ export default {
         { type: "application/ld+json" },
         JSON.stringify({
           "@context": "https://schema.org/",
-          "@type": "Review",
-          itemReviewed: {
-            "@type": "Product",
-            image: pageData.params.image,
-            name: pageData.frontmatter.title,
-            description: pageData.frontmatter.description,
-            aggregateRating: {
-              "@type": "AggregateRating",
-              ratingValue: pageData.params.rating,
-              reviewCount: pageData.params.reviewCount,
-            },
-          },
-          reviewRating: {
-            "@type": "Rating",
+          "@type": "Product",
+          image: pageData.params.image,
+          name: pageData.frontmatter.title,
+          description: pageData.frontmatter.description,
+          aggregateRating: {
+            "@type": "AggregateRating",
             ratingValue: pageData.params.rating,
-          },
-          author: {
-            "@type": "Person",
-            name: pageData.params.author,
-          },
-          publisher: {
-            "@type": "Organization",
-            name: "Paymenter",
+            reviewCount: pageData.params.reviewCount,
           },
         }),
       ]);
