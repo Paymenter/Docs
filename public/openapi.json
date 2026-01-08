@@ -4822,18 +4822,14 @@
                                     "data"
                                 ]
                             },
-                            "property": {
+                            "properties": {
                                 "type": "object",
                                 "properties": {
                                     "data": {
-                                        "anyOf": [
-                                            {
-                                                "$ref": "#/components/schemas/PropertyResourceIdentifier"
-                                            },
-                                            {
-                                                "type": "null"
-                                            }
-                                        ]
+                                        "type": "array",
+                                        "items": {
+                                            "$ref": "#/components/schemas/PropertyResourceIdentifier"
+                                        }
                                     }
                                 },
                                 "required": [
