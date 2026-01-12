@@ -75,6 +75,9 @@ sponsors:
   - name: KaasHosting
     url: https://kaashosting.nl/
     component: kaashosting
+  - name: Rehzzo
+    url: https://rehzzo.com/
+    component: rehzzo
 
 supportbanner:
   text: Support Us to Keep Going
