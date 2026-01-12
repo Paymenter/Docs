@@ -66,9 +66,6 @@ featuresLanding:
     desc: Create your own themes, modify and add what you need, create your custom experience for your customers.
 
 sponsors:
-  - name: NodeDog Consulting
-    url: https://nodedog.consulting/
-    component: nodedog
   - name: WitherHosting
     url: https://witherhosting.com/
     component: witherhosting

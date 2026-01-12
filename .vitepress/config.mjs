@@ -21,6 +21,19 @@ export default {
 
   sitemap: {
     hostname: "https://paymenter.org",
+    transformItems: (items) => {
+      return items.map((item) => {
+        var excludedPaths = [
+          'anniversary/',
+          'README',
+          'CONTRIBUTING',
+        ];
+        if (excludedPaths.includes(item.url)) {
+          return null;
+        }
+        return item;
+      }).filter(item => item !== null);
+    },
   },
 
   versioning: {
