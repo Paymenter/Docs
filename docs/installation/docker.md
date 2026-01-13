@@ -10,10 +10,10 @@ Installation guide for Paymenter using Docker.
 
 To install Paymenter using Docker, you will first need to install Docker and Docker Compose. You can find the installation instructions for your operating system on the [Docker website](https://docs.docker.com/get-docker/).
 
-Once you have Docker and Docker Compose installed, download the `docker-compose.example.yml` file from the [GitHub repository](https://github.com/Paymenter/Paymenter/blob/master/docker-compose.example.yml) using the following command:
+Once you have Docker and Docker Compose installed, download the `docker-compose.example.yml` file from the [GitHub repository](https://github.com/Paymenter/Paymenter/blob/v1.4.7/docker-compose.example.yml) using the following command:
 
 ```bash
-curl -Lo docker-compose.yml https://raw.githubusercontent.com/Paymenter/Paymenter/master/docker-compose.example.yml
+curl -Lo docker-compose.yml https://raw.githubusercontent.com/Paymenter/Paymenter/v1.4.7/docker-compose.example.yml
 ```
 
 You might want to edit the `docker-compose.yml` file to suit your needs. For example, you might want to change the database password or the port on which Paymenter will run.
