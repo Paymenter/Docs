@@ -64,6 +64,7 @@ const parseBBCode = (input) => {
         .replace(/\[I\](.*?)\[\/I\]/gi, (match, content) => `<i>${escape(content)}</i>`)
         .replace(/\[U\](.*?)\[\/U\]/gi, (match, content) => `<u>${escape(content)}</u>`)
         .replace(/\[S\](.*?)\[\/S\]/gi, (match, content) => `<s>${escape(content)}</s>`)
+        .replace(/\[HR\](.*?)\[\/HR\]/gi, '<hr />')
         .replace(
             /\[COLOR=(.*?)\](.*?)\[\/COLOR\]/gi,
             (match, color, content) => `<span style="color:${escape(color)}">${escape(content)}</span>`,
