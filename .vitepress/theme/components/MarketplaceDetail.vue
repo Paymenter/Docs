@@ -107,13 +107,13 @@ const parseBBCode = (input) => {
         // Lists
         .replace(
             /\[LIST\](.*?)\[\/LIST\]/gis,
-            (match, content) => `<ul class="list-disc pl-5 my-4 space-y-1">${escape(content)}</ul>`,
+            (match, content) => `<ul class="!list-disc pl-5 my-4 space-y-1">${escape(content)}</ul>`,
         )
         .replace(
             /\[LIST=1\](.*?)\[\/LIST\]/gis,
-            (match, content) => `<ol class="list-decimal pl-5 my-4 space-y-1">${escape(content)}</ol>`,
+            (match, content) => `<ol class="!list-decimal pl-5 my-4 space-y-1">${escape(content)}</ol>`,
         )
-        .replace(/\[\*\]/gi, `<li class="list-item list-inside">`)
+        .replace(/\[\*\]/gi, `<li class=" list-inside">`)
         // Code and quotes
         .replace(
             /\[CODE\](.*?)\[\/CODE\]/gis,
@@ -236,7 +236,7 @@ const parseBBCode = (input) => {
                                             params.description,
                                     )
                                 "
-                                class="text-[var(--vp-c-text-2)] space-y-2"
+                                class="text-[var(--vp-c-text-2)] space-y-2 "
                             ></div>
                         </div>
                     </div>
