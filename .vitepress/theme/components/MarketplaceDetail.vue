@@ -60,11 +60,6 @@ const parseBBCode = (input) => {
 
     let html = input
         // Basic formatting
-        .replace(/\[B\](.*?)\[\/B\]/gi, (match, content) => `<b>${escape(content)}</b>`)
-        .replace(/\[I\](.*?)\[\/I\]/gi, (match, content) => `<i>${escape(content)}</i>`)
-        .replace(/\[U\](.*?)\[\/U\]/gi, (match, content) => `<u>${escape(content)}</u>`)
-        .replace(/\[S\](.*?)\[\/S\]/gi, (match, content) => `<s>${escape(content)}</s>`)
-        .replace(/\[HR\](.*?)\[\/HR\]/gi, '<hr />')
         .replace(
             /\[COLOR=(.*?)\](.*?)\[\/COLOR\]/gi,
             (match, color, content) => `<span style="color:${escape(color)}">${escape(content)}</span>`,
@@ -118,8 +113,7 @@ const parseBBCode = (input) => {
             /\[LIST=1\](.*?)\[\/LIST\]/gis,
             (match, content) => `<ol class="list-decimal pl-5 my-4 space-y-1">${escape(content)}</ol>`,
         )
-        .replace(/\[\*\]/gi, "<li>")
-
+        .replace(/\[\*\]/gi, `<li class="list-item list-inside">`)
         // Code and quotes
         .replace(
             /\[CODE\](.*?)\[\/CODE\]/gis,
@@ -136,6 +130,12 @@ const parseBBCode = (input) => {
 
         // Layout
         .replace(/\[INDENT\](.*?)\[\/INDENT\]/gis, (match, content) => `<div class="pl-6">${escape(content)}</div>`)
+        // Text styles
+        .replace(/\[B\](.*?)\[\/B\]/gi, (match, content) => `<b>${escape(content)}</b>`)
+        .replace(/\[I\](.*?)\[\/I\]/gi, (match, content) => `<i>${escape(content)}</i>`)
+        .replace(/\[U\](.*?)\[\/U\]/gi, (match, content) => `<u>${escape(content)}</u>`)
+        .replace(/\[S\](.*?)\[\/S\]/gi, (match, content) => `<s>${escape(content)}</s>`)
+        .replace(/\[HR\](.*?)\[\/HR\]/gi, '<hr />')
         .replace(/\n/g, "<br>");
 
     return html;
