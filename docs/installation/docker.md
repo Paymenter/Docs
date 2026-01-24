@@ -55,4 +55,21 @@ This will prompt you for the username, email and password of the user.
 docker compose exec paymenter php artisan app:user:create
 ```
 
+## Building and Deploying the Default Theme
+
+::: info
+After installation or updates, you must build the default theme and switch to it, as updates may break other themes.
+:::
+
+Run the following command to build the default theme:
+```bash
+docker compose run --rm asset-builder npm install
+docker compose run --rm asset-builder npm run build default
+```
+
+Run the following command to switch to the default theme:
+```bash
+docker compose exec paymenter php artisan app:settings:change theme
+```
+
 Now your dockerized Paymenter installation is ready to use! The default port is `80`
