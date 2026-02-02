@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "@cloudflare/pages-plugin-vercel-og": "^0.1.2",
-    "@scalar/api-reference": "^1.40.9",
+    "@scalar/api-reference": "1.43.7",
     "keen-slider": "^6.8.6",
     "react": "^19.2.3",
     "@tailwindcss/vite": "^4.1.18",
