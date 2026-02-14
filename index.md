@@ -75,6 +75,9 @@ sponsors:
   - name: Rehzzo
     url: https://rehzzo.com/
     component: rehzzo
+  - name: Kuroit
+    url: https://kuroit.com/
+    component: kuroit
 
 supportbanner:
   text: Support Us to Keep Going
