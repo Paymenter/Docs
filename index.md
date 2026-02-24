@@ -66,6 +66,12 @@ featuresLanding:
     desc: Create your own themes, modify and add what you need, create your custom experience for your customers.
 
 sponsors:
+  - name: McSets
+    url: https://mcsets.com/
+    component: mcsets
+  - name: Kuroit
+    url: https://kuroit.com/
+    component: kuroit
   - name: WitherHosting
     url: https://witherhosting.com/
     component: witherhosting
@@ -75,9 +81,6 @@ sponsors:
   - name: Rehzzo
     url: https://rehzzo.com/
     component: rehzzo
-  - name: Kuroit
-    url: https://kuroit.com/
-    component: kuroit
 
 supportbanner:
   text: Support Us to Keep Going
