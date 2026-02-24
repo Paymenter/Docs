@@ -76,7 +76,7 @@ php artisan app:upgrade
 php artisan app:user:create
 ```
 
-### Send password reset email to a user
+### Reset a user's password
 
 ```bash
 php artisan app:user:password-reset <email>
