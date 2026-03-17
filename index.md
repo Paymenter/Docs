@@ -81,6 +81,9 @@ sponsors:
   - name: Rehzzo
     url: https://rehzzo.com/
     component: rehzzo
+  - name: DigitalInfra
+    url: https://digitalinfra.be
+    component: digitalinfra
 
 supportbanner:
   text: Support Us to Keep Going
