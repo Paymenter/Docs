@@ -127,7 +127,11 @@ const parseBBCode = (input) => {
             /\[QUOTE\](.*?)\[\/QUOTE\]/gis,
             (match, content) => `<blockquote class="border-l-4 border-[var(--vp-c-brand-1)] pl-4 italic my-4 bg-[var(--vp-c-bg-soft)] p-2 rounded-r">${escape(content)}</blockquote>`,
         )
-
+        // Replace font
+        .replace(
+            /\[FONT=(.*?)\](.*?)\[\/FONT\]/gi,
+            (match, font, content) => `<span style="font-family:${escape(font)}">${escape(content)}</span>`,
+        )
         // Layout
         .replace(/\[INDENT\](.*?)\[\/INDENT\]/gis, (match, content) => `<div class="pl-6">${escape(content)}</div>`)
         // Text styles
