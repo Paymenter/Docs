@@ -69,6 +69,9 @@ sponsors:
   - name: McSets
     url: https://mcsets.com/
     component: mcsets
+  - name: Kuroit
+    url: https://kuroit.com/
+    component: kuroit
   - name: WitherHosting
     url: https://witherhosting.com/
     component: witherhosting
