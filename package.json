@@ -1,16 +1,16 @@
 {
   "scripts": {
-    "docs:dev": "vitepress dev",
-    "docs:build": "vitepress build",
-    "docs:preview": "vitepress preview",
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview",
     "version": "bash version.sh"
   },
   "dependencies": {
     "@cloudflare/pages-plugin-vercel-og": "^0.1.2",
-    "@scalar/api-reference": "1.43.7",
+    "@scalar/api-reference": "^1.55.3",
+    "@tailwindcss/vite": "^4.1.18",
     "keen-slider": "^6.8.6",
     "react": "^19.2.3",
-    "@tailwindcss/vite": "^4.1.18",
     "tailwindcss": "^4.1.18",
     "vitepress": "^1.6.4"
   },

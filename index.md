@@ -66,9 +66,6 @@ featuresLanding:
     desc: Create your own themes, modify and add what you need, create your custom experience for your customers.
 
 sponsors:
-  - name: McSets
-    url: https://mcsets.com/
-    component: mcsets
   - name: Kuroit
     url: https://kuroit.com/
     component: kuroit
