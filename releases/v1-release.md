@@ -1,8 +1,8 @@
 ---
-title: V1 Release
+title: v1 Release
 description: First major release of Paymenter v1.0
 ---
-# V1 Release
+# v1 Release
 
 We're excited to announce the first release of our next MAJOR version, v1.0. This release is a significant milestone for us, and we're excited to share it with you.
 

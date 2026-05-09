@@ -287,13 +287,14 @@ export default {
       ],
       "/releases/": [
         {
-          text: "Index",
+          text: "Releases",
           items: [
-            { text: "V1.4 Release", link: "/releases/v1.4-release" },
-            { text: "V1.3 Release", link: "/releases/v1.3-release" },
-            { text: "V1.2 Release", link: "/releases/v1.2-release" },
-            { text: "V1.1 Release", link: "/releases/v1.1-release" },
-            { text: "V1 Release", link: "/releases/v1-release" },
+            { text: "v1.5 Release", link: "/releases/v1.5-release" },
+            { text: "v1.4 Release", link: "/releases/v1.4-release" },
+            { text: "v1.3 Release", link: "/releases/v1.3-release" },
+            { text: "v1.2 Release", link: "/releases/v1.2-release" },
+            { text: "v1.1 Release", link: "/releases/v1.1-release" },
+            { text: "v1 Release", link: "/releases/v1-release" },
           ],
         },
       ],

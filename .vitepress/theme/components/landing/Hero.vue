@@ -54,7 +54,7 @@ const hero = frontmatter.value.heroLanding;
             class="relative z-10 flex flex-col items-center justify-center text-center min-h-[50vh] py-24 px-4"
         >
             <div class="flex justify-center">
-                <a href="/releases/v1.4-release" class="mb-8">
+                <a href="/releases/v1.5-release" class="mb-8">
                     <div
                         class="flex items-center gap-2 rounded-full py-2 px-4 text-(--vp-c-text-1) bg-(--vp-c-bg-alt)/50 border border-(--vp-c-border) text-sm transition duration-200 will-change-transform hover:scale-105"
                     >
