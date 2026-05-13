@@ -13,11 +13,11 @@ next:
 | ---------------- | ------- | :-------: |
 | **Ubuntu**       | 24.04   |    ✅     |
 |                  | 22.04   |    ✅     |
-|                  | 20.04   |    ✅     |
-| **CentOS**       | 8       |    ✅     |
-|                  | 7       |    ✅     |
-| **Debian**       | 11      |    ✅     |
-|                  | 10      |    ✅     |
+| **CentOS**       | 9       |    ✅     |
+|                  | 8       |    ✅     |
+| **Debian**       | 13      |    ✅     |
+|                  | 12      |    ✅     |
+|                  | 11      |    ✅     |
 | **Windows**      | Any     |    ❌     |
 
 > [!TIP]
@@ -51,16 +51,26 @@ apt update
 apt -y install php8.3 php8.3-{common,cli,gd,mysql,mbstring,bcmath,xml,fpm,curl,zip,intl,redis} mariadb-server nginx tar unzip git redis-server
 ```
 
-```bash [Debian]
-apt -y install software-properties-common curl ca-certificates gnupg2 sudo lsb-release
+```bash [Debian 11/12]
+apt -y install curl ca-certificates gnupg2 sudo lsb-release
 
 echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/sury-php.list
+curl -fsSL https://packages.sury.org/php/apt.gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/sury-keyring.gpg
 
-curl -fsSL  https://packages.sury.org/php/apt.gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/sury-keyring.gpg
+curl -sSL https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash -s -- --mariadb-server-version="mariadb-10.11"
 
 apt update
 
-curl -sSL https://downloads.mariadb.com/MariaDB/mariadb_repo_setup | sudo bash -s -- --mariadb-server-version="mariadb-10.11"
+apt install -y php8.3 php8.3-{common,cli,gd,mysql,mbstring,bcmath,xml,fpm,curl,zip,intl,redis} mariadb-server nginx tar unzip git redis-server
+```
+
+```bash [Debian 13]
+apt -y install curl ca-certificates gnupg2 sudo lsb-release
+
+echo "deb https://packages.sury.org/php/ $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/sury-php.list
+curl -fsSL https://packages.sury.org/php/apt.gpg | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/sury-keyring.gpg
+
+apt update
 
 apt install -y php8.3 php8.3-{common,cli,gd,mysql,mbstring,bcmath,xml,fpm,curl,zip,intl,redis} mariadb-server nginx tar unzip git redis-server
 ```
