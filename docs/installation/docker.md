@@ -56,3 +56,15 @@ docker compose exec paymenter php artisan app:user:create
 ```
 
 Now your dockerized Paymenter installation is ready to use! The default port is `80`
+
+## NPM & Node
+
+The default docker setup includes an `asset-builder` service that can be used to run npm and node commands. This is useful for development and for building themes and extensions.
+
+To use the `asset-builder` service, you can run the following command:
+
+```bash
+docker compose run --rm asset-builder npm install
+docker compose run --rm asset-builder npm run build
+```
+
