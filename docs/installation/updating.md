@@ -6,31 +6,6 @@ description: "Update your Paymenter installation to the latest version"
 
 Before you start the upgrade process make sure that your extensions and themes are compatible with the new version. Check the extension/theme documentation or the marketplace for compatibility information.
 
-::: warning
-If your current version is below 1.0.0, please follow the [migration guide](/docs/guides/v0-migration.md) first.
-:::
-
-::: details For docker users
-If you are using the docker version of Paymenter, use the following commands to update:
-
-::: warning
-The `docker compose down -v` command clears non-persistent volumes (including built themes and extensions), which is necessary for the update. Themes and extensions source files are stored in persistent volumes and will be retained. This assumes you haven't made significant modifications to the default docker-compose file. If you have customized your setup extensively, please back up your data before proceeding with the update.
-:::
-
-```bash
-docker compose down -v
-docker compose pull
-docker compose up -d --force-recreate
-```
-
-::: info
-After the update completes, you must build the default theme and switch to it, as updates may break other themes.
-:::
-
-Run the following command to switch to the default theme:
-```bash
-docker compose exec paymenter php artisan app:settings:change theme default
-``` 
 
 ## Automatic update
 
@@ -92,3 +67,27 @@ php artisan up
 ```
 
 Update is now complete!
+
+
+## Docker
+
+If you are using the docker version of Paymenter, use the following commands to update:
+
+::: warning
+The `docker compose down -v` command clears non-persistent volumes (including built themes and extensions), which is necessary for the update. Themes and extensions source files are stored in persistent volumes and will be retained. This assumes you haven't made significant modifications to the default docker-compose file. If you have customized your setup extensively, please back up your data before proceeding with the update.
+:::
+
+```bash
+docker compose down -v
+docker compose pull
+docker compose up -d --force-recreate
+```
+
+::: info
+After the update completes, you must build the default theme and switch to it, as updates may break other themes.
+:::
+
+Run the following command to switch to the default theme:
+```bash
+docker compose exec paymenter php artisan app:settings:change theme default
+``` 
