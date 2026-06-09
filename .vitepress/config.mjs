@@ -124,21 +124,30 @@ export default {
         ]);
       }
       // Add structured data for marketplace items
+      const productSchema = {
+        "@context": "https://schema.org/",
+        "@type": "Product",
+        image: pageData.params.image,
+        name: pageData.frontmatter.title,
+        description: pageData.frontmatter.description,
+      };
+      
+      // Only add aggregateRating if values exist
+      if (
+        pageData.params.rating != null &&
+        pageData.params.review_count != null
+      ) {
+        productSchema.aggregateRating = {
+          "@type": "AggregateRating",
+          ratingValue: pageData.params.rating,
+          reviewCount: pageData.params.review_count,
+        };
+      }
+      
       head.push([
         "script",
         { type: "application/ld+json" },
-        JSON.stringify({
-          "@context": "https://schema.org/",
-          "@type": "Product",
-          image: pageData.params.image,
-          name: pageData.frontmatter.title,
-          description: pageData.frontmatter.description,
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: pageData.params.rating,
-            reviewCount: pageData.params.review_count,
-          },
-        }),
+        JSON.stringify(productSchema),
       ]);
     } else {
       head.push(["meta", { property: "og:image", content: "/textlogo.png" }]);
