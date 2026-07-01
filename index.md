@@ -78,6 +78,9 @@ sponsors:
   - name: Rehzzo
     url: https://rehzzo.com/
     component: rehzzo
+  - name: Etheron Hosting
+    url: https://etheron.nl/
+    component: etheron
   - name: DigitalInfra
     url: https://digitalinfra.be
     component: digitalinfra
