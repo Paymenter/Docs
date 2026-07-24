@@ -1,6 +1,7 @@
 import fs, { link } from "fs";
 import path from "path";
 import tailwindcss from "@tailwindcss/vite";
+import { generateOgImage } from '../scripts/generate-og.mjs'
 
 export default {
   ignoreDeadLinks: true,
@@ -40,6 +41,8 @@ export default {
     latestVersion: "1.0.0",
   },
 
+  srcExclude: ["README.md", "CONTRIBUTING.md"],
+
   transformPageData(pageData) {
     if (pageData.params && pageData.params.name) {
       pageData.title = pageData.params.name;
@@ -49,7 +52,7 @@ export default {
     }
   },
 
-  transformHead: ({ pageData }) => {
+  transformHead: async ({ pageData }) => {
     const head = [];
 
     head.push([
@@ -112,6 +115,19 @@ export default {
           content: `/${pageData.relativePath.replace(".md", "")}/og-image.png`,
         },
       ]);
+      await generateOgImage(
+        pageData.frontmatter.title
+          ? pageData.frontmatter.title
+          : "Paymenter",
+        pageData.frontmatter.description
+          ? pageData.frontmatter.description
+          : "Paymenter is an open source payment gateway for your hosting.",
+        path.join(
+          __dirname, "../.vitepress/dist",
+          pageData.relativePath.replace(".md", ""),
+          "og-image.png"
+        )
+      );
     } else if (pageData.filePath === "marketplace/[id].md") {
       if (pageData.params.image) {
         head.push([
