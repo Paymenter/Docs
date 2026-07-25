@@ -177,7 +177,7 @@ const createSlug = (id, name) => {
                         v-model="searchQuery"
                         type="text"
                         placeholder="Search extensions and themes..."
-                        class="w-full pl-12 pr-4 py-4 bg-(--vp-c-bg) border-2 border-(--vp-c-border) rounded-xl text-(--vp-c-text-1) placeholder-(--vp-c-text-2) focus:border-(--vp-c-brand-1) focus:outline-none transition-colors"
+                        class="w-full text-(--vp-c-text-1) placeholder-(--vp-c-text-2) focus:border-(--vp-c-brand-1) focus:outline-none transition-colors"
                     />
                 </div>
             </div>
@@ -190,36 +190,33 @@ const createSlug = (id, name) => {
                 <button
                     @click="setFilter('all')"
                     :class="{
-                        'bg-(--vp-c-brand-1) border-(--vp-c-brand-1)':
+                        'text-(--vp-c-text-1) font-medium':
                             activeFilter === 'all',
-                        'bg-(--vp-c-bg) text-(--vp-c-text-2) border-(--vp-c-border) hover:border-(--vp-c-brand-1) hover:text-(--vp-c-text-1)':
-                            activeFilter !== 'all',
+                        'hover:text-(--vp-c-text-1) text-(--vp-c-text-2)': activeFilter !== 'all',
                     }"
-                    class="filter-button px-6 py-3 border-2 rounded-lg font-medium transition-all duration-200"
+                    class="transition-all duration-200"
                 >
                     All ({{ grandTotalItemCount }})
                 </button>
                 <button
                     @click="setFilter('extension')"
                     :class="{
-                        'bg-(--vp-c-brand-1) border-(--vp-c-brand-1)':
+                        'text-(--vp-c-text-1) font-medium':
                             activeFilter === 'extension',
-                        'bg-(--vp-c-bg) text-(--vp-c-text-2) border-(--vp-c-border) hover:border-(--vp-c-brand-1) hover:text-(--vp-c-text-1)':
-                            activeFilter !== 'extension',
+                        'hover:text-(--vp-c-text-1) text-(--vp-c-text-2)': activeFilter !== 'extension',
                     }"
-                    class="filter-button px-6 py-3 border-2 rounded-lg font-medium transition-all duration-200"
+                    class="transition-all duration-200"
                 >
                     Extensions ({{ grandTotalExtensionCount }})
                 </button>
                 <button
                     @click="setFilter('theme')"
                     :class="{
-                        'bg-(--vp-c-brand-1) border-(--vp-c-brand-1)':
+                        'text-(--vp-c-text-1) font-medium':
                             activeFilter === 'theme',
-                        'bg-(--vp-c-bg) text-(--vp-c-text-2) border-(--vp-c-border) hover:border-(--vp-c-brand-1) hover:text-(--vp-c-text-1)':
-                            activeFilter !== 'theme',
+                        'hover:text-(--vp-c-text-1) text-(--vp-c-text-2)': activeFilter !== 'theme',
                     }"
-                    class="filter-button px-6 py-3 border-2 rounded-lg font-medium transition-all duration-200"
+                    class="transition-all duration-200"
                 >
                     Themes ({{ grandTotalThemeCount }})
                 </button>
@@ -430,13 +427,5 @@ const createSlug = (id, name) => {
     border-width: 5px;
     border-style: solid;
     border-color: #1f2937 transparent transparent transparent;
-}
-
-.filter-button:not(.bg-\[var\(--vp-c-brand-1\)\]) {
-    color: var(--vp-c-text-2);
-}
-
-.filter-button:not(.bg-\[var\(--vp-c-brand-1\)\]):hover {
-    color: var(--vp-c-text-1);
 }
 </style>

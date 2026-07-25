@@ -10,7 +10,7 @@ const { frontmatter } = useData();
             class="relative lg:p-14 p-8 bg-linear-to-br from-[#111827] to-[#4213CE]/60"
         >
             <div class="absolute w-full h-full">
-                <svg id="noice" class="w-full h-full">
+                <svg id="noice" class="w-full h-full lg:scale-150 scale-125">
                     <filter id="noise-filter">
                         <feTurbulence
                             type="fractalNoise"
