@@ -283,7 +283,7 @@ const createSlug = (id, name) => {
                         </h3>
 
                         <div
-                            class="flex justify-between items-center text-sm mt-2 mb-2"
+                            class="flex justify-between items-center text-sm mb-2"
                         >
                             <div class="flex items-center gap-1.5">
                                 <span>By {{ item.author }}</span>
@@ -314,7 +314,7 @@ const createSlug = (id, name) => {
                                 {{ formatDate(item.last_update) }}</span
                             >
                         </div>
-                        <div class="grow min-h-12 my-2">
+                        <div class="grow min-h-12">
                             <p class="text-(--vp-c-text-2) line-clamp-2">
                                 {{ item.description }}
                             </p>
