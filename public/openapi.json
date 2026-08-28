@@ -4363,6 +4363,13 @@
                         ],
                         "format": "date-time"
                     },
+                    "suspend_hold_until": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "format": "date-time"
+                    },
                     "currency_code": {
                         "type": "string",
                         "example": "USD"
@@ -5480,6 +5487,13 @@
                                 ],
                                 "format": "date-time"
                             },
+                            "suspend_hold_until": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ],
+                                "format": "date-time"
+                            },
                             "updated_at": {
                                 "type": [
                                     "string",
@@ -5502,6 +5516,7 @@
                             "status",
                             "currency_code",
                             "expires_at",
+                            "suspend_hold_until",
                             "updated_at",
                             "created_at"
                         ]
@@ -6269,6 +6284,13 @@
                         "default": "pending"
                     },
                     "expires_at": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "format": "date-time"
+                    },
+                    "suspend_hold_until": {
                         "type": [
                             "string",
                             "null"
