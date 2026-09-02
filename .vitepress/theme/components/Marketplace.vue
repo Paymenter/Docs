@@ -16,13 +16,13 @@ const updateStateFromUrl = () => {
     searchQuery.value = new URLSearchParams(window.location.search).get("search") || "";
 };
 
-const syncUrlState = () => {
+const syncUrlState = (path = window.location.pathname) => {
     const queryParams = new URLSearchParams(window.location.search);
     if (searchQuery.value) queryParams.set("search", searchQuery.value);
     else queryParams.delete("search");
 
     const query = queryParams.toString();
-    const url = `${window.location.pathname}${query ? `?${query}` : ""}`;
+    const url = `${path}${query ? `?${query}` : ""}`;
     window.history.replaceState({}, "", url);
 };
 
@@ -32,7 +32,7 @@ const setFilter = (filter) => {
     if (filter === "theme") newPath = "/marketplace/themes";
 
     activeFilter.value = filter; // Update the reactive value directly
-    syncUrlState();
+    syncUrlState(newPath);
 };
 
 const isLoading = ref(true);
