@@ -439,7 +439,7 @@
                     {
                         "name": "include",
                         "in": "query",
-                        "description": "Available includes are `products`, `productsCount`, `productsExists`, `parent`, `parentCount`, `parentExists`, `children`, `childrenCount`, `childrenExists`. You can include multiple options by separating them with a comma.",
+                        "description": "Available includes are `products.plans.prices`, `products.plans.pricesCount`, `products.plans.pricesExists`, `parent`, `parentCount`, `parentExists`, `children`, `childrenCount`, `childrenExists`. You can include multiple options by separating them with a comma.",
                         "schema": {
                             "type": "string"
                         }
@@ -472,6 +472,13 @@
                     },
                     {
                         "name": "filter[parent_id]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filter[slug]",
                         "in": "query",
                         "schema": {
                             "type": "string"
@@ -600,7 +607,7 @@
                     {
                         "name": "include",
                         "in": "query",
-                        "description": "Available includes are `products`, `productsCount`, `productsExists`, `parent`, `parentCount`, `parentExists`, `children`, `childrenCount`, `childrenExists`. You can include multiple options by separating them with a comma.",
+                        "description": "Available includes are `products.plans.prices`, `products.plans.pricesCount`, `products.plans.pricesExists`, `parent`, `parentCount`, `parentExists`, `children`, `childrenCount`, `childrenExists`. You can include multiple options by separating them with a comma.",
                         "schema": {
                             "type": "string"
                         }
@@ -1400,6 +1407,13 @@
                     },
                     {
                         "name": "filter[name]",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "filter[slug]",
                         "in": "query",
                         "schema": {
                             "type": "string"
@@ -4349,6 +4363,13 @@
                         ],
                         "format": "date-time"
                     },
+                    "suspend_hold_until": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "format": "date-time"
+                    },
                     "currency_code": {
                         "type": "string",
                         "example": "USD"
@@ -5466,6 +5487,13 @@
                                 ],
                                 "format": "date-time"
                             },
+                            "suspend_hold_until": {
+                                "type": [
+                                    "string",
+                                    "null"
+                                ],
+                                "format": "date-time"
+                            },
                             "updated_at": {
                                 "type": [
                                     "string",
@@ -5488,6 +5516,7 @@
                             "status",
                             "currency_code",
                             "expires_at",
+                            "suspend_hold_until",
                             "updated_at",
                             "created_at"
                         ]
@@ -6255,6 +6284,13 @@
                         "default": "pending"
                     },
                     "expires_at": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "format": "date-time"
+                    },
+                    "suspend_hold_until": {
                         "type": [
                             "string",
                             "null"
