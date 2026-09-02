@@ -7,11 +7,23 @@ const masterItems = ref([]);
 const searchQuery = ref("");
 const activeFilter = ref("all");
 
-const updateFilterFromUrl = () => {
+const updateStateFromUrl = () => {
     const path = window.location.pathname;
     if (path === "/marketplace/extensions") activeFilter.value = "extension";
     else if (path === "/marketplace/themes") activeFilter.value = "theme";
     else activeFilter.value = "all";
+
+    searchQuery.value = new URLSearchParams(window.location.search).get("search") || "";
+};
+
+const syncUrlState = () => {
+    const queryParams = new URLSearchParams(window.location.search);
+    if (searchQuery.value) queryParams.set("search", searchQuery.value);
+    else queryParams.delete("search");
+
+    const query = queryParams.toString();
+    const url = `${window.location.pathname}${query ? `?${query}` : ""}`;
+    window.history.replaceState({}, "", url);
 };
 
 const setFilter = (filter) => {
@@ -19,8 +31,8 @@ const setFilter = (filter) => {
     if (filter === "extension") newPath = "/marketplace/extensions";
     if (filter === "theme") newPath = "/marketplace/themes";
 
-    window.history.replaceState({}, "", newPath);
     activeFilter.value = filter; // Update the reactive value directly
+    syncUrlState();
 };
 
 const isLoading = ref(true);
@@ -76,12 +88,14 @@ const handleScroll = () => {
 };
 
 onMounted(() => {
-    updateFilterFromUrl(); // Set initial filter based on URL
+    updateStateFromUrl(); // Set initial state based on URL
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("popstate", updateStateFromUrl);
 });
 
 onUnmounted(() => {
     window.removeEventListener("scroll", handleScroll);
+    window.removeEventListener("popstate", updateStateFromUrl);
 });
 
 onMounted(fetchAndProcessAllData);
@@ -128,6 +142,8 @@ const loadMore = () => {
 watch([activeFilter, searchQuery], () => {
     currentPage.value = 1;
 });
+
+watch(searchQuery, syncUrlState);
 
 const grandTotalItemCount = computed(() => masterItems.value.length);
 const grandTotalExtensionCount = computed(
