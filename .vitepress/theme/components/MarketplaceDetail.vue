@@ -53,9 +53,19 @@ const parseBBCode = (input) => {
         .replace(/'/g, "&#039;");
     }
 
-    const addRef = (url) => {
-        if (!url.includes("builtbybit.com") || url.includes("ref=")) return url;
-        return url + (url.includes("?") ? "&" : "?") + "ref=398830";
+    const getSafeUrl = (value, addReferral = false) => {
+        try {
+            const url = new URL(value.trim());
+
+            if (!["http:", "https:"].includes(url.protocol)) return "#";
+            if (addReferral && url.hostname.endsWith("builtbybit.com") && !url.searchParams.has("ref")) {
+                url.searchParams.set("ref", "398830");
+            }
+
+            return escape(url.href);
+        } catch {
+            return "#";
+        }
     };
 
     let html = input
@@ -86,16 +96,16 @@ const parseBBCode = (input) => {
         .replace(
             /\[URL='?(.*?)'?\](.*?)\[\/URL\]/gi,
             (match, url, text) =>
-                `<a href="${addRef(escape(url))}" target="_blank" class="text-[var(--vp-c-brand-1)] hover:underline">${escape(text)}</a>`,
+                `<a href="${getSafeUrl(url, true)}" target="_blank" rel="noopener noreferrer" class="text-[var(--vp-c-brand-1)] hover:underline">${escape(text)}</a>`,
         )
         .replace(
             /\[URL\](.*?)\[\/URL\]/gi,
             (match, url) =>
-                `<a href="${addRef(escape(url))}" target="_blank" class="text-[var(--vp-c-brand-1)] hover:underline">${escape(url)}</a>`,
+                `<a href="${getSafeUrl(url, true)}" target="_blank" rel="noopener noreferrer" class="text-[var(--vp-c-brand-1)] hover:underline">${escape(url)}</a>`,
         )
         .replace(
             /\[IMG\](.*?)\[\/IMG\]/gi,
-            (match, src) => `<img src="${escape(src)}" class="max-w-full rounded-lg my-2" />`,
+            (match, src) => `<img src="${getSafeUrl(src)}" class="max-w-full rounded-lg my-2" />`,
         )
 
         // Attachments
