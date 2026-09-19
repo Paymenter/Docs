@@ -16,7 +16,13 @@ const updateStateFromUrl = () => {
     searchQuery.value = new URLSearchParams(window.location.search).get("search") || "";
 };
 
-const syncUrlState = (path = window.location.pathname) => {
+const getFilterPath = () => {
+    if (activeFilter.value === "extension") return "/marketplace/extensions";
+    if (activeFilter.value === "theme") return "/marketplace/themes";
+    return "/marketplace";
+};
+
+const syncUrlState = (path = getFilterPath()) => {
     const queryParams = new URLSearchParams(window.location.search);
     if (searchQuery.value) queryParams.set("search", searchQuery.value);
     else queryParams.delete("search");
@@ -143,7 +149,7 @@ watch([activeFilter, searchQuery], () => {
     currentPage.value = 1;
 });
 
-watch(searchQuery, syncUrlState);
+watch(searchQuery, () => syncUrlState());
 
 const grandTotalItemCount = computed(() => masterItems.value.length);
 const grandTotalExtensionCount = computed(
