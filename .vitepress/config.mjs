@@ -210,7 +210,7 @@ export default {
             },
             {
               type: 10,
-              content: `-## [Join our Discord](https://discord.gg/paymenter-882318291014651924)`,
+              content: `-# [Join our Discord](https://discord.gg/paymenter-882318291014651924)`,
             }
           ],
         },
