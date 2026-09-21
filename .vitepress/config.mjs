@@ -175,7 +175,7 @@ export default {
           components: [
             {
               type: 10,
-              content: `# **[${title}](${url})**\n${pageData.frontmatter.description}`,
+              content: `## **[${title}](${url})**\n${pageData.frontmatter.description}`,
             },
             {
               type: 12,
@@ -194,14 +194,12 @@ export default {
                 {
                   type: 2,
                   style: 5,
-                  // Real url
                   url: url,
                   label: "View",
                 },
                 {
                   type: 2,
                   style: 5,
-                  // Purchase url
                   url: pageData.params.url,
                   label: "Purchase ($" + pageData.params.price + ")",
                 },
@@ -209,6 +207,10 @@ export default {
             },
             {
               type: 14,
+            },
+            {
+              type: 10,
+              content: `-## [Join our Discord](https://discord.gg/paymenter-882318291014651924)`,
             }
           ],
         },
