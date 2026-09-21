@@ -158,30 +158,24 @@ export default {
         JSON.stringify(productSchema),
       ]);
 
+      const url =
+        "https://paymenter.org/marketplace/" +
+        pageData.params.id +
+        "-" +
+        pageData.params.name
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, "-")
+          .replace(/^-+|-+$/g, "");
+
       const discordEmbedSchema = {
         component: {
           type: 17,
           spoiler: false,
-          accent_color: 1752220,
+          accent_color: "#4060ff",
           components: [
             {
-              type: 9,
-              components: [
-                {
-                  type: 10,
-                  content:
-                    "# " +
-                    pageData.frontmatter.title +
-                    "\n" +
-                    pageData.frontmatter.description,
-                },
-              ],
-              accessory: {
-                type: 2,
-                style: 5,
-                url: pageData.params.url,
-                label: "Open",
-              },
+              type: 10,
+              content: `# **[${title}](${url})**\n${pageData.frontmatter.description}`,
             },
             {
               type: 12,
@@ -200,17 +194,22 @@ export default {
                 {
                   type: 2,
                   style: 5,
-                  url: pageData.params.url,
+                  // Real url
+                  url: url,
                   label: "View",
                 },
                 {
                   type: 2,
                   style: 5,
+                  // Purchase url
                   url: pageData.params.url,
                   label: "Purchase ($" + pageData.params.price + ")",
                 },
               ],
             },
+            {
+              type: 14,
+            }
           ],
         },
       };
