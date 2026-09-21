@@ -59,7 +59,6 @@ export default {
     const description = pageData.frontmatter.description
       ? pageData.frontmatter.description
       : "Paymenter is an open source payment gateway for your hosting.";
-
     head.push([
       "meta",
       {
@@ -78,7 +77,6 @@ export default {
     // If path is / use textlogo, else use generated image
     if (
       pageData.relativePath &&
-      pageData.relativePath !== "index.md" &&
       pageData.filePath !== "marketplace/[id].md"
     ) {
       head.push([
@@ -100,14 +98,14 @@ export default {
         "meta",
         {
           property: "og:image",
-          content: `/${pageData.relativePath.replace(".md", "")}/og-image.png`,
+          content: pageData.relativePath === `index.md` ? `/textlogo.png` : `/${pageData.relativePath.replace(".md", "")}/og-image.png`,
         },
       ]);
       head.push([
         "meta",
         {
           property: "twitter:image",
-          content: `/${pageData.relativePath.replace(".md", "")}/og-image.png`,
+          content: pageData.relativePath === `index.md` ? `/textlogo.png` : `/${pageData.relativePath.replace(".md", "")}/og-image.png`,
         },
       ]);
       await generateOgImage(
@@ -120,6 +118,53 @@ export default {
           "og-image.png",
         ),
       );
+
+      const url = `https://paymenter.org/${pageData.relativePath.replace(".md", "")}`;
+
+      const discordEmbedSchema = {
+        component: {
+          type: 17,
+          spoiler: false,
+          accent_color: 4219135,
+          components: [
+            {
+              type: 10,
+              content: `## **[${title}](${url})**\n${pageData.frontmatter.description}`,
+            },
+            {
+              type: 12,
+              items: [
+                {
+                  media: {
+                    url: pageData.relativePath === `index.md` ? `/textlogo.png` : `/${pageData.relativePath.replace(".md", "")}/og-image.png`,
+                  },
+                  description: "Image",
+                },
+              ],
+            },
+            {
+              type: 1,
+              components: [
+                {
+                  type: 2,
+                  style: 5,
+                  url: url,
+                  label: "View",
+                },
+              ],
+            },
+            {
+              type: 10,
+              content: `-# [Join our Discord](https://discord.gg/paymenter-882318291014651924) - [Visit GitHub](https://github.com/paymenter/Paymenter)`,
+            }
+          ],
+        },
+      };
+      head.push([
+        "script",
+        { id: "discord:component-embed", type: "application/json" },
+        JSON.stringify(discordEmbedSchema),
+      ]);
     } else if (pageData.filePath === "marketplace/[id].md") {
       if (pageData.params.image) {
         head.push([
@@ -201,7 +246,10 @@ export default {
                   type: 2,
                   style: 5,
                   url: pageData.params.url,
-                  label: "Purchase ($" + pageData.params.price + ")",
+                  label:
+                    pageData.params.price > 0
+                      ? "Purchase ($" + pageData.params.price + ")"
+                      : "Download",
                 },
               ],
             },
@@ -210,8 +258,8 @@ export default {
             },
             {
               type: 10,
-              content: `-# [Join our Discord](https://discord.gg/paymenter-882318291014651924)`,
-            }
+              content: `-# [Join our Discord](https://discord.gg/paymenter-882318291014651924) - [Visit GitHub](https://github.com/paymenter/Paymenter)`,
+            },
           ],
         },
       };
@@ -221,14 +269,7 @@ export default {
         { id: "discord:component-embed", type: "application/json" },
         JSON.stringify(discordEmbedSchema),
       ]);
-    } else {
-      head.push(["meta", { property: "og:image", content: "/textlogo.png" }]);
-      head.push([
-        "meta",
-        { property: "twitter:image", content: "/textlogo.png" },
-      ]);
     }
-
     return head;
   },
 
