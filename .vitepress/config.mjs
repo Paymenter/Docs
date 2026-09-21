@@ -153,6 +153,7 @@ export default {
                 },
               ],
             },
+            { type: 14 },
             {
               type: 10,
               content: `-# [Join our Discord](https://discord.gg/paymenter-882318291014651924) - [Visit GitHub](https://github.com/paymenter/Paymenter)`,
