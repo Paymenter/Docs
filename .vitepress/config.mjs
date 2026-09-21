@@ -129,14 +129,14 @@ export default {
           components: [
             {
               type: 10,
-              content: `## **[${title}](${url})**\n${pageData.frontmatter.description}`,
+              content: `## **[${title}](${url})**\n${description}`,
             },
             {
               type: 12,
               items: [
                 {
                   media: {
-                    url: pageData.relativePath === `index.md` ? `/textlogo.png` : `/${pageData.relativePath.replace(".md", "")}/og-image.png`,
+                    url: pageData.relativePath === `index.md` ? `https://paymenter.org/textlogo.png` : `https://paymenter.org/${pageData.relativePath.replace(".md", "")}/og-image.png`,
                   },
                   description: "Image",
                 },
