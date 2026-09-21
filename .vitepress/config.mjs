@@ -1,7 +1,7 @@
 import fs, { link } from "fs";
 import path from "path";
 import tailwindcss from "@tailwindcss/vite";
-import { generateOgImage } from '../scripts/generate-og.mjs'
+import { generateOgImage } from "../scripts/generate-og.mjs";
 
 export default {
   ignoreDeadLinks: true,
@@ -23,17 +23,15 @@ export default {
   sitemap: {
     hostname: "https://paymenter.org",
     transformItems: (items) => {
-      return items.map((item) => {
-        var excludedPaths = [
-          'anniversary/',
-          'README',
-          'CONTRIBUTING',
-        ];
-        if (excludedPaths.includes(item.url)) {
-          return null;
-        }
-        return item;
-      }).filter(item => item !== null);
+      return items
+        .map((item) => {
+          var excludedPaths = ["anniversary/", "README", "CONTRIBUTING"];
+          if (excludedPaths.includes(item.url)) {
+            return null;
+          }
+          return item;
+        })
+        .filter((item) => item !== null);
     },
   },
 
@@ -54,25 +52,26 @@ export default {
 
   transformHead: async ({ pageData }) => {
     const head = [];
+    const title =
+      pageData.frontmatter.title && pageData.frontmatter.title !== "Paymenter"
+        ? pageData.frontmatter.title + " | Paymenter"
+        : "Paymenter";
+    const description = pageData.frontmatter.description
+      ? pageData.frontmatter.description
+      : "Paymenter is an open source payment gateway for your hosting.";
 
     head.push([
       "meta",
       {
         property: "og:title",
-        content:
-          pageData.frontmatter.title &&
-          pageData.frontmatter.title !== "Paymenter"
-            ? pageData.frontmatter.title + " | Paymenter"
-            : "Paymenter",
+        content: title,
       },
     ]);
     head.push([
       "meta",
       {
         property: "og:description",
-        content: pageData.frontmatter.description
-          ? pageData.frontmatter.description
-          : "Paymenter is an open source payment gateway for your hosting.",
+        content: description,
       },
     ]);
 
@@ -86,18 +85,14 @@ export default {
         "meta",
         {
           property: "image:title",
-          content: pageData.frontmatter.title
-            ? pageData.frontmatter.title
-            : "Paymenter",
+          content: title,
         },
       ]);
       head.push([
         "meta",
         {
           property: "image:description",
-          content: pageData.frontmatter.description
-            ? pageData.frontmatter.description
-            : "Paymenter is an open source payment gateway for your hosting.",
+          content: description,
         },
       ]);
 
@@ -116,17 +111,14 @@ export default {
         },
       ]);
       await generateOgImage(
-        pageData.frontmatter.title
-          ? pageData.frontmatter.title
-          : "Paymenter",
-        pageData.frontmatter.description
-          ? pageData.frontmatter.description
-          : "Paymenter is an open source payment gateway for your hosting.",
+        title,
+        description,
         path.join(
-          __dirname, "../.vitepress/dist",
+          __dirname,
+          "../.vitepress/dist",
           pageData.relativePath.replace(".md", ""),
-          "og-image.png"
-        )
+          "og-image.png",
+        ),
       );
     } else if (pageData.filePath === "marketplace/[id].md") {
       if (pageData.params.image) {
@@ -147,7 +139,7 @@ export default {
         name: pageData.frontmatter.title,
         description: pageData.frontmatter.description,
       };
-      
+
       // Only add aggregateRating if values exist
       if (
         pageData.params.rating != null &&
@@ -159,11 +151,74 @@ export default {
           reviewCount: pageData.params.review_count,
         };
       }
-      
+
       head.push([
         "script",
         { type: "application/ld+json" },
         JSON.stringify(productSchema),
+      ]);
+
+      const discordEmbedSchema = {
+        component: {
+          type: 17,
+          spoiler: false,
+          accent_color: 1752220,
+          components: [
+            {
+              type: 9,
+              components: [
+                {
+                  type: 10,
+                  content:
+                    "# " +
+                    pageData.frontmatter.title +
+                    "\n" +
+                    pageData.frontmatter.description,
+                },
+              ],
+              accessory: {
+                type: 2,
+                style: 5,
+                url: pageData.params.url,
+                label: "Open",
+              },
+            },
+            {
+              type: 12,
+              items: [
+                {
+                  media: {
+                    url: pageData.params.image,
+                  },
+                  description: "Product image",
+                },
+              ],
+            },
+            {
+              type: 1,
+              components: [
+                {
+                  type: 2,
+                  style: 5,
+                  url: pageData.params.url,
+                  label: "View",
+                },
+                {
+                  type: 2,
+                  style: 5,
+                  url: pageData.params.url,
+                  label: "Purchase ($" + pageData.params.price + ")",
+                },
+              ],
+            },
+          ],
+        },
+      };
+
+      head.push([
+        "script",
+        { id: "discord:component-embed", type: "application/json" },
+        JSON.stringify(discordEmbedSchema),
       ]);
     } else {
       head.push(["meta", { property: "og:image", content: "/textlogo.png" }]);
