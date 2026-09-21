@@ -171,7 +171,7 @@ export default {
         component: {
           type: 17,
           spoiler: false,
-          accent_color: "#4060ff",
+          accent_color: 4219135,
           components: [
             {
               type: 10,
