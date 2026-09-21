@@ -221,7 +221,7 @@ export default {
           components: [
             {
               type: 10,
-              content: `## **[${title}](${url})**\n${pageData.frontmatter.description}`,
+              content: `### **[${title}](${url})**\n${pageData.frontmatter.description}`,
             },
             {
               type: 12,
