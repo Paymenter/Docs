@@ -129,7 +129,7 @@ export default {
           components: [
             {
               type: 10,
-              content: `## **[${title}](${url})**\n${description}`,
+              content: `### **[${title}](${url})**\n${description}`,
             },
             {
               type: 12,
