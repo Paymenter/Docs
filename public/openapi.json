@@ -2717,7 +2717,7 @@
                     {
                         "name": "include",
                         "in": "query",
-                        "description": "Available includes are `gateway`, `gatewayCount`, `gatewayExists`, `reference`, `referenceCount`, `referenceExists`, `invoice`, `invoiceCount`, `invoiceExists`. You can include multiple options by separating them with a comma.",
+                        "description": "Available includes are `invoice`, `invoiceCount`, `invoiceExists`. You can include multiple options by separating them with a comma.",
                         "schema": {
                             "type": "string"
                         }
@@ -2966,7 +2966,7 @@
                     {
                         "name": "include",
                         "in": "query",
-                        "description": "Available includes are `gateway`, `gatewayCount`, `gatewayExists`, `reference`, `referenceCount`, `referenceExists`, `invoice`, `invoiceCount`, `invoiceExists`. You can include multiple options by separating them with a comma.",
+                        "description": "Available includes are `invoice`, `invoiceCount`, `invoiceExists`. You can include multiple options by separating them with a comma.",
                         "schema": {
                             "type": "string"
                         }
