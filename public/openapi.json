@@ -132,7 +132,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Return the affiliates as a JSON response\n\n\n\nPaginated set of `AffiliateResource`",
+                        "description": "Paginated set of `AffiliateResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -165,13 +165,15 @@
                                             "type": "object",
                                             "properties": {
                                                 "current_page": {
-                                                    "type": "integer"
+                                                    "type": "integer",
+                                                    "minimum": 1
                                                 },
                                                 "from": {
                                                     "type": [
                                                         "integer",
                                                         "null"
-                                                    ]
+                                                    ],
+                                                    "minimum": 1
                                                 },
                                                 "path": {
                                                     "type": [
@@ -182,14 +184,16 @@
                                                 },
                                                 "per_page": {
                                                     "type": "integer",
-                                                    "description": "Number of items shown per page."
+                                                    "description": "Number of items shown per page.",
+                                                    "minimum": 0
                                                 },
                                                 "to": {
                                                     "type": [
                                                         "integer",
                                                         "null"
                                                     ],
-                                                    "description": "Number of the last item in the slice."
+                                                    "description": "Number of the last item in the slice.",
+                                                    "minimum": 1
                                                 }
                                             },
                                             "required": [
@@ -249,7 +253,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Return the created affiliate as a JSON response\n\n\n\n`AffiliateResource`",
+                        "description": "`AffiliateResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -257,6 +261,19 @@
                                     "properties": {
                                         "data": {
                                             "$ref": "#/components/schemas/AffiliateResource"
+                                        },
+                                        "included": {
+                                            "type": "array",
+                                            "items": {
+                                                "anyOf": [
+                                                    {
+                                                        "$ref": "#/components/schemas/UserResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/AffiliateOrderResource"
+                                                    }
+                                                ]
+                                            }
                                         }
                                     },
                                     "required": [
@@ -303,7 +320,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Return the affiliate as a JSON response\n\n\n\n`AffiliateResource`",
+                        "description": "`AffiliateResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -311,6 +328,19 @@
                                     "properties": {
                                         "data": {
                                             "$ref": "#/components/schemas/AffiliateResource"
+                                        },
+                                        "included": {
+                                            "type": "array",
+                                            "items": {
+                                                "anyOf": [
+                                                    {
+                                                        "$ref": "#/components/schemas/UserResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/AffiliateOrderResource"
+                                                    }
+                                                ]
+                                            }
                                         }
                                     },
                                     "required": [
@@ -359,7 +389,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Return the updated affiliate as a JSON response\n\n\n\n`AffiliateResource`",
+                        "description": "`AffiliateResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -367,6 +397,19 @@
                                     "properties": {
                                         "data": {
                                             "$ref": "#/components/schemas/AffiliateResource"
+                                        },
+                                        "included": {
+                                            "type": "array",
+                                            "items": {
+                                                "anyOf": [
+                                                    {
+                                                        "$ref": "#/components/schemas/UserResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/AffiliateOrderResource"
+                                                    }
+                                                ]
+                                            }
                                         }
                                     },
                                     "required": [
@@ -439,7 +482,7 @@
                     {
                         "name": "include",
                         "in": "query",
-                        "description": "Available includes are `products.plans.prices`, `products.plans.pricesCount`, `products.plans.pricesExists`, `parent`, `parentCount`, `parentExists`, `children`, `childrenCount`, `childrenExists`. You can include multiple options by separating them with a comma.",
+                        "description": "Available includes are `products.plans.prices`, `parent`, `parentCount`, `parentExists`, `children`, `childrenCount`, `childrenExists`. You can include multiple options by separating them with a comma.",
                         "schema": {
                             "type": "string"
                         }
@@ -487,7 +530,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Return the categories as a JSON response\n\n\n\nPaginated set of `CategoryResource`",
+                        "description": "Paginated set of `CategoryResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -520,13 +563,15 @@
                                             "type": "object",
                                             "properties": {
                                                 "current_page": {
-                                                    "type": "integer"
+                                                    "type": "integer",
+                                                    "minimum": 1
                                                 },
                                                 "from": {
                                                     "type": [
                                                         "integer",
                                                         "null"
-                                                    ]
+                                                    ],
+                                                    "minimum": 1
                                                 },
                                                 "path": {
                                                     "type": [
@@ -537,14 +582,16 @@
                                                 },
                                                 "per_page": {
                                                     "type": "integer",
-                                                    "description": "Number of items shown per page."
+                                                    "description": "Number of items shown per page.",
+                                                    "minimum": 0
                                                 },
                                                 "to": {
                                                     "type": [
                                                         "integer",
                                                         "null"
                                                     ],
-                                                    "description": "Number of the last item in the slice."
+                                                    "description": "Number of the last item in the slice.",
+                                                    "minimum": 1
                                                 }
                                             },
                                             "required": [
@@ -607,7 +654,7 @@
                     {
                         "name": "include",
                         "in": "query",
-                        "description": "Available includes are `products.plans.prices`, `products.plans.pricesCount`, `products.plans.pricesExists`, `parent`, `parentCount`, `parentExists`, `children`, `childrenCount`, `childrenExists`. You can include multiple options by separating them with a comma.",
+                        "description": "Available includes are `products.plans.prices`, `parent`, `parentCount`, `parentExists`, `children`, `childrenCount`, `childrenExists`. You can include multiple options by separating them with a comma.",
                         "schema": {
                             "type": "string"
                         }
@@ -615,7 +662,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Return the category as a JSON response\n\n\n\n`CategoryResource`",
+                        "description": "`CategoryResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -623,6 +670,19 @@
                                     "properties": {
                                         "data": {
                                             "$ref": "#/components/schemas/CategoryResource"
+                                        },
+                                        "included": {
+                                            "type": "array",
+                                            "items": {
+                                                "anyOf": [
+                                                    {
+                                                        "$ref": "#/components/schemas/ProductResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/CategoryResource"
+                                                    }
+                                                ]
+                                            }
                                         }
                                     },
                                     "required": [
@@ -711,7 +771,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Return the users as a JSON response\n\n\n\nPaginated set of `UserResource`",
+                        "description": "Paginated set of `UserResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -744,13 +804,15 @@
                                             "type": "object",
                                             "properties": {
                                                 "current_page": {
-                                                    "type": "integer"
+                                                    "type": "integer",
+                                                    "minimum": 1
                                                 },
                                                 "from": {
                                                     "type": [
                                                         "integer",
                                                         "null"
-                                                    ]
+                                                    ],
+                                                    "minimum": 1
                                                 },
                                                 "path": {
                                                     "type": [
@@ -761,14 +823,16 @@
                                                 },
                                                 "per_page": {
                                                     "type": "integer",
-                                                    "description": "Number of items shown per page."
+                                                    "description": "Number of items shown per page.",
+                                                    "minimum": 0
                                                 },
                                                 "to": {
                                                     "type": [
                                                         "integer",
                                                         "null"
                                                     ],
-                                                    "description": "Number of the last item in the slice."
+                                                    "description": "Number of the last item in the slice.",
+                                                    "minimum": 1
                                                 }
                                             },
                                             "required": [
@@ -843,7 +907,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Return the created user as a JSON response\n\n\n\n`UserResource`",
+                        "description": "`UserResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -851,6 +915,34 @@
                                     "properties": {
                                         "data": {
                                             "$ref": "#/components/schemas/UserResource"
+                                        },
+                                        "included": {
+                                            "type": "array",
+                                            "items": {
+                                                "anyOf": [
+                                                    {
+                                                        "$ref": "#/components/schemas/PropertyResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/OrderResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/ServiceResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/InvoiceResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/TicketResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/CreditResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/RoleResource"
+                                                    }
+                                                ]
+                                            }
                                         }
                                     },
                                     "required": [
@@ -897,7 +989,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Return the user as a JSON response\n\n\n\n`UserResource`",
+                        "description": "`UserResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -905,6 +997,34 @@
                                     "properties": {
                                         "data": {
                                             "$ref": "#/components/schemas/UserResource"
+                                        },
+                                        "included": {
+                                            "type": "array",
+                                            "items": {
+                                                "anyOf": [
+                                                    {
+                                                        "$ref": "#/components/schemas/PropertyResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/OrderResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/ServiceResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/InvoiceResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/TicketResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/CreditResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/RoleResource"
+                                                    }
+                                                ]
+                                            }
                                         }
                                     },
                                     "required": [
@@ -953,7 +1073,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Return the updated user as a JSON response\n\n\n\n`UserResource`",
+                        "description": "`UserResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -961,6 +1081,34 @@
                                     "properties": {
                                         "data": {
                                             "$ref": "#/components/schemas/UserResource"
+                                        },
+                                        "included": {
+                                            "type": "array",
+                                            "items": {
+                                                "anyOf": [
+                                                    {
+                                                        "$ref": "#/components/schemas/PropertyResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/OrderResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/ServiceResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/InvoiceResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/TicketResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/CreditResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/RoleResource"
+                                                    }
+                                                ]
+                                            }
                                         }
                                     },
                                     "required": [
@@ -1074,7 +1222,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Return the orders as a JSON response\n\n\n\nPaginated set of `OrderResource`",
+                        "description": "Paginated set of `OrderResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -1107,13 +1255,15 @@
                                             "type": "object",
                                             "properties": {
                                                 "current_page": {
-                                                    "type": "integer"
+                                                    "type": "integer",
+                                                    "minimum": 1
                                                 },
                                                 "from": {
                                                     "type": [
                                                         "integer",
                                                         "null"
-                                                    ]
+                                                    ],
+                                                    "minimum": 1
                                                 },
                                                 "path": {
                                                     "type": [
@@ -1124,14 +1274,16 @@
                                                 },
                                                 "per_page": {
                                                     "type": "integer",
-                                                    "description": "Number of items shown per page."
+                                                    "description": "Number of items shown per page.",
+                                                    "minimum": 0
                                                 },
                                                 "to": {
                                                     "type": [
                                                         "integer",
                                                         "null"
                                                     ],
-                                                    "description": "Number of the last item in the slice."
+                                                    "description": "Number of the last item in the slice.",
+                                                    "minimum": 1
                                                 }
                                             },
                                             "required": [
@@ -1191,7 +1343,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Return the created order as a JSON response\n\n\n\n`OrderResource`",
+                        "description": "`OrderResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -1199,6 +1351,19 @@
                                     "properties": {
                                         "data": {
                                             "$ref": "#/components/schemas/OrderResource"
+                                        },
+                                        "included": {
+                                            "type": "array",
+                                            "items": {
+                                                "anyOf": [
+                                                    {
+                                                        "$ref": "#/components/schemas/ServiceResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/UserResource"
+                                                    }
+                                                ]
+                                            }
                                         }
                                     },
                                     "required": [
@@ -1245,7 +1410,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Return the order as a JSON response\n\n\n\n`OrderResource`",
+                        "description": "`OrderResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -1253,6 +1418,19 @@
                                     "properties": {
                                         "data": {
                                             "$ref": "#/components/schemas/OrderResource"
+                                        },
+                                        "included": {
+                                            "type": "array",
+                                            "items": {
+                                                "anyOf": [
+                                                    {
+                                                        "$ref": "#/components/schemas/ServiceResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/UserResource"
+                                                    }
+                                                ]
+                                            }
                                         }
                                     },
                                     "required": [
@@ -1301,7 +1479,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Return the updated order as a JSON response\n\n\n\n`OrderResource`",
+                        "description": "`OrderResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -1309,6 +1487,19 @@
                                     "properties": {
                                         "data": {
                                             "$ref": "#/components/schemas/OrderResource"
+                                        },
+                                        "included": {
+                                            "type": "array",
+                                            "items": {
+                                                "anyOf": [
+                                                    {
+                                                        "$ref": "#/components/schemas/ServiceResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/UserResource"
+                                                    }
+                                                ]
+                                            }
                                         }
                                     },
                                     "required": [
@@ -1381,7 +1572,7 @@
                     {
                         "name": "include",
                         "in": "query",
-                        "description": "Available includes are `category`, `categoryCount`, `categoryExists`, `plans.prices`, `plans.pricesCount`, `plans.pricesExists`, `services`, `servicesCount`, `servicesExists`. You can include multiple options by separating them with a comma.",
+                        "description": "Available includes are `category`, `categoryCount`, `categoryExists`, `plans.prices`, `services`, `servicesCount`, `servicesExists`. You can include multiple options by separating them with a comma.",
                         "schema": {
                             "type": "string"
                         }
@@ -1450,7 +1641,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Return the products as a JSON response\n\n\n\nPaginated set of `ProductResource`",
+                        "description": "Paginated set of `ProductResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -1483,13 +1674,15 @@
                                             "type": "object",
                                             "properties": {
                                                 "current_page": {
-                                                    "type": "integer"
+                                                    "type": "integer",
+                                                    "minimum": 1
                                                 },
                                                 "from": {
                                                     "type": [
                                                         "integer",
                                                         "null"
-                                                    ]
+                                                    ],
+                                                    "minimum": 1
                                                 },
                                                 "path": {
                                                     "type": [
@@ -1500,14 +1693,16 @@
                                                 },
                                                 "per_page": {
                                                     "type": "integer",
-                                                    "description": "Number of items shown per page."
+                                                    "description": "Number of items shown per page.",
+                                                    "minimum": 0
                                                 },
                                                 "to": {
                                                     "type": [
                                                         "integer",
                                                         "null"
                                                     ],
-                                                    "description": "Number of the last item in the slice."
+                                                    "description": "Number of the last item in the slice.",
+                                                    "minimum": 1
                                                 }
                                             },
                                             "required": [
@@ -1570,7 +1765,7 @@
                     {
                         "name": "include",
                         "in": "query",
-                        "description": "Available includes are `category`, `categoryCount`, `categoryExists`, `plans.prices`, `plans.pricesCount`, `plans.pricesExists`, `services`, `servicesCount`, `servicesExists`. You can include multiple options by separating them with a comma.",
+                        "description": "Available includes are `category`, `categoryCount`, `categoryExists`, `plans.prices`, `services`, `servicesCount`, `servicesExists`. You can include multiple options by separating them with a comma.",
                         "schema": {
                             "type": "string"
                         }
@@ -1578,7 +1773,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Return the product as a JSON response\n\n\n\n`ProductResource`",
+                        "description": "`ProductResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -1586,6 +1781,19 @@
                                     "properties": {
                                         "data": {
                                             "$ref": "#/components/schemas/ProductResource"
+                                        },
+                                        "included": {
+                                            "type": "array",
+                                            "items": {
+                                                "anyOf": [
+                                                    {
+                                                        "$ref": "#/components/schemas/CategoryResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/PlanResource"
+                                                    }
+                                                ]
+                                            }
                                         }
                                     },
                                     "required": [
@@ -1688,7 +1896,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Return the services as a JSON response\n\n\n\nPaginated set of `ServiceResource`",
+                        "description": "Paginated set of `ServiceResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -1721,13 +1929,15 @@
                                             "type": "object",
                                             "properties": {
                                                 "current_page": {
-                                                    "type": "integer"
+                                                    "type": "integer",
+                                                    "minimum": 1
                                                 },
                                                 "from": {
                                                     "type": [
                                                         "integer",
                                                         "null"
-                                                    ]
+                                                    ],
+                                                    "minimum": 1
                                                 },
                                                 "path": {
                                                     "type": [
@@ -1738,14 +1948,16 @@
                                                 },
                                                 "per_page": {
                                                     "type": "integer",
-                                                    "description": "Number of items shown per page."
+                                                    "description": "Number of items shown per page.",
+                                                    "minimum": 0
                                                 },
                                                 "to": {
                                                     "type": [
                                                         "integer",
                                                         "null"
                                                     ],
-                                                    "description": "Number of the last item in the slice."
+                                                    "description": "Number of the last item in the slice.",
+                                                    "minimum": 1
                                                 }
                                             },
                                             "required": [
@@ -1817,7 +2029,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Return the created service as a JSON response\n\n\n\n`ServiceResource`",
+                        "description": "`ServiceResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -1825,6 +2037,31 @@
                                     "properties": {
                                         "data": {
                                             "$ref": "#/components/schemas/ServiceResource"
+                                        },
+                                        "included": {
+                                            "type": "array",
+                                            "items": {
+                                                "anyOf": [
+                                                    {
+                                                        "$ref": "#/components/schemas/CouponResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/UserResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/OrderResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/ProductResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/InvoiceResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/PropertyResource"
+                                                    }
+                                                ]
+                                            }
                                         }
                                     },
                                     "required": [
@@ -1871,7 +2108,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Return the service as a JSON response\n\n\n\n`ServiceResource`",
+                        "description": "`ServiceResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -1879,6 +2116,31 @@
                                     "properties": {
                                         "data": {
                                             "$ref": "#/components/schemas/ServiceResource"
+                                        },
+                                        "included": {
+                                            "type": "array",
+                                            "items": {
+                                                "anyOf": [
+                                                    {
+                                                        "$ref": "#/components/schemas/CouponResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/UserResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/OrderResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/ProductResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/InvoiceResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/PropertyResource"
+                                                    }
+                                                ]
+                                            }
                                         }
                                     },
                                     "required": [
@@ -1927,7 +2189,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Return the updated service as a JSON response\n\n\n\n`ServiceResource`",
+                        "description": "`ServiceResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -1935,6 +2197,31 @@
                                     "properties": {
                                         "data": {
                                             "$ref": "#/components/schemas/ServiceResource"
+                                        },
+                                        "included": {
+                                            "type": "array",
+                                            "items": {
+                                                "anyOf": [
+                                                    {
+                                                        "$ref": "#/components/schemas/CouponResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/UserResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/OrderResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/ProductResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/InvoiceResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/PropertyResource"
+                                                    }
+                                                ]
+                                            }
                                         }
                                     },
                                     "required": [
@@ -2055,7 +2342,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Return the credits as a JSON response\n\n\n\nPaginated set of `CreditResource`",
+                        "description": "Paginated set of `CreditResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -2088,13 +2375,15 @@
                                             "type": "object",
                                             "properties": {
                                                 "current_page": {
-                                                    "type": "integer"
+                                                    "type": "integer",
+                                                    "minimum": 1
                                                 },
                                                 "from": {
                                                     "type": [
                                                         "integer",
                                                         "null"
-                                                    ]
+                                                    ],
+                                                    "minimum": 1
                                                 },
                                                 "path": {
                                                     "type": [
@@ -2105,14 +2394,16 @@
                                                 },
                                                 "per_page": {
                                                     "type": "integer",
-                                                    "description": "Number of items shown per page."
+                                                    "description": "Number of items shown per page.",
+                                                    "minimum": 0
                                                 },
                                                 "to": {
                                                     "type": [
                                                         "integer",
                                                         "null"
                                                     ],
-                                                    "description": "Number of the last item in the slice."
+                                                    "description": "Number of the last item in the slice.",
+                                                    "minimum": 1
                                                 }
                                             },
                                             "required": [
@@ -2165,7 +2456,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Return the created credit as a JSON response\n\n\n\n`CreditResource`",
+                        "description": "`CreditResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -2173,6 +2464,12 @@
                                     "properties": {
                                         "data": {
                                             "$ref": "#/components/schemas/CreditResource"
+                                        },
+                                        "included": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/UserResource"
+                                            }
                                         }
                                     },
                                     "required": [
@@ -2219,7 +2516,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Return the credit as a JSON response\n\n\n\n`CreditResource`",
+                        "description": "`CreditResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -2227,6 +2524,12 @@
                                     "properties": {
                                         "data": {
                                             "$ref": "#/components/schemas/CreditResource"
+                                        },
+                                        "included": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/UserResource"
+                                            }
                                         }
                                     },
                                     "required": [
@@ -2275,7 +2578,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Return the updated credit as a JSON response\n\n\n\n`CreditResource`",
+                        "description": "`CreditResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -2283,6 +2586,12 @@
                                     "properties": {
                                         "data": {
                                             "$ref": "#/components/schemas/CreditResource"
+                                        },
+                                        "included": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#/components/schemas/UserResource"
+                                            }
                                         }
                                     },
                                     "required": [
@@ -2410,7 +2719,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Return the invoices as a JSON response\n\n\n\nPaginated set of `InvoiceResource`",
+                        "description": "Paginated set of `InvoiceResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -2443,13 +2752,15 @@
                                             "type": "object",
                                             "properties": {
                                                 "current_page": {
-                                                    "type": "integer"
+                                                    "type": "integer",
+                                                    "minimum": 1
                                                 },
                                                 "from": {
                                                     "type": [
                                                         "integer",
                                                         "null"
-                                                    ]
+                                                    ],
+                                                    "minimum": 1
                                                 },
                                                 "path": {
                                                     "type": [
@@ -2460,14 +2771,16 @@
                                                 },
                                                 "per_page": {
                                                     "type": "integer",
-                                                    "description": "Number of items shown per page."
+                                                    "description": "Number of items shown per page.",
+                                                    "minimum": 0
                                                 },
                                                 "to": {
                                                     "type": [
                                                         "integer",
                                                         "null"
                                                     ],
-                                                    "description": "Number of the last item in the slice."
+                                                    "description": "Number of the last item in the slice.",
+                                                    "minimum": 1
                                                 }
                                             },
                                             "required": [
@@ -2527,7 +2840,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Return the created invoice as a JSON response\n\n\n\n`InvoiceResource`",
+                        "description": "`InvoiceResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -2535,6 +2848,19 @@
                                     "properties": {
                                         "data": {
                                             "$ref": "#/components/schemas/InvoiceResource"
+                                        },
+                                        "included": {
+                                            "type": "array",
+                                            "items": {
+                                                "anyOf": [
+                                                    {
+                                                        "$ref": "#/components/schemas/UserResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/InvoiceItemResource"
+                                                    }
+                                                ]
+                                            }
                                         }
                                     },
                                     "required": [
@@ -2581,7 +2907,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Return the invoice as a JSON response\n\n\n\n`InvoiceResource`",
+                        "description": "`InvoiceResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -2589,6 +2915,19 @@
                                     "properties": {
                                         "data": {
                                             "$ref": "#/components/schemas/InvoiceResource"
+                                        },
+                                        "included": {
+                                            "type": "array",
+                                            "items": {
+                                                "anyOf": [
+                                                    {
+                                                        "$ref": "#/components/schemas/UserResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/InvoiceItemResource"
+                                                    }
+                                                ]
+                                            }
                                         }
                                     },
                                     "required": [
@@ -2637,7 +2976,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Return the updated invoice as a JSON response\n\n\n\n`InvoiceResource`",
+                        "description": "`InvoiceResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -2645,6 +2984,19 @@
                                     "properties": {
                                         "data": {
                                             "$ref": "#/components/schemas/InvoiceResource"
+                                        },
+                                        "included": {
+                                            "type": "array",
+                                            "items": {
+                                                "anyOf": [
+                                                    {
+                                                        "$ref": "#/components/schemas/UserResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/InvoiceItemResource"
+                                                    }
+                                                ]
+                                            }
                                         }
                                     },
                                     "required": [
@@ -2779,7 +3131,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Return the invoices as a JSON response\n\n\n\nPaginated set of `InvoiceItemResource`",
+                        "description": "Paginated set of `InvoiceItemResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -2812,13 +3164,15 @@
                                             "type": "object",
                                             "properties": {
                                                 "current_page": {
-                                                    "type": "integer"
+                                                    "type": "integer",
+                                                    "minimum": 1
                                                 },
                                                 "from": {
                                                     "type": [
                                                         "integer",
                                                         "null"
-                                                    ]
+                                                    ],
+                                                    "minimum": 1
                                                 },
                                                 "path": {
                                                     "type": [
@@ -2829,14 +3183,16 @@
                                                 },
                                                 "per_page": {
                                                     "type": "integer",
-                                                    "description": "Number of items shown per page."
+                                                    "description": "Number of items shown per page.",
+                                                    "minimum": 0
                                                 },
                                                 "to": {
                                                     "type": [
                                                         "integer",
                                                         "null"
                                                     ],
-                                                    "description": "Number of the last item in the slice."
+                                                    "description": "Number of the last item in the slice.",
+                                                    "minimum": 1
                                                 }
                                             },
                                             "required": [
@@ -2920,7 +3276,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Return the created invoice as a JSON response\n\n\n\n`InvoiceItemResource`",
+                        "description": "`InvoiceItemResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -2928,6 +3284,43 @@
                                     "properties": {
                                         "data": {
                                             "$ref": "#/components/schemas/InvoiceItemResource"
+                                        },
+                                        "included": {
+                                            "type": "array",
+                                            "items": {
+                                                "anyOf": [
+                                                    {
+                                                        "$ref": "#/components/schemas/ServiceResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/CouponResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/UserResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/OrderResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/ProductResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/InvoiceResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/PropertyResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/ServiceUpgradeResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/CreditResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/InvoiceItemResource"
+                                                    }
+                                                ]
+                                            }
                                         }
                                     },
                                     "required": [
@@ -2974,7 +3367,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Return the invoice item as a JSON response\n\n\n\n`InvoiceItemResource`",
+                        "description": "`InvoiceItemResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -2982,6 +3375,43 @@
                                     "properties": {
                                         "data": {
                                             "$ref": "#/components/schemas/InvoiceItemResource"
+                                        },
+                                        "included": {
+                                            "type": "array",
+                                            "items": {
+                                                "anyOf": [
+                                                    {
+                                                        "$ref": "#/components/schemas/ServiceResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/CouponResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/UserResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/OrderResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/ProductResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/InvoiceResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/PropertyResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/ServiceUpgradeResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/CreditResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/InvoiceItemResource"
+                                                    }
+                                                ]
+                                            }
                                         }
                                     },
                                     "required": [
@@ -3030,7 +3460,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Return the updated invoice item as a JSON response\n\n\n\n`InvoiceItemResource`",
+                        "description": "`InvoiceItemResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -3038,6 +3468,43 @@
                                     "properties": {
                                         "data": {
                                             "$ref": "#/components/schemas/InvoiceItemResource"
+                                        },
+                                        "included": {
+                                            "type": "array",
+                                            "items": {
+                                                "anyOf": [
+                                                    {
+                                                        "$ref": "#/components/schemas/ServiceResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/CouponResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/UserResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/OrderResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/ProductResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/InvoiceResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/PropertyResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/ServiceUpgradeResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/CreditResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/InvoiceItemResource"
+                                                    }
+                                                ]
+                                            }
                                         }
                                     },
                                     "required": [
@@ -3179,7 +3646,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Return the tickets as a JSON response\n\n\n\nPaginated set of `TicketResource`",
+                        "description": "Paginated set of `TicketResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -3212,13 +3679,15 @@
                                             "type": "object",
                                             "properties": {
                                                 "current_page": {
-                                                    "type": "integer"
+                                                    "type": "integer",
+                                                    "minimum": 1
                                                 },
                                                 "from": {
                                                     "type": [
                                                         "integer",
                                                         "null"
-                                                    ]
+                                                    ],
+                                                    "minimum": 1
                                                 },
                                                 "path": {
                                                     "type": [
@@ -3229,14 +3698,16 @@
                                                 },
                                                 "per_page": {
                                                     "type": "integer",
-                                                    "description": "Number of items shown per page."
+                                                    "description": "Number of items shown per page.",
+                                                    "minimum": 0
                                                 },
                                                 "to": {
                                                     "type": [
                                                         "integer",
                                                         "null"
                                                     ],
-                                                    "description": "Number of the last item in the slice."
+                                                    "description": "Number of the last item in the slice.",
+                                                    "minimum": 1
                                                 }
                                             },
                                             "required": [
@@ -3296,7 +3767,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Return the created ticket as a JSON response\n\n\n\n`TicketResource`",
+                        "description": "`TicketResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -3304,6 +3775,19 @@
                                     "properties": {
                                         "data": {
                                             "$ref": "#/components/schemas/TicketResource"
+                                        },
+                                        "included": {
+                                            "type": "array",
+                                            "items": {
+                                                "anyOf": [
+                                                    {
+                                                        "$ref": "#/components/schemas/TicketMessageResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/UserResource"
+                                                    }
+                                                ]
+                                            }
                                         }
                                     },
                                     "required": [
@@ -3350,7 +3834,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Return the ticket as a JSON response\n\n\n\n`TicketResource`",
+                        "description": "`TicketResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -3358,6 +3842,19 @@
                                     "properties": {
                                         "data": {
                                             "$ref": "#/components/schemas/TicketResource"
+                                        },
+                                        "included": {
+                                            "type": "array",
+                                            "items": {
+                                                "anyOf": [
+                                                    {
+                                                        "$ref": "#/components/schemas/TicketMessageResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/UserResource"
+                                                    }
+                                                ]
+                                            }
                                         }
                                     },
                                     "required": [
@@ -3406,7 +3903,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Return the updated ticket as a JSON response\n\n\n\n`TicketResource`",
+                        "description": "`TicketResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -3414,6 +3911,19 @@
                                     "properties": {
                                         "data": {
                                             "$ref": "#/components/schemas/TicketResource"
+                                        },
+                                        "included": {
+                                            "type": "array",
+                                            "items": {
+                                                "anyOf": [
+                                                    {
+                                                        "$ref": "#/components/schemas/TicketMessageResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/UserResource"
+                                                    }
+                                                ]
+                                            }
                                         }
                                     },
                                     "required": [
@@ -3527,7 +4037,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Return the ticketMessages as a JSON response\n\n\n\nPaginated set of `TicketMessageResource`",
+                        "description": "Paginated set of `TicketMessageResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -3560,13 +4070,15 @@
                                             "type": "object",
                                             "properties": {
                                                 "current_page": {
-                                                    "type": "integer"
+                                                    "type": "integer",
+                                                    "minimum": 1
                                                 },
                                                 "from": {
                                                     "type": [
                                                         "integer",
                                                         "null"
-                                                    ]
+                                                    ],
+                                                    "minimum": 1
                                                 },
                                                 "path": {
                                                     "type": [
@@ -3577,14 +4089,16 @@
                                                 },
                                                 "per_page": {
                                                     "type": "integer",
-                                                    "description": "Number of items shown per page."
+                                                    "description": "Number of items shown per page.",
+                                                    "minimum": 0
                                                 },
                                                 "to": {
                                                     "type": [
                                                         "integer",
                                                         "null"
                                                     ],
-                                                    "description": "Number of the last item in the slice."
+                                                    "description": "Number of the last item in the slice.",
+                                                    "minimum": 1
                                                 }
                                             },
                                             "required": [
@@ -3647,7 +4161,7 @@
                 },
                 "responses": {
                     "200": {
-                        "description": "Return the created ticketMessage as a JSON response\n\n\n\n`TicketMessageResource`",
+                        "description": "`TicketMessageResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -3655,6 +4169,22 @@
                                     "properties": {
                                         "data": {
                                             "$ref": "#/components/schemas/TicketMessageResource"
+                                        },
+                                        "included": {
+                                            "type": "array",
+                                            "items": {
+                                                "anyOf": [
+                                                    {
+                                                        "$ref": "#/components/schemas/UserResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/TicketResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/TicketAttachmentResource"
+                                                    }
+                                                ]
+                                            }
                                         }
                                     },
                                     "required": [
@@ -3701,7 +4231,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Return the ticketMessage as a JSON response\n\n\n\n`TicketMessageResource`",
+                        "description": "`TicketMessageResource`",
                         "content": {
                             "application/vnd.api+json": {
                                 "schema": {
@@ -3709,6 +4239,22 @@
                                     "properties": {
                                         "data": {
                                             "$ref": "#/components/schemas/TicketMessageResource"
+                                        },
+                                        "included": {
+                                            "type": "array",
+                                            "items": {
+                                                "anyOf": [
+                                                    {
+                                                        "$ref": "#/components/schemas/UserResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/TicketResource"
+                                                    },
+                                                    {
+                                                        "$ref": "#/components/schemas/TicketAttachmentResource"
+                                                    }
+                                                ]
+                                            }
                                         }
                                     },
                                     "required": [
@@ -3778,7 +4324,10 @@
                         "type": "string"
                     },
                     "type": {
-                        "type": "string"
+                        "type": "string",
+                        "enum": [
+                            "extAffiliateOrders"
+                        ]
                     },
                     "attributes": {
                         "type": "object",
@@ -3806,7 +4355,10 @@
                 "type": "object",
                 "properties": {
                     "type": {
-                        "type": "string"
+                        "type": "string",
+                        "enum": [
+                            "extAffiliateOrders"
+                        ]
                     },
                     "id": {
                         "type": "string"
@@ -3825,7 +4377,10 @@
                         "type": "string"
                     },
                     "type": {
-                        "type": "string"
+                        "type": "string",
+                        "enum": [
+                            "extAffiliates"
+                        ]
                     },
                     "attributes": {
                         "type": "object",
@@ -3895,14 +4450,10 @@
                                 "type": "object",
                                 "properties": {
                                     "data": {
-                                        "anyOf": [
-                                            {
-                                                "$ref": "#/components/schemas/AffiliateOrderResourceIdentifier"
-                                            },
-                                            {
-                                                "type": "null"
-                                            }
-                                        ]
+                                        "type": "array",
+                                        "items": {
+                                            "$ref": "#/components/schemas/AffiliateOrderResourceIdentifier"
+                                        }
                                     }
                                 },
                                 "required": [
@@ -4224,7 +4775,9 @@
                     },
                     "currency_code": {
                         "type": "string",
-                        "example": "USD"
+                        "examples": [
+                            "USD"
+                        ]
                     },
                     "amount": {
                         "type": "number",
@@ -4286,7 +4839,9 @@
                     },
                     "currency_code": {
                         "type": "string",
-                        "example": "USD"
+                        "examples": [
+                            "USD"
+                        ]
                     },
                     "due_at": {
                         "type": [
@@ -4298,6 +4853,7 @@
                     "status": {
                         "type": "string",
                         "enum": [
+                            "draft",
                             "pending",
                             "paid",
                             "cancelled"
@@ -4320,7 +4876,9 @@
                     },
                     "currency_code": {
                         "type": "string",
-                        "example": "USD"
+                        "examples": [
+                            "USD"
+                        ]
                     }
                 },
                 "required": [
@@ -4372,7 +4930,9 @@
                     },
                     "currency_code": {
                         "type": "string",
-                        "example": "USD"
+                        "examples": [
+                            "USD"
+                        ]
                     },
                     "price": {
                         "type": "number",
@@ -4447,7 +5007,8 @@
                         ],
                         "enum": [
                             "Support",
-                            "Sales"
+                            "Sales",
+                            null
                         ]
                     },
                     "priority": {
@@ -6187,7 +6748,9 @@
                 "properties": {
                     "currency_code": {
                         "type": "string",
-                        "example": "USD"
+                        "examples": [
+                            "USD"
+                        ]
                     },
                     "amount": {
                         "type": "number",
@@ -6229,7 +6792,9 @@
                     },
                     "currency_code": {
                         "type": "string",
-                        "example": "USD"
+                        "examples": [
+                            "USD"
+                        ]
                     },
                     "due_at": {
                         "type": [
@@ -6258,7 +6823,9 @@
                     },
                     "currency_code": {
                         "type": "string",
-                        "example": "USD"
+                        "examples": [
+                            "USD"
+                        ]
                     }
                 },
                 "title": "UpdateOrderRequest"
@@ -6306,7 +6873,9 @@
                     },
                     "currency_code": {
                         "type": "string",
-                        "example": "USD"
+                        "examples": [
+                            "USD"
+                        ]
                     },
                     "price": {
                         "type": "number",
@@ -6351,7 +6920,8 @@
                         ],
                         "enum": [
                             "Support",
-                            "Sales"
+                            "Sales",
+                            null
                         ]
                     },
                     "priority": {
