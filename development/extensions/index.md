@@ -195,19 +195,19 @@ class Example extends Extension
     public function installed()// [!code focus:5]
     {
         // Code to run when the extension is installed, for example run migrations:
-        ExtensionHelper::runMigrations('extension/Others/Example/database/migrations');
+        ExtensionHelper::runMigrations('extensions/Others/Example/database/migrations');
     }
 
     public function uninstalled()// [!code focus:5]
     {
         // Code to run when the extension is uninstalled, for example rollback migrations:
-        ExtensionHelper::rollbackMigrations('extension/Others/Example/database/migrations');
+        ExtensionHelper::rollbackMigrations('extensions/Others/Example/database/migrations');
     }
 
     public function upgraded()// [!code focus:5]
     {
         // Code to run when the extension is upgraded, for example run migrations:
-        ExtensionHelper::runMigrations('extension/Others/Example/database/migrations');
+        ExtensionHelper::runMigrations('extensions/Others/Example/database/migrations');
     }
 }
 
